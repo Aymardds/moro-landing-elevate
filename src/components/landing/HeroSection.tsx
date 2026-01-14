@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Apple, PlayCircle, ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
+import phoneMockup from "@/assets/phone-mockup-real.png";
 
 export const HeroSection = () => {
   return (
@@ -25,7 +25,7 @@ export const HeroSection = () => {
             className="text-center lg:text-left"
           >
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
-              <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+              <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
               <span className="text-sm font-medium">
                 +5000 coopératives nous font confiance
               </span>
@@ -48,7 +48,7 @@ export const HeroSection = () => {
                 Inscrire ma coopérative
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button variant="outline" size="xl">
+              <Button variant="accent" size="xl">
                 Voir la démo
               </Button>
             </div>
@@ -78,21 +78,19 @@ export const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* Hero Image */}
+          {/* Hero Image - Phone Mockup */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
+            className="relative flex justify-center"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-elevated">
+            <div className="relative">
               <img
-                src={heroImage}
-                alt="Coopératives africaines utilisant Moro"
-                className="w-full h-auto object-cover"
+                src={phoneMockup}
+                alt="Application Moro sur smartphone"
+                className="w-full max-w-md h-auto object-contain drop-shadow-2xl"
               />
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
             </div>
 
             {/* Floating Stats Card */}

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import moroLogo from "@/assets/moro-logo.png";
 
 const navLinks = [
   { label: "Pourquoi Moro", href: "#why" },
@@ -30,11 +31,8 @@ export const Header = () => {
     >
       <div className="container-tight flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-xl bg-gradient-hero flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-xl">M</span>
-          </div>
-          <span className="text-xl font-bold text-foreground">Moro</span>
+        <a href="#" className="flex items-center">
+          <img src={moroLogo} alt="Moro" className="h-10 w-auto" />
         </a>
 
         {/* Desktop Navigation */}
