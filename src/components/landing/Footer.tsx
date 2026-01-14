@@ -1,4 +1,5 @@
 import { Apple, PlayCircle, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import moroLogo from "@/assets/moro-logo.png";
 
 const footerLinks = {
   product: {
@@ -52,11 +53,8 @@ export const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 lg:gap-12 mb-12">
           {/* Brand */}
           <div className="col-span-2">
-            <a href="#" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">M</span>
-              </div>
-              <span className="text-xl font-bold text-background">Moro</span>
+            <a href="#" className="flex items-center mb-4">
+              <img src={moroLogo} alt="Moro" className="h-10 w-auto brightness-0 invert" />
             </a>
             <p className="text-background/60 mb-6 max-w-xs">
               La solution de gestion et de financement pour les coopératives et associations africaines.

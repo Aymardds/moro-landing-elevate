@@ -6,7 +6,7 @@ import {
   FileText, 
   Lock 
 } from "lucide-react";
-import phoneMockup from "@/assets/phone-mockup.png";
+import phoneMockup from "@/assets/phone-mockup-real.png";
 
 const features = [
   {
