@@ -1,16 +1,21 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Apple, PlayCircle } from "lucide-react";
+import { WavyBackground } from "@/components/ui/WavyBackground";
+import waveBg from "@/assets/wave-bg.jpg";
 
 export const CTASection = () => {
   return (
     <section className="section-padding bg-gradient-hero relative overflow-hidden">
-      {/* Background Pattern */}
+      {/* Background Image */}
       <div
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}
+        className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-30"
+        style={{ backgroundImage: `url(${waveBg})` }}
+      />
+      <WavyBackground
+        colors={["#ffffff", "#F7941D", "#ffffff"]}
+        opacity={0.05}
+        className="opacity-40"
       />
 
       <div className="container-tight relative z-10">
@@ -25,7 +30,7 @@ export const CTASection = () => {
             Rejoignez les coopératives qui transforment leur gestion avec Moro
           </h2>
           <p className="text-lg sm:text-xl text-primary-foreground/80 mb-10">
-            Plus de 5 000 organisations nous font déjà confiance. 
+            Plus de 5 000 organisations nous font déjà confiance.
             Lancez-vous gratuitement dès aujourd'hui.
           </p>
 

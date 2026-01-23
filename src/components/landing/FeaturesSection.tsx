@@ -1,38 +1,44 @@
 import { motion } from "framer-motion";
-import { 
-  UserCheck, 
-  PieChart, 
-  Landmark, 
-  FileText, 
-  Lock 
+import {
+  Wallet,
+  Activity,
+  Users,
+  BrainCircuit,
+  BarChart3,
+  Network
 } from "lucide-react";
-import phoneMockup from "@/assets/phone-mockup-real.png";
+import appDashboardMockup from "@/assets/app-dashboard-mockup.png";
 
 const features = [
   {
-    icon: UserCheck,
-    title: "Gestion des membres",
-    description: "Inscrivez, modifiez et suivez tous vos membres. Historique complet des cotisations par personne.",
+    icon: Wallet,
+    title: "Gestion des opérations courantes",
+    description: "Moro organise, planifie les opérations financières liées à un projet par catégorie, auteur.",
   },
   {
-    icon: PieChart,
-    title: "Suivi financier",
-    description: "Tableau de bord complet avec entrées, sorties, solde. Alertes automatiques sur les impayés.",
+    icon: Activity,
+    title: "Analyse de flux financiers",
+    description: "Moro génère un tableau de bord analytique de projet et des variations graphiques de vos opérations financières.",
   },
   {
-    icon: Landmark,
-    title: "Projets & Microfinancement",
-    description: "Créez des projets collectifs, suivez les contributions et accédez à des financements adaptés.",
+    icon: Users,
+    title: "Gestion des utilisateurs",
+    description: "Le contrôle d'accès granulaire permet aux utilisateurs de définir qui peut accéder à certaines informations ou fonctionnalités.",
   },
   {
-    icon: FileText,
-    title: "Rapports automatisés",
-    description: "Générez des PV d'assemblée, bilans financiers et rapports d'activité en PDF.",
+    icon: BrainCircuit,
+    title: "Assistance projet par l'IA",
+    description: "Notre assistant doté d'IA vous aide à peaufiner votre demande de financement sans tracas !",
   },
   {
-    icon: Lock,
-    title: "Sécurité des données",
-    description: "Vos données sont chiffrées et sauvegardées. Conformité aux standards internationaux.",
+    icon: BarChart3,
+    title: "Résultat d'exploitation",
+    description: "Création et gestion de projets illimité, organisation de projet par catégorie, date.",
+  },
+  {
+    icon: Network,
+    title: "Mise en relation avec des investisseurs",
+    description: "Moro vous connecte directement aux investisseurs et grandes industries.",
   },
 ];
 
@@ -40,83 +46,97 @@ export const FeaturesSection = () => {
   return (
     <section id="features" className="section-padding bg-secondary/30">
       <div className="container-tight">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Phone Mockup */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative order-2 lg:order-1"
-          >
-            <div className="relative max-w-sm mx-auto">
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
-              
-              {/* Phone */}
+        {/* Centered Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="inline-block text-primary font-semibold mb-4">
+            FONCTIONNALITÉS
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            Financez votre projet avec la <span className="text-primary">méthode 310</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Notre IA optimise votre dossier de financement et vous connecte aux bons investisseurs pour maximiser vos chances de réussite.
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-[1fr_2fr_1fr] gap-8 items-center">
+          {/* Left Column: Features 1-3 */}
+          <div className="space-y-12">
+            {features.slice(0, 3).map((feature, index) => (
               <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="relative"
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex flex-col items-center text-center lg:items-end lg:text-right gap-4 group"
               >
-                <img
-                  src={phoneMockup}
-                  alt="Application Moro sur mobile"
-                  className="w-full h-auto drop-shadow-2xl"
-                />
+                <div className="flex-shrink-0 w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-sm">
+                  <feature.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
               </motion.div>
+            ))}
+          </div>
 
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -left-4 w-20 h-20 bg-accent/20 rounded-full blur-2xl" />
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
-            </div>
-          </motion.div>
-
-          {/* Content */}
+          {/* Center Column: Phone Mockup */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="order-1 lg:order-2"
+            className="relative mx-auto max-w-[500px] lg:max-w-none w-full"
           >
-            <span className="inline-block text-primary font-semibold mb-4">
-              FONCTIONNALITÉS
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Tout ce dont vous avez besoin, au bout des doigts
-            </h2>
-            <p className="text-lg text-muted-foreground mb-10">
-              Une application complète pour gérer votre coopérative de A à Z. 
-              Simple à utiliser, puissante dans ses fonctionnalités.
-            </p>
+            {/* Glow effects */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[80%] bg-primary/20 blur-3xl rounded-full -z-10" />
 
-            {/* Features List */}
-            <div className="space-y-6">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex gap-4 group"
-                >
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <feature.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-foreground mb-1">
-                      {feature.title}
-                    </h3>
-                    <p className="text-muted-foreground">
-                      {feature.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="relative z-10 p-4">
+              <img
+                src={appDashboardMockup}
+                alt="Interface de l'application Moro"
+                className="w-full h-auto drop-shadow-2xl"
+              />
             </div>
           </motion.div>
+
+          {/* Right Column: Features 4-6 */}
+          <div className="space-y-12">
+            {features.slice(3, 6).map((feature, index) => (
+              <motion.div
+                key={index + 3}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: (index + 3) * 0.1 }}
+                className="flex flex-col items-center text-center lg:items-start lg:text-left gap-4 group"
+              >
+                <div className="flex-shrink-0 w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-sm">
+                  <feature.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

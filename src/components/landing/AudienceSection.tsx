@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import cooperativeMeeting from "@/assets/cooperative-meeting.jpg";
+import audienceImage from "@/assets/impact/impact-6.jpg";
 
 const audiences = [
   {
@@ -43,7 +43,7 @@ export const AudienceSection = () => {
               Moro s'adapte à votre réalité
             </h2>
             <p className="text-lg text-muted-foreground mb-10">
-              Que vous soyez une coopérative de 10 membres ou une association de 
+              Que vous soyez une coopérative de 10 membres ou une association de
               1000 personnes, Moro grandit avec vous.
             </p>
 
@@ -80,8 +80,8 @@ export const AudienceSection = () => {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-elevated">
               <img
-                src={cooperativeMeeting}
-                alt="Réunion de coopérative africaine"
+                src={audienceImage}
+                alt="Communauté Moro"
                 className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />

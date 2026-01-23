@@ -1,18 +1,23 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Apple, PlayCircle, ArrowRight } from "lucide-react";
-import phoneMockup from "@/assets/phone-mockup-real.png";
+import { WavyBackground } from "@/components/ui/WavyBackground";
+import waveBg from "@/assets/wave-bg.jpg";
+import heroPeople from "@/assets/hero-people.png";
 
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-warm" />
+      {/* Background Image */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}
+        className="absolute inset-0 bg-cover bg-center opacity-60"
+        style={{ backgroundImage: `url(${waveBg})` }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/40" />
+      <WavyBackground
+        colors={["#1B7D3C", "#F7941D", "#1B7D3C"]}
+        opacity={0.02}
+        className="opacity-30"
       />
 
       <div className="container-tight relative z-10">
@@ -32,14 +37,11 @@ export const HeroSection = () => {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-6">
-              La solution de{" "}
-              <span className="text-gradient">gestion et financement</span>{" "}
-              pour les coopératives africaines
+              Une Solution <span className="text-gradient">Fiable, Simple</span> Inclusive
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8">
-              Simplifiez la gestion de vos membres, cotisations et projets.
-              Accédez à des financements adaptés au secteur informel.
+              Moro vous aidera à organiser, gérer vos ressources et vous accompagne dans le financement de votre projet.
             </p>
 
             {/* CTA Buttons */}
@@ -78,18 +80,22 @@ export const HeroSection = () => {
             </div>
           </motion.div>
 
-          {/* Hero Image - Phone Mockup */}
+          {/* Hero Image - People Illustration Highlighted */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative flex justify-center"
+            className="relative flex justify-center lg:justify-end"
           >
-            <div className="relative">
-              <img
-                src={phoneMockup}
-                alt="Application Moro sur smartphone"
-                className="w-full max-w-md h-auto object-contain drop-shadow-2xl"
+            <div className="relative w-full max-w-[1080px]">
+              {/* People Illustration */}
+              <motion.img
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                src={heroPeople}
+                alt="Jeunes filles utilisant Moro"
+                className="relative z-10 w-full h-auto object-contain drop-shadow-2xl"
               />
             </div>
 
@@ -98,7 +104,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="absolute -bottom-6 -left-6 glass rounded-xl p-4 shadow-elevated"
+              className="absolute -bottom-6 left-0 glass rounded-xl p-4 shadow-elevated z-20"
             >
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
@@ -118,7 +124,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="absolute -top-4 -right-4 glass rounded-xl p-4 shadow-elevated"
+              className="absolute -top-4 right-0 glass rounded-xl p-4 shadow-elevated z-20"
             >
               <div className="flex items-center gap-3">
                 <div className="flex -space-x-2">
@@ -139,15 +145,7 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Bottom Wave */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" fill="none" className="w-full">
-          <path
-            d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-            fill="hsl(var(--background))"
-          />
-        </svg>
-      </div>
+
     </section>
   );
 };
