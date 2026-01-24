@@ -93,13 +93,15 @@ export const HeroSection = () => {
           >
             <div className="relative w-full max-w-[1080px]">
               {/* People Illustration */}
-              <motion.img
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+              {/* People Illustration */}
+              <img
                 src={heroPeople}
                 alt="Jeunes filles utilisant Moro"
                 className="relative z-10 w-full h-auto object-contain drop-shadow-2xl"
+                loading="eager"
+                fetchPriority="high"
+                width="1024"
+                height="682"
               />
             </div>
 
