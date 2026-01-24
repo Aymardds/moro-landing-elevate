@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "1,000+", label: "Utilisateurs actifs" },
+  { value: "1,000+", label: "Utilisateurs actifs dont 40% sont des femmes" },
   { value: "500+", label: "transcation/jour" },
-  { value: "2 Mds", label: "FCFA transités" },
+  { value: "5+", label: "Partenariats stratégiques" },
   { value: "1", label: "Pays africain" },
 ];
 

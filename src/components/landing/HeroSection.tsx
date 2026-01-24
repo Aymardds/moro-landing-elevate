@@ -110,7 +110,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="absolute -bottom-6 left-0 glass rounded-xl p-4 shadow-elevated z-20"
+              className="absolute bottom-4 md:-bottom-6 left-0 glass rounded-xl p-4 shadow-elevated z-20"
             >
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
