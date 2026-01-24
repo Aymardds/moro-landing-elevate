@@ -55,7 +55,9 @@ export const CTASection = () => {
           {/* App Store Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="#"
+              href="https://apps.apple.com/fr/app/moro/id6569222115"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-primary-foreground text-primary px-6 py-3 rounded-xl hover:bg-primary-foreground/90 transition-colors"
             >
               <Apple className="w-6 h-6" />
@@ -65,7 +67,9 @@ export const CTASection = () => {
               </div>
             </a>
             <a
-              href="#"
+              href="https://play.google.com/store/apps/details?id=com.litekev.moro"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-primary-foreground text-primary px-6 py-3 rounded-xl hover:bg-primary-foreground/90 transition-colors"
             >
               <PlayCircle className="w-6 h-6" />

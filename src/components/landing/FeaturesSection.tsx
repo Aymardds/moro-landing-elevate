@@ -58,7 +58,7 @@ export const FeaturesSection = () => {
             FONCTIONNALITÉS
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Financez votre projet avec la <span className="text-primary">méthode 310</span>
+            Financez votre projet avec la <br /> <span className="text-primary">méthode 310</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Notre IA optimise votre dossier de financement et vous connecte aux bons investisseurs pour maximiser vos chances de réussite.
@@ -107,7 +107,7 @@ export const FeaturesSection = () => {
               <img
                 src={appDashboardMockup}
                 alt="Interface de l'application Moro"
-                className="w-full h-auto drop-shadow-2xl"
+                className="w-full h-auto drop-shadow-2xl scale-125 transition-transform duration-500"
               />
             </div>
           </motion.div>

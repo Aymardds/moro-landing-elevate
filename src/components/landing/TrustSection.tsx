@@ -147,6 +147,10 @@ export const TrustSection = () => {
                 logo: "/partners/cdpao.png",
               },
               {
+                name: "AERSP",
+                logo: "/partners/aersp.jpg",
+              },
+              {
                 name: "Impose",
                 logo: "/partners/impose.png",
                 className: "h-9 w-auto",

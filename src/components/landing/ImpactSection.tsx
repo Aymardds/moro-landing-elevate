@@ -16,32 +16,33 @@ import impact14 from "@/assets/impact/impact-14.jpg";
 import impact15 from "@/assets/impact/impact-15.jpg";
 
 const images = [
-    // First Block
-    { src: impact1, alt: "Session de formation sur le terrain", className: "md:col-span-2 md:row-span-2 h-full" },
-    { src: impact2, alt: "Utilisation de l'application Moro", className: "md:col-span-1 md:row-span-1 h-full" },
-    { src: impact3, alt: "Réunion avec les agriculteurs", className: "md:col-span-1 md:row-span-1 h-full" },
-    { src: impact4, alt: "Présentation Moro", className: "md:col-span-1 md:row-span-1 h-full" },
-    { src: impact5, alt: "Remise de certificats", className: "md:col-span-1 md:row-span-1 h-full" },
+    // Block 1: Large Left (Interview terrain)
+    { src: "/impact/action-5.jpg", alt: "Interview terrain", className: "md:col-span-2 md:row-span-2 h-full" },
+    { src: impact1, alt: "Session de formation", className: "md:col-span-1 md:row-span-1 h-full" },
+    { src: impact2, alt: "Utilisation app", className: "md:col-span-1 md:row-span-1 h-full" },
+    { src: impact3, alt: "Réunion agriculteurs", className: "md:col-span-1 md:row-span-1 h-full" },
+    { src: impact4, alt: "Présentation", className: "md:col-span-1 md:row-span-1 h-full" },
 
-    // Second Block (Mirrored/Varied)
-    { src: impact6, alt: "Communauté Moro", className: "md:col-span-1 md:row-span-1 h-full" },
-    { src: impact7, alt: "Formation en groupe", className: "md:col-span-1 md:row-span-1 h-full" },
-    { src: impact8, alt: "Impact social", className: "md:col-span-2 md:row-span-2 h-full" },
+    // Block 2: Large Right (Impact social)
+    { src: impact5, alt: "workshop avec les associations de la Mé", className: "md:col-span-1 md:row-span-1 h-full" },
+    { src: impact6, alt: "Communauté", className: "md:col-span-1 md:row-span-1 h-full" },
+    { src: impact8, alt: "Formation en éducation financière en partenariat avec L'AEJ et AERSP", className: "md:col-span-2 md:row-span-2 h-full" },
+    { src: impact7, alt: "Formation groupe", className: "md:col-span-1 md:row-span-1 h-full" },
     { src: impact9, alt: "Partenariat local", className: "md:col-span-1 md:row-span-1 h-full" },
-    { src: impact10, alt: "Vers un avenir meilleur", className: "md:col-span-1 md:row-span-1 h-full" },
 
-    // Third Block (Mixed)
-    { src: impact11, alt: "Jeunes entrepreneurs", className: "md:col-span-1 md:row-span-1 h-full" },
-    { src: impact12, alt: "Digitalisation agricole", className: "md:col-span-1 md:row-span-1 h-full" },
-    { src: impact13, alt: "Réunion stratégique", className: "md:col-span-1 md:row-span-1 h-full" },
-    { src: impact14, alt: "Formation pratique", className: "md:col-span-1 md:row-span-1 h-full" },
-    { src: impact15, alt: "Succès partagé", className: "md:col-span-2 md:row-span-1 h-full" },
-
-    // Fourth Block (New Additions)
-    { src: "/impact/action-2.jpg", alt: "Sur le terrain", className: "md:col-span-1 md:row-span-1 h-full" },
-    { src: "/impact/action-3.jpg", alt: "Collaboration", className: "md:col-span-1 md:row-span-1 h-full" },
+    // Block 3: Large Left (Impact communautaire)
     { src: "/impact/action-1.jpg", alt: "Impact communautaire", className: "md:col-span-2 md:row-span-2 h-full" },
-    { src: "/impact/action-4.png", alt: "Partenariats stratégiques", className: "md:col-span-2 md:row-span-2 h-full" },
+    { src: impact10, alt: "Avenir meilleur", className: "md:col-span-1 md:row-span-1 h-full" },
+    { src: impact11, alt: "Entrepreneurs", className: "md:col-span-1 md:row-span-1 h-full" },
+    { src: impact12, alt: "Digitalisation du secteur Informel", className: "md:col-span-1 md:row-span-1 h-full" },
+    { src: impact13, alt: "Stratégie", className: "md:col-span-1 md:row-span-1 h-full" },
+
+    // Block 4: Large Right (Partenariats)
+    { src: impact14, alt: "Formation pratique", className: "md:col-span-1 md:row-span-1 h-full" },
+    { src: impact15, alt: "Succès partagé", className: "md:col-span-1 md:row-span-1 h-full" },
+    { src: "/impact/action-4.png", alt: "Participation au FAUCI2024", className: "md:col-span-2 md:row-span-2 h-full" },
+    { src: "/impact/action-2.jpg", alt: "Recompense à Moro pour son impact sur la jeunesse de la Mé", className: "md:col-span-1 md:row-span-1 h-full" },
+    { src: "/impact/action-3.jpg", alt: "Stand de Moro au CAMP des Disciples d'Emmaüs dans le Tonpki", className: "md:col-span-1 md:row-span-1 h-full" },
 ];
 
 export const ImpactSection = () => {

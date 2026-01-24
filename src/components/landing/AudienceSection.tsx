@@ -102,7 +102,7 @@ export const AudienceSection = () => {
                 <div className="w-10 h-10 bg-primary/20 rounded-full" />
                 <div>
                   <div className="font-semibold text-foreground">Alassane COULIBALY</div>
-                  <div className="text-sm text-muted-foreground">Présidente, AERSP</div>
+                  <div className="text-sm text-muted-foreground">Président, AERSP</div>
                 </div>
               </div>
             </motion.div>
