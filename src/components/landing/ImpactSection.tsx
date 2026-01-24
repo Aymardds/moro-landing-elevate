@@ -36,6 +36,12 @@ const images = [
     { src: impact13, alt: "Réunion stratégique", className: "md:col-span-1 md:row-span-1 h-full" },
     { src: impact14, alt: "Formation pratique", className: "md:col-span-1 md:row-span-1 h-full" },
     { src: impact15, alt: "Succès partagé", className: "md:col-span-2 md:row-span-1 h-full" },
+
+    // Fourth Block (New Additions)
+    { src: "/impact/action-2.jpg", alt: "Sur le terrain", className: "md:col-span-1 md:row-span-1 h-full" },
+    { src: "/impact/action-3.jpg", alt: "Collaboration", className: "md:col-span-1 md:row-span-1 h-full" },
+    { src: "/impact/action-1.jpg", alt: "Impact communautaire", className: "md:col-span-2 md:row-span-2 h-full" },
+    { src: "/impact/action-4.png", alt: "Partenariats stratégiques", className: "md:col-span-2 md:row-span-2 h-full" },
 ];
 
 export const ImpactSection = () => {

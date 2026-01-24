@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "5,000+", label: "Coopératives actives" },
-  { value: "50,000+", label: "Membres gérés" },
+  { value: "1,000+", label: "Utilisateurs actifs" },
+  { value: "500+", label: "transcation/jour" },
   { value: "2 Mds", label: "FCFA transités" },
-  { value: "12", label: "Pays africains" },
+  { value: "1", label: "Pays africain" },
 ];
 
 const testimonials = [
@@ -117,7 +117,7 @@ export const TrustSection = () => {
           ))}
         </div>
 
-        {/* Partner Logos Placeholder */}
+        {/* Partner Logos */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -128,14 +128,36 @@ export const TrustSection = () => {
           <p className="text-center text-muted-foreground mb-8 font-medium">
             Ils soutiennent notre mission
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-50">
-            {["BCEAO", "AFD", "BPI France", "GIZ", "USAID"].map((partner, i) => (
-              <div
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+            {[
+              {
+                name: "Days for Girls",
+                logo: "/partners/days-for-girls.jpg",
+              },
+              {
+                name: "MIPSE",
+                logo: "/partners/mipse.jpg",
+              },
+              {
+                name: "ONG Jeunes Espoir",
+                logo: "/partners/ong-jeunes-espoir.jpg",
+              },
+              {
+                name: "CDPAO",
+                logo: "/partners/cdpao.png",
+              },
+              {
+                name: "Impose",
+                logo: "/partners/impose.png",
+                className: "h-9 w-auto",
+              },
+            ].map((partner, i) => (
+              <img
                 key={i}
-                className="text-xl font-bold text-muted-foreground/50"
-              >
-                {partner}
-              </div>
+                src={partner.logo}
+                alt={partner.name}
+                className={`${partner.className || "h-16 w-auto"} object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100`}
+              />
             ))}
           </div>
         </motion.div>

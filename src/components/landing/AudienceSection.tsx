@@ -43,7 +43,7 @@ export const AudienceSection = () => {
               Moro s'adapte à votre réalité
             </h2>
             <p className="text-lg text-muted-foreground mb-10">
-              Que vous soyez une coopérative de 10 membres ou une association de
+              Que vous soyez une coopérative ou une association de
               1000 personnes, Moro grandit avec vous.
             </p>
 
@@ -96,13 +96,13 @@ export const AudienceSection = () => {
               className="absolute -bottom-6 left-6 right-6 glass rounded-xl p-5 shadow-elevated"
             >
               <p className="text-foreground italic mb-3">
-                "Moro nous a permis de passer de 50 à 200 membres en gardant une gestion rigoureuse."
+                "Moro nous a permis d'optimiser et structurer la gestion de nos projets afin de garantir la performance de notre association."
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 bg-primary/20 rounded-full" />
                 <div>
-                  <div className="font-semibold text-foreground">Mariama Diallo</div>
-                  <div className="text-sm text-muted-foreground">Présidente, Coop Jëkko</div>
+                  <div className="font-semibold text-foreground">Alassane COULIBALY</div>
+                  <div className="text-sm text-muted-foreground">Présidente, AERSP</div>
                 </div>
               </div>
             </motion.div>

@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { 
-  TrendingUp, 
-  Users, 
-  Shield, 
-  Wallet, 
-  BarChart3, 
-  Globe 
+import {
+  TrendingUp,
+  Users,
+  Shield,
+  Wallet,
+  BarChart3,
+  Globe
 } from "lucide-react";
 
 const benefits = [
@@ -79,7 +79,7 @@ export const WhyMoroSection = () => {
             Une solution pensée pour vous
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Moro accompagne les coopératives et associations dans leur transformation digitale 
+            Moro accompagne les PMEs, les coopératives et associations dans leur transformation digitale
             avec des outils simples, sécurisés et adaptés au terrain.
           </p>
         </motion.div>

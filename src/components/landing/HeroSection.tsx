@@ -32,7 +32,7 @@ export const HeroSection = () => {
             <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
               <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
               <span className="text-sm font-medium">
-                +5000 coopératives nous font confiance
+                +1000 utilisateurs nous font confiance
               </span>
             </div>
 
@@ -136,7 +136,7 @@ export const HeroSection = () => {
                   ))}
                 </div>
                 <div className="text-sm">
-                  <span className="font-bold text-foreground">+50K</span>
+                  <span className="font-bold text-foreground">+1000</span>
                   <span className="text-muted-foreground"> utilisateurs</span>
                 </div>
               </div>

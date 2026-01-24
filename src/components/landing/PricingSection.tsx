@@ -80,7 +80,7 @@ export const PricingSection = () => {
             Des prix adaptés à vos besoins
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Nos offres abordables seront appliquées dès Janvier 2026, permettant ainsi à nos clients de bénéficier de services de qualité à des tarifs compétitifs.
+            Nos offres abordables pour aider nos clients à bénéficier de services de qualité.
           </p>
 
           <div className="mt-8 flex justify-center items-center gap-1">
