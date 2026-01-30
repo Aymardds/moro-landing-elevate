@@ -107,6 +107,7 @@ export const FeaturesSection = () => {
               <img
                 src={appDashboardMockup}
                 alt="Interface de l'application Moro"
+                loading="lazy"
                 className="w-full h-auto drop-shadow-2xl scale-125 transition-transform duration-500"
               />
             </div>

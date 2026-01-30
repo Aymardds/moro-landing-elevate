@@ -99,7 +99,8 @@ export const HeroSection = () => {
                 alt="Jeunes filles utilisant Moro"
                 className="relative z-10 w-full h-auto object-contain drop-shadow-2xl"
                 loading="eager"
-                fetchPriority="high"
+                // @ts-ignore
+                fetchpriority="high"
                 width="1024"
                 height="682"
               />
