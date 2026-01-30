@@ -34,9 +34,9 @@ const INITIAL_MESSAGES: Message[] = [
 ];
 
 const QUICK_ACTIONS: Action[] = [
-    { label: 'Inscrire ma coopérative', value: 'register', icon: <Users className="w-4 h-4" /> },
-    { label: 'Télécharger l\'application', value: 'download', icon: <Smartphone className="w-4 h-4" /> },
-    { label: 'Découvrir nos services', value: 'services', icon: <Zap className="w-4 h-4" /> },
+    { label: 'Inscrire ma coopérative', value: 'Je fais l\'inscription', icon: <Users className="w-4 h-4" /> },
+    { label: 'Télécharger l\'application', value: 'Je veux télécharger l\'application', icon: <Smartphone className="w-4 h-4" /> },
+    { label: 'Découvrir nos services', value: 'Je veux découvrir nos services', icon: <Zap className="w-4 h-4" /> },
 ];
 
 export const ChatWidget = () => {
@@ -116,7 +116,8 @@ export const ChatWidget = () => {
             }
 
             switch (actionValue) {
-                case 'register':
+                case "Je fais l'inscription":
+                case 'register': // Fallback support
                     botResponse = {
                         id: (Date.now() + 1).toString(),
                         text: "Excellent choix ! Pour inscrire votre coopérative, vous pouvez cliquer sur le bouton ci-dessous pour accéder au formulaire d'inscription.",
@@ -126,7 +127,8 @@ export const ChatWidget = () => {
                         timestamp: new Date(),
                     };
                     break;
-                case 'download':
+                case "Je veux télécharger l'application":
+                case 'download': // Fallback
                     botResponse = {
                         id: (Date.now() + 1).toString(),
                         text: "L'application Moro est disponible sur iOS et Android. Téléchargez-la dès maintenant via les liens ci-dessous :",
@@ -139,23 +141,25 @@ export const ChatWidget = () => {
                         timestamp: new Date(),
                     };
                     break;
-                case 'services':
+                case "Je veux découvrir nos services":
+                case 'services': // Fallback
                     botResponse = {
                         id: (Date.now() + 1).toString(),
                         text: "Moro propose une suite complète pour votre coopérative. Voici nos services et nos offres :",
                         sender: 'bot',
                         type: 'action-card',
                         actions: [
-                            { label: "Nos Tarifs / Offres", value: 'show_pricing', icon: <Zap className="w-4 h-4" /> },
-                            { label: "Gestion des Membres", value: 'service_members', icon: <Users className="w-4 h-4" /> },
-                            { label: "Paiements Sécurisés", value: 'service_payments', icon: <Check className="w-4 h-4" /> },
-                            { label: "Traçabilité", value: 'service_traceability', icon: <Zap className="w-4 h-4" /> },
-                            { label: "Accès au Crédit", value: 'service_credit', icon: <Zap className="w-4 h-4" /> }
+                            { label: "Nos Tarifs / Offres", value: 'Voir vos tarifs', icon: <Zap className="w-4 h-4" /> },
+                            { label: "Gestion des Membres", value: 'Je veux gérer mes membres', icon: <Users className="w-4 h-4" /> },
+                            { label: "Paiements Sécurisés", value: 'Je veux effectuer des paiements sécurisés', icon: <Check className="w-4 h-4" /> },
+                            { label: "Traçabilité", value: 'Je veux tracer mes transactions', icon: <Zap className="w-4 h-4" /> },
+                            { label: "Accès au Crédit", value: 'Je veux accéder au crédit', icon: <Zap className="w-4 h-4" /> }
                         ],
                         timestamp: new Date(),
                     };
                     break;
-                case 'show_pricing':
+                case 'Voir vos tarifs':
+                case 'show_pricing': // Fallback
                     botResponse = {
                         id: (Date.now() + 1).toString(),
                         text: "Découvrez nos packs conçus pour votre croissance :",
@@ -196,6 +200,7 @@ export const ChatWidget = () => {
                         timestamp: new Date(),
                     };
                     break;
+                case 'Je veux gérer mes membres':
                 case 'service_members':
                     botResponse = {
                         id: (Date.now() + 1).toString(),
@@ -205,6 +210,7 @@ export const ChatWidget = () => {
                         timestamp: new Date(),
                     };
                     break;
+                case 'Je veux effectuer des paiements sécurisés':
                 case 'service_payments':
                     botResponse = {
                         id: (Date.now() + 1).toString(),
@@ -214,6 +220,7 @@ export const ChatWidget = () => {
                         timestamp: new Date(),
                     };
                     break;
+                case 'Je veux tracer mes transactions':
                 case 'service_traceability':
                     botResponse = {
                         id: (Date.now() + 1).toString(),
@@ -223,6 +230,7 @@ export const ChatWidget = () => {
                         timestamp: new Date(),
                     };
                     break;
+                case 'Je veux accéder au crédit':
                 case 'service_credit':
                     botResponse = {
                         id: (Date.now() + 1).toString(),
