@@ -57,9 +57,8 @@ export const Footer = () => {
               <img src={moroLogo} alt="Moro" className="h-10 w-auto brightness-0 invert" />
             </a>
             <p className="text-background/60 mb-6 max-w-xs">
-              La solution de gestion et de financement pour les coopératives et associations africaines.
+              Moro, est une solution inclusive de gestion des opérations courantes et d'assistance financière aux micros projets.
             </p>
-            
             {/* App Store Links */}
             <div className="flex flex-col sm:flex-row gap-3">
               <a

@@ -57,7 +57,7 @@ export const FeaturesSection = () => {
           <span className="inline-block text-primary font-semibold mb-4">
             FONCTIONNALITÉS
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
             Financez votre projet avec la <br /> <span className="text-primary">méthode 310</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

@@ -38,6 +38,7 @@ export const PricingSection = () => {
         "Assistance en accès au financement",
         "Gestion d'annonces (Illimité)",
         "Support client privilégié 24/7",
+        "OCR Intelligente",
       ],
       cta: "Souscrire",
       popular: true,
@@ -58,6 +59,7 @@ export const PricingSection = () => {
         "Assistance accès au financement de projet",
         "Annonces illimitées",
         "Support 24/7",
+        "OCR Intelligente",
       ],
       cta: "Commencer",
       popular: false,
@@ -76,7 +78,7 @@ export const PricingSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
             Des prix adaptés à vos besoins
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

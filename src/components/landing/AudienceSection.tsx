@@ -39,7 +39,7 @@ export const AudienceSection = () => {
             <span className="inline-block text-primary font-semibold mb-4">
               POUR QUI ?
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
               Moro s'adapte à votre réalité
             </h2>
             <p className="text-lg text-muted-foreground mb-10">

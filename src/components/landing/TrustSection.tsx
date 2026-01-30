@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const stats = [
   { value: "1,000+", label: "Utilisateurs actifs dont 40% sont des femmes" },
-  { value: "500+", label: "transcation/jour" },
+  { value: "500+", label: "transactions/jour" },
   { value: "5+", label: "Partenariats stratégiques" },
   { value: "1", label: "Pays africain" },
 ];
@@ -72,7 +72,7 @@ export const TrustSection = () => {
           <span className="inline-block text-primary font-semibold mb-4">
             TÉMOIGNAGES
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-foreground">
             Ils nous font confiance
           </h2>
         </motion.div>

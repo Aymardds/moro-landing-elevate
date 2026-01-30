@@ -66,7 +66,7 @@ export const TeamSection = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#f59e0b] mb-6">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl text-[#f59e0b] mb-6">
                         Notre Équipe Admin
                     </h2>
                 </motion.div>

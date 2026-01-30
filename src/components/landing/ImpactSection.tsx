@@ -59,7 +59,7 @@ export const ImpactSection = () => {
                     <span className="inline-block text-primary font-semibold mb-4">
                         SUR LE TERRAIN
                     </span>
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
                         Nos actions au quotidien
                     </h2>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

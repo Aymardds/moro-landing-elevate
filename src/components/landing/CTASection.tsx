@@ -26,11 +26,11 @@ export const CTASection = () => {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
-            Rejoignez les coopératives qui transforment leur gestion avec Moro
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-primary-foreground mb-6">
+            Rejoignez une finance inclusive, durable et responsable en Afrique
           </h2>
           <p className="text-lg sm:text-xl text-primary-foreground/80 mb-10">
-            Plus de 5 000 organisations nous font déjà confiance.
+            Plus de 1 000 utilisateurs nous font déjà confiance. <br />
             Lancez-vous gratuitement dès aujourd'hui.
           </p>
 

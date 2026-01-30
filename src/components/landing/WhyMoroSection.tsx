@@ -75,11 +75,11 @@ export const WhyMoroSection = () => {
           <span className="inline-block text-primary font-semibold mb-4">
             POURQUOI MORO ?
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
             Une solution pensée pour vous
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Moro accompagne les PMEs, les coopératives et associations dans leur transformation digitale
+            Moro accompagne les Particuliers, PMEs, Coopératives et Associations dans leur transformation digitale
             avec des outils simples, sécurisés et adaptés au terrain.
           </p>
         </motion.div>

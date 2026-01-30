@@ -37,7 +37,7 @@ export const HeroSection = () => {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-6">
-              Une Solution <span className="text-gradient">Fiable, Simple</span> Inclusive
+              <span className="text-gradient font-montserrat font-black"> Une Solution Simple, Fiable et Inclusive</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8">
