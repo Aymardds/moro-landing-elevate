@@ -185,7 +185,7 @@ export const ChatWidget = () => {
                 case 'plan_premium':
                     botResponse = {
                         id: (Date.now() + 1).toString(),
-                        text: "🚀 **Moro Premium (25 600 FCFA/an)**\n\nPour les structures professionnelles.\n\n• Gestion opérations & projets (Illimité)\n• Tableau de bord intelligent\n• Utilisateurs illimités\n• Résultat d'exploitation\n• Assistance accès financement\n• Annonces illimitées\n• Support 24/7 & OCR Intelligente\n• Envoyer ou recevoir de l'argent par Wave, Momo",
+                        text: "🚀 **Moro Premium (25 600 FCFA/an)**\n\nPour les structures professionnelles.\n\n• Gestion opérations & projets (Illimité)\n• Tableau de bord intelligent\n• Utilisateurs illimités\n• Résultat d'exploitation\n• Assistance et financement de projet\n• Annonces illimitées\n• Support 24/7 & OCR Intelligente\n• Simulateur de crédit\n• Envoyer ou recevoir de l'argent par Wave, Momo",
                         sender: 'bot',
                         type: 'text',
                         timestamp: new Date(),
@@ -194,7 +194,7 @@ export const ChatWidget = () => {
                 case 'plan_business':
                     botResponse = {
                         id: (Date.now() + 1).toString(),
-                        text: "🏢 **Moro Business (Gratuit*)**\n\nAccès gratuit + services payants obligatoires (dès 100 membres).\n\n• Tout illimité (Opérations, Projets, Annonces)\n• Tableau de bord intelligent\n• Résultat d’exploitation\n• Assistance financement\n• Support 24/7 & OCR Intelligente\n• Envoyer ou recevoir de l'argent par Wave, Momo",
+                        text: "🏢 **Moro Business (Gratuit*)**\n\nPour les associations et coopératives d'au moins 50 membres.\n\n• Tout illimité (Opérations, Projets, Annonces)\n• Tableau de bord intelligent\n• Résultat d’exploitation\n• Assistance financement\n• Support 24/7 & OCR Intelligente\n• Envoyer ou recevoir de l'argent par Wave, Momo",
                         sender: 'bot',
                         type: 'text',
                         timestamp: new Date(),

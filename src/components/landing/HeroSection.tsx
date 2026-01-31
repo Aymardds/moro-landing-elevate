@@ -45,15 +45,7 @@ export const HeroSection = () => {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              <Button variant="hero" size="xl" className="group">
-                Inscrire ma coopérative
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Button variant="accent" size="xl">
-                Voir la démo
-              </Button>
-            </div>
+
 
             {/* App Store Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">

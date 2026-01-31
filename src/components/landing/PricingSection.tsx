@@ -37,9 +37,10 @@ export const PricingSection = () => {
         "Tableau de bord intelligent",
         "Gestion d'utilisateurs (Illimité)",
         "Résultat d'exploitation",
-        "Assistance en accès au financement",
+        "Assistance et financement de projet",
         "Annonces illimitées",
         "Support client privilégié 24/7",
+        "Simulateur de crédit",
         "OCR Intelligente",
         "Envoyer ou recevoir de l'argent par Wave, Momo",
       ],
@@ -52,7 +53,7 @@ export const PricingSection = () => {
       price: "Gratuit*",
       currency: "",
       period: "",
-      description: "Accès gratuit + services payants obligatoires (dès 100 membres)",
+      description: "Pour les associations et coopératives d'au moins 50 membres",
       features: [
         "Gestion des opérations (illimité)",
         "Projets illimités",
@@ -151,6 +152,13 @@ export const PricingSection = () => {
                   ? "bg-primary text-primary-foreground hover:bg-primary/90 border-transparent"
                   : "bg-transparent text-white border-white hover:bg-white/10"
                   }`}
+                onClick={() => {
+                  if (plan.name === "Moro Basic" || plan.name === "Moro Premium") {
+                    window.location.href = "#download-cta";
+                  } else if (plan.name === "Moro Business") {
+                    window.location.href = "#cta-section";
+                  }
+                }}
               >
                 {plan.cta}
               </Button>

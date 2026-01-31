@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Apple, PlayCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { WavyBackground } from "@/components/ui/WavyBackground";
 import waveBg from "@/assets/wave-bg.jpg";
 
 export const CTASection = () => {
   return (
-    <section className="section-padding bg-gradient-hero relative overflow-hidden">
+    <section id="cta-section" className="section-padding bg-gradient-hero relative overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-30"
@@ -35,7 +35,7 @@ export const CTASection = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               variant="accent"
               size="xl"
@@ -50,34 +50,6 @@ export const CTASection = () => {
             >
               Demander une démo
             </Button>
-          </div>
-
-          {/* App Store Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://apps.apple.com/fr/app/moro/id6569222115"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-primary-foreground text-primary px-6 py-3 rounded-xl hover:bg-primary-foreground/90 transition-colors"
-            >
-              <Apple className="w-6 h-6" />
-              <div className="text-left">
-                <div className="text-xs opacity-80">Télécharger sur</div>
-                <div className="font-semibold">App Store</div>
-              </div>
-            </a>
-            <a
-              href="https://play.google.com/store/apps/details?id=com.litekev.moro"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-primary-foreground text-primary px-6 py-3 rounded-xl hover:bg-primary-foreground/90 transition-colors"
-            >
-              <PlayCircle className="w-6 h-6" />
-              <div className="text-left">
-                <div className="text-xs opacity-80">Disponible sur</div>
-                <div className="font-semibold">Google Play</div>
-              </div>
-            </a>
           </div>
         </motion.div>
       </div>
