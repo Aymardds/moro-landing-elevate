@@ -166,7 +166,7 @@ export const ChatWidget = () => {
                         sender: 'bot',
                         type: 'action-card',
                         actions: [
-                            { label: "Moro Basic (Gratuit)", value: 'plan_basic', icon: <Zap className="w-4 h-4" /> },
+                            { label: "Moro Basic (200 FCFA)", value: 'plan_basic', icon: <Zap className="w-4 h-4" /> },
                             { label: "Moro Premium", value: 'plan_premium', icon: <Zap className="w-4 h-4" /> },
                             { label: "Moro Business", value: 'plan_business', icon: <Zap className="w-4 h-4" /> }
                         ],
@@ -176,7 +176,7 @@ export const ChatWidget = () => {
                 case 'plan_basic':
                     botResponse = {
                         id: (Date.now() + 1).toString(),
-                        text: "🌱 **Moro Basic (Gratuit)**\n\nIdéal pour les petits groupes et tests.\n\n• Gestion des opérations (Illimité)\n• Gestion autonome de projet (05)\n• Gestion de 2 utilisateurs\n• État de caisse\n• Annonces (1 par semaine)",
+                        text: "🌱 **Moro Basic (200 FCFA / 24h)**\n\nIdéale pour usage personnel ou microprojet.\n\n• Gestion des opérations (Illimité)\n• Gestion autonome de projet (05)\n• Gestion de 2 utilisateurs\n• État de caisse\n• Annonces (1 par semaine)\n• Envoyer ou recevoir de l'argent par Wave, Momo",
                         sender: 'bot',
                         type: 'text',
                         timestamp: new Date(),
@@ -185,7 +185,7 @@ export const ChatWidget = () => {
                 case 'plan_premium':
                     botResponse = {
                         id: (Date.now() + 1).toString(),
-                        text: "🚀 **Moro Premium (25 600 FCFA/an)**\n\nPour les structures professionnelles.\n\n• Gestion opérations & projets (Illimité)\n• Tableau de bord intelligent\n• Utilisateurs illimités\n• Résultat d'exploitation\n• Assistance accès financement\n• Annonces illimitées\n• Support 24/7 & OCR Intelligente",
+                        text: "🚀 **Moro Premium (25 600 FCFA/an)**\n\nPour les structures professionnelles.\n\n• Gestion opérations & projets (Illimité)\n• Tableau de bord intelligent\n• Utilisateurs illimités\n• Résultat d'exploitation\n• Assistance accès financement\n• Annonces illimitées\n• Support 24/7 & OCR Intelligente\n• Envoyer ou recevoir de l'argent par Wave, Momo",
                         sender: 'bot',
                         type: 'text',
                         timestamp: new Date(),
@@ -194,7 +194,7 @@ export const ChatWidget = () => {
                 case 'plan_business':
                     botResponse = {
                         id: (Date.now() + 1).toString(),
-                        text: "🏢 **Moro Business (Gratuit*)**\n\nAccès gratuit + services payants obligatoires (dès 100 membres).\n\n• Tout illimité (Opérations, Projets, Annonces)\n• Tableau de bord intelligent\n• Résultat d’exploitation\n• Assistance financement\n• Support 24/7 & OCR Intelligente",
+                        text: "🏢 **Moro Business (Gratuit*)**\n\nAccès gratuit + services payants obligatoires (dès 100 membres).\n\n• Tout illimité (Opérations, Projets, Annonces)\n• Tableau de bord intelligent\n• Résultat d’exploitation\n• Assistance financement\n• Support 24/7 & OCR Intelligente\n• Envoyer ou recevoir de l'argent par Wave, Momo",
                         sender: 'bot',
                         type: 'text',
                         timestamp: new Date(),
