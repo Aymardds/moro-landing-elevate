@@ -3,9 +3,10 @@ import audienceImage from "@/assets/impact/impact-6.jpg";
 
 const audiences = [
   {
-    emoji: "🤝",
-    title: "Coopératives",
-    description: "Coopératives agricoles, d'épargne et de crédit, de production. Gérez vos membres et vos finances efficacement.",
+    emoji: "💼",
+    title: "Secteur informel",
+    description: "Marchands, artisans, micro-entrepreneurs. Formalisez votre activité et accédez au crédit.",
+
   },
   {
     emoji: "🏛️",
@@ -18,9 +19,9 @@ const audiences = [
     description: "Groupements d'intérêt économique, tontines formalisées, mutuelles de santé.",
   },
   {
-    emoji: "💼",
-    title: "Secteur informel",
-    description: "Marchands, artisans, micro-entrepreneurs. Formalisez votre activité et accédez au crédit.",
+    emoji: "🤝",
+    title: "Coopératives",
+    description: "Coopératives agricoles, d'épargne et de crédit, de production. Gérez vos membres et vos finances efficacement.",
   },
 ];
 

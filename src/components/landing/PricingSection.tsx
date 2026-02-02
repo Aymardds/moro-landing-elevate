@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import waveBg from "@/assets/wave-bg.jpg";
 
 export const PricingSection = () => {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -69,6 +70,7 @@ export const PricingSection = () => {
       cta: "Commencer",
       popular: false,
       color: "bg-[#0F172A]", // Slate 900 for Business
+      backgroundImage: waveBg,
     },
   ];
 
@@ -118,8 +120,20 @@ export const PricingSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`relative overflow-hidden rounded-3xl p-6 lg:p-8 text-white ${plan.color} shadow-2xl flex flex-col`}
+              style={
+                plan.backgroundImage
+                  ? {
+                    backgroundImage: `url(${plan.backgroundImage})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }
+                  : {}
+              }
             >
-              <div className="mb-6">
+              {plan.backgroundImage && (
+                <div className="absolute inset-0 bg-black/60 z-0 pointer-events-none" />
+              )}
+              <div className="mb-6 relative z-10">
                 <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
                 <div className="flex items-baseline gap-1 mt-4">
                   {plan.price === "Gratuit" ? (
@@ -134,7 +148,7 @@ export const PricingSection = () => {
                 <p className="text-sm opacity-90 mt-2 min-h-[40px]">{plan.description}</p>
               </div>
 
-              <ul className="space-y-3 mb-8 flex-grow">
+              <ul className="space-y-3 mb-8 flex-grow relative z-10">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <div className="w-5 h-5 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -148,7 +162,7 @@ export const PricingSection = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className={`w-full rounded-2xl py-6 text-lg font-bold border-2 mt-auto ${plan.popular
+                className={`w-full rounded-2xl py-6 text-lg font-bold border-2 mt-auto relative z-10 ${plan.popular
                   ? "bg-primary text-primary-foreground hover:bg-primary/90 border-transparent"
                   : "bg-transparent text-white border-white hover:bg-white/10"
                   }`}
@@ -164,7 +178,7 @@ export const PricingSection = () => {
               </Button>
 
               {plan.popular && (
-                <div className="absolute top-6 right-6">
+                <div className="absolute top-6 right-6 z-20">
                   <span className="bg-[#f59e0b] text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                     Populaire
                   </span>

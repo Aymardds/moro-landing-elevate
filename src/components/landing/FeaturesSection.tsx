@@ -13,32 +13,32 @@ const features = [
   {
     icon: Wallet,
     title: "Gestion des opérations courantes",
-    description: "Moro organise, planifie les opérations financières liées à un projet par catégorie, auteur.",
+    description: "Moro organise, planifie les opérations financières liées à un projet par catégorie, assisté par la technologie OCR.",
   },
   {
     icon: Activity,
     title: "Analyse de flux financiers",
-    description: "Moro génère un tableau de bord analytique de projet et des variations graphiques de vos opérations financières.",
+    description: "Moro génère un tableau de bord analytique de projet et des variations graphiques de vos opérations financières 24h/7 pour vous aider a prendre de meilleures décisions.",
   },
   {
     icon: Users,
     title: "Gestion des utilisateurs",
-    description: "Le contrôle d'accès granulaire permet aux utilisateurs de définir qui peut accéder à certaines informations ou fonctionnalités.",
+    description: "Déléguez des droits d'accès à vos collaborateurs et partenaires pour une meilleure collaboration.",
   },
   {
     icon: BrainCircuit,
     title: "Assistance projet par l'IA",
-    description: "Notre assistant doté d'IA vous aide à peaufiner votre demande de financement sans tracas !",
+    description: "Notre assistant doté d'IA vous aide à peaufiner votre demande de financement afin d'avoir de meilleurs scorings sans tracas.",
   },
   {
     icon: BarChart3,
     title: "Résultat d'exploitation",
-    description: "Création et gestion de projets illimité, organisation de projet par catégorie, date.",
+    description: "Création et gestion de projets illimité, Moro vous donne une vision claire de la rentabilité de vos projets.",
   },
   {
     icon: Network,
     title: "Mise en relation avec des investisseurs",
-    description: "Moro vous connecte directement aux investisseurs et grandes industries.",
+    description: "Moro vous connecte directement aux investisseurs et institutions financières",
   },
 ];
 
