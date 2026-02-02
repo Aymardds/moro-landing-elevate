@@ -10,21 +10,21 @@ const stats = [
 const testimonials = [
   {
     quote: "Avant Moro, on perdait des heures à gérer les cotisations sur papier. Maintenant, tout est automatique.",
-    author: "Amadou Koné",
-    role: "Trésorier, Coopérative Baobab",
-    location: "Côte d'Ivoire",
+    author: "Loukmane ",
+    role: "Entrepreuneur indépendant",
+    location: "Bouaké, Côte d'Ivoire",
   },
   {
-    quote: "L'accès au microfinancement via Moro a permis à notre coopérative de financer notre premier entrepôt.",
-    author: "Fatou Mbaye",
-    role: "Présidente, GIE Teranga",
-    location: "Sénégal",
+    quote: "L'accès aux outils de microfinancement via Moro a permis à notre coopérative de mieux s'organiser.",
+    author: "Maman Yvone",
+    role: "Présidente, Coopérative",
+    location: "Logoualé, Côte d'Ivoire",
   },
   {
     quote: "Simple, efficace, et ça marche même quand le réseau est faible. Exactement ce qu'il nous fallait.",
-    author: "Emmanuel Okafor",
-    role: "Secrétaire Général, Coop Unity",
-    location: "Nigeria",
+    author: "Assemian Celestin",
+    role: "Commerçant au Marché d'adjamé",
+    location: "Abidjan, Côte d'Ivoire",
   },
 ];
 
