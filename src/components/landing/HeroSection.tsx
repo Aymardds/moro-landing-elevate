@@ -44,10 +44,7 @@ export const HeroSection = () => {
               Moro vous aidera à organiser, gérer vos ressources et vous accompagne dans le financement de votre projet.
             </p>
 
-            {/* CTA Buttons */}
 
-
-            {/* App Store Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
               <a
                 href="https://apps.apple.com/fr/app/moro/id6569222115"

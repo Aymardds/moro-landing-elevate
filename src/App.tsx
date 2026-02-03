@@ -6,6 +6,8 @@ import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import { ChatWidget } from "./components/chat/ChatWidget";
+import Business from "./pages/Business";
+import ScrollToHashElement from "./components/utils/ScrollToHashElement";
 
 // Lazy load NotFound page
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -18,9 +20,11 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToHashElement />
         <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Chargement...</div>}>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/business" element={<Business />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
