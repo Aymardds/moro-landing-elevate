@@ -115,7 +115,9 @@ export const Header = () => {
                 <Button variant="outline" className="w-full">
                   Connexion
                 </Button>
-                <Button className="w-full">Moro Business  </Button>
+                <Link to="/business" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Button className="w-full">Moro Business</Button>
+                </Link>
               </div>
             </nav>
           </motion.div>

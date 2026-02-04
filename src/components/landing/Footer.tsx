@@ -63,14 +63,14 @@ export const Footer = () => {
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="#"
-                className="inline-flex items-center gap-2 bg-background/10 hover:bg-background/20 px-4 py-2 rounded-lg transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-background/10 hover:bg-background/20 px-4 py-2 rounded-lg transition-colors"
               >
                 <Apple className="w-5 h-5" />
                 <span className="text-sm font-medium">App Store</span>
               </a>
               <a
                 href="#"
-                className="inline-flex items-center gap-2 bg-background/10 hover:bg-background/20 px-4 py-2 rounded-lg transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-background/10 hover:bg-background/20 px-4 py-2 rounded-lg transition-colors"
               >
                 <PlayCircle className="w-5 h-5" />
                 <span className="text-sm font-medium">Google Play</span>

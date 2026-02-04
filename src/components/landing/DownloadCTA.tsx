@@ -26,7 +26,7 @@ export const DownloadCTA = () => {
                             href="https://apps.apple.com/fr/app/moro/id6569222115"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-3 bg-foreground text-background px-6 py-3 rounded-xl hover:bg-foreground/90 transition-colors"
+                            className="inline-flex items-center justify-center gap-3 bg-foreground text-background px-6 py-3 rounded-xl hover:bg-foreground/90 transition-colors"
                         >
                             <Apple className="w-6 h-6" />
                             <div className="text-left">
@@ -38,7 +38,7 @@ export const DownloadCTA = () => {
                             href="https://play.google.com/store/apps/details?id=com.litekev.moro"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-3 bg-foreground text-background px-6 py-3 rounded-xl hover:bg-foreground/90 transition-colors"
+                            className="inline-flex items-center justify-center gap-3 bg-foreground text-background px-6 py-3 rounded-xl hover:bg-foreground/90 transition-colors"
                         >
                             <PlayCircle className="w-6 h-6" />
                             <div className="text-left">
