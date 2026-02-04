@@ -101,7 +101,7 @@ export const Footer = () => {
         {/* Bottom */}
         <div className="pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-background/60 text-sm">
-            © {new Date().getFullYear()} Moro. Tous droits réservés.
+            © {new Date().getFullYear()} Moro. Tous droits réservés. | Powered by <a href="https://inexiumus.com">Inexiumus</a>
           </p>
 
           {/* Social Links */}

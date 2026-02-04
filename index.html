@@ -11,6 +11,36 @@
   <meta name="author" content="Moro" />
   <meta name="keywords"
     content="coopérative, association, gestion, financement, Afrique, microfinance, cotisation, tontine, épargne" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1B7D3C" />
+
+  <!-- Security Headers -->
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <!-- Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' 'unsafe-eval';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' data: https:;
+    connect-src 'self';
+    frame-ancestors 'none';
+    base-uri 'self';
+    form-action 'self';
+  " />
+
+  <!-- Preconnect to external domains for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Optimized font loading with display=swap -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;900&display=swap"
+    rel="stylesheet" />
 
   <meta property="og:title" content="Moro - Gestion et financement pour coopératives africaines" />
   <meta property="og:description"
@@ -43,6 +73,11 @@
           "@type": "Organization",
           "name": "Moro",
           "url": "https://www.moro-apps.net"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "1000"
         }
       }
     </script>

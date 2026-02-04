@@ -78,7 +78,7 @@ export const BusinessHero = () => {
                             {/* Header Mock */}
                             <div className="flex items-center justify-between mb-2">
                                 <div className="flex items-center gap-3">
-                                    <img src={moroLogo} alt="Moro Logo" className="h-8 w-auto opacity-90" />
+                                    <img src={moroLogo} alt="Moro Logo" className="h-8 w-auto opacity-90" loading="lazy" />
                                     <div className="h-6 w-[1px] bg-border mx-2"></div>
                                     <div className="text-sm font-medium text-muted-foreground">Dashboard</div>
                                 </div>

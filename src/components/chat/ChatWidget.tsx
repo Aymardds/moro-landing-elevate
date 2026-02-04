@@ -4,6 +4,8 @@ import { MessageCircle, X, Send, Smartphone, Users, Zap, ArrowRight, Check } fro
 import { Button } from '@/components/ui/button';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { sanitizeHtml, sanitizeInput } from '@/lib/sanitize';
+import { safeOpenUrl } from '@/lib/url-validator';
 
 type MessageType = 'text' | 'action-card';
 type Sender = 'bot' | 'user';
@@ -39,12 +41,18 @@ const QUICK_ACTIONS: Action[] = [
     { label: 'Découvrir nos services', value: 'Je veux découvrir nos services', icon: <Zap className="w-4 h-4" /> },
 ];
 
+// Security constants
+const MAX_MESSAGE_LENGTH = 500;
+const MAX_MESSAGES_PER_MINUTE = 10;
+
 export const ChatWidget = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);
     const [inputValue, setInputValue] = useState('');
     const [isTyping, setIsTyping] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
     const messagesEndRef = useRef<HTMLDivElement>(null);
+    const messageTimestamps = useRef<number[]>([]);
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -54,22 +62,52 @@ export const ChatWidget = () => {
         scrollToBottom();
     }, [messages, isTyping, isOpen]);
     const handleSend = () => {
-        if (!inputValue.trim()) return;
-        handleAction(inputValue);
-        setInputValue('');
-    };
+        const trimmedInput = inputValue.trim();
+        if (!trimmedInput) return;
 
-    const handleAction = (actionValue: string) => {
-        // Handle external links directly
-        if (actionValue.startsWith('http')) {
-            window.open(actionValue, '_blank');
+        // Check message length
+        if (trimmedInput.length > MAX_MESSAGE_LENGTH) {
+            setErrorMessage(`Message trop long (max ${MAX_MESSAGE_LENGTH} caractères)`);
+            setTimeout(() => setErrorMessage(''), 3000);
             return;
         }
 
-        // Add user message
+        // Check rate limiting
+        const now = Date.now();
+        const oneMinuteAgo = now - 60000;
+        messageTimestamps.current = messageTimestamps.current.filter(t => t > oneMinuteAgo);
+
+        if (messageTimestamps.current.length >= MAX_MESSAGES_PER_MINUTE) {
+            setErrorMessage('Trop de messages. Veuillez patienter un moment.');
+            setTimeout(() => setErrorMessage(''), 3000);
+            return;
+        }
+
+        messageTimestamps.current.push(now);
+
+        // Sanitize input before processing
+        const sanitizedInput = sanitizeInput(trimmedInput, MAX_MESSAGE_LENGTH);
+        handleAction(sanitizedInput);
+        setInputValue('');
+        setErrorMessage('');
+    };
+
+    const handleAction = (actionValue: string) => {
+        // Handle external links with security validation
+        if (actionValue.startsWith('http')) {
+            const opened = safeOpenUrl(actionValue);
+            if (!opened) {
+                setErrorMessage('URL non autorisée pour des raisons de sécurité');
+                setTimeout(() => setErrorMessage(''), 3000);
+            }
+            return;
+        }
+
+        // Add user message with sanitization
+        const displayText = QUICK_ACTIONS.find(a => a.value === actionValue)?.label || actionValue;
         const userMsg: Message = {
             id: Date.now().toString(),
-            text: QUICK_ACTIONS.find(a => a.value === actionValue)?.label || actionValue,
+            text: sanitizeHtml(displayText),
             sender: 'user',
             type: 'text',
             timestamp: new Date(),
@@ -317,7 +355,8 @@ export const ChatWidget = () => {
                                                 : 'bg-white text-gray-800 border border-gray-100 rounded-tl-none'
                                                 }`}
                                         >
-                                            <p className="leading-relaxed">{msg.text}</p>
+                                            {/* Text is already sanitized when message is created */}
+                                            <p className="leading-relaxed" dangerouslySetInnerHTML={{ __html: msg.text }} />
 
                                             {msg.actions && (
                                                 <div className="mt-3 flex flex-col gap-2">
@@ -367,6 +406,20 @@ export const ChatWidget = () => {
 
                         {/* Input / Quick Actions */}
                         <div className="p-4 bg-white border-t border-gray-100">
+                            {/* Error message */}
+                            <AnimatePresence>
+                                {errorMessage && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -10 }}
+                                        className="mb-3 p-2 bg-red-50 border border-red-200 rounded-lg text-red-600 text-xs"
+                                    >
+                                        {errorMessage}
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+
                             <div className="flex gap-2 overflow-x-auto pb-3 scrollbar-hide">
                                 {QUICK_ACTIONS.map(action => (
                                     <button

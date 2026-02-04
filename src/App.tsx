@@ -4,12 +4,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
 import { ChatWidget } from "./components/chat/ChatWidget";
-import Business from "./pages/Business";
 import ScrollToHashElement from "./components/utils/ScrollToHashElement";
 
-// Lazy load NotFound page
+// Lazy load pages for better performance
+const Index = lazy(() => import("./pages/Index"));
+const Business = lazy(() => import("./pages/Business"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();

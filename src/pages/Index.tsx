@@ -10,10 +10,17 @@ import { TeamSection } from "@/components/landing/TeamSection";
 import { TrustSection } from "@/components/landing/TrustSection";
 import { CTASection } from "@/components/landing/CTASection";
 import { Footer } from "@/components/landing/Footer";
+import { SEO } from "@/components/SEO";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Moro - Gestion et financement de microprojet en Afrique"
+        description="Moro, est une solution inclusive de gestion des opérations courantes et d'assistance financière aux micros projets. Simplifiez vos cotisations et accédez au microfinancement."
+        keywords="coopérative, association, gestion, financement, Afrique, microfinance, cotisation, tontine, épargne"
+        canonical="https://www.moro-apps.net"
+      />
       <Header />
       <main>
         <HeroSection />
