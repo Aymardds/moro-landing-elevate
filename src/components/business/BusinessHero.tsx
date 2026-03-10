@@ -1,140 +1,191 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Users, Activity, Briefcase } from "lucide-react";
-import { WavyBackground } from "@/components/ui/WavyBackground";
-import waveBg from "@/assets/wave-bg.jpg";
-import moroLogo from "@/assets/moro-logo.png";
+import { ArrowRight, Download } from "lucide-react";
 
 export const BusinessHero = () => {
     return (
-        <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-            {/* Background Image */}
-            <div
-                className="absolute inset-0 bg-cover bg-center opacity-40"
-                style={{ backgroundImage: `url(${waveBg})` }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/60 to-white/80" />
-            <WavyBackground
-                colors={["#1B7D3C", "#F7941D", "#1B7D3C"]}
-                opacity={0.03}
-                className="opacity-40"
-            />
+        <section className="relative min-h-[90vh] lg:min-h-screen bg-[#0a1a0f] grid lg:grid-cols-2 overflow-hidden font-futura">
+            {/* Background Effects */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <div
+                    className="absolute top-[50%] right-[-10%] w-[60%] h-[60%] bg-[#1e6641]/35 rounded-full blur-[120px] -translate-y-1/2"
+                />
+                <div
+                    className="absolute bottom-[20%] left-[-10%] w-[40%] h-[40%] bg-[#e8870a]/12 rounded-full blur-[100px]"
+                />
+                {/* Grid Texture */}
+                <div
+                    className="absolute inset-0 opacity-[0.025]"
+                    style={{
+                        backgroundImage: `linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)`,
+                        backgroundSize: '60px 60px'
+                    }}
+                />
+            </div>
 
-            <div className="container-tight relative z-10 w-full">
-                <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-                    {/* Content */}
+            {/* Content Left */}
+            <div className="relative z-10 flex flex-col justify-center px-8 sm:px-12 lg:px-20 py-24 lg:py-32">
+                <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="flex items-center gap-3 text-[#4db87a] text-[11px] font-semibold tracking-[0.2em] uppercase mb-8"
+                >
+                    <div className="w-7 h-0.5 bg-[#4db87a] rounded-full" />
+                    Moro — Module Comptabilité
+                </motion.div>
+
+                <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    className="text-white text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.05] mb-8"
+                >
+                    De la vente du jour<br />
+                    à l'<em className="italic text-[#4db87a] not-italic">état financier</em><br />
+                    certifié OHADA
+                </motion.h1>
+
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="text-white/60 text-base sm:text-lg leading-relaxed max-w-md mb-12"
+                >
+                    Moro est la seule application mobile qui transforme vos opérations quotidiennes en bilan conforme SYSCOA/OHADA, exportable et certifiable — en un tap.
+                </motion.p>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    className="flex flex-wrap gap-2.5 mb-12"
+                >
+                    {[
+                        { text: "📊 Bilan SYSCOA/OHADA automatique", color: "green" },
+                        { text: "📄 Export PDF instantané", color: "green" },
+                        { text: "🏅 Certification intégrée", color: "orange" },
+                        { text: "🤖 Saisie par IA conversationnelle", color: "green" }
+                    ].map((chip, i) => (
+                        <div
+                            key={i}
+                            className={`px-4 py-2 rounded-full text-[12px] font-semibold border ${chip.color === 'green'
+                                    ? 'bg-[#4db87a]/15 border-[#4db87a]/30 text-[#4db87a]'
+                                    : 'bg-[#e8870a]/15 border-[#e8870a]/30 text-[#f0a030]'
+                                }`}
+                        >
+                            {chip.text}
+                        </div>
+                    ))}
+                </motion.div>
+
+                <motion.a
+                    href="#journey"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="group inline-flex items-center gap-3 bg-[#4db87a] hover:bg-[#5dc98a] text-[#0a1a0f] px-8 py-4 rounded-xl text-sm font-bold transition-all hover:-translate-y-1 active:translate-y-0 w-fit"
+                >
+                    Découvrir le parcours comptable
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </motion.a>
+            </div>
+
+            {/* Mockup Right */}
+            <div className="relative z-10 flex items-center justify-center p-8 lg:p-20">
+                <div className="relative w-full max-w-[300px] aspect-[1/2]">
+                    {/* Phone 2 (Behind) */}
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="text-center lg:text-left flex-1"
+                        animate={{
+                            y: [0, -8, 0],
+                            rotate: [3, 3, 3]
+                        }}
+                        transition={{
+                            duration: 4,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                        className="absolute top-[60px] left-[30px] w-full bg-[#111] rounded-[36px] overflow-hidden border border-white/10 shadow-2xl opacity-60 z-10"
                     >
-                        <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
-                            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-                            <span className="text-sm font-medium">
-                                Moro Business
-                            </span>
+                        <div className="bg-[#e8870a] text-white py-2 px-4 text-center text-[10px] font-bold">Certification</div>
+                        <div className="p-6 text-center">
+                            <div className="text-3xl mb-3">🏅</div>
+                            <div className="text-[#e8870a] text-[9px] font-bold mb-2 uppercase">État financier certifié</div>
+                            <p className="text-white/50 text-[8px] leading-relaxed">
+                                Bilan SMT SYSCOA/OHADA<br />Mars 2026 — Validé
+                            </p>
                         </div>
+                    </motion.div>
 
-                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-6">
-                            <span className="text-gradient font-montserrat font-black">Gérez votre activité avec efficacité</span>
-                        </h1>
-
-                        <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8">
-                            Une suite d'outils puissants pour piloter votre business, gérer vos paiements et analyser vos performances en temps réel.
-                        </p>
-
-                        <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-8">
-                            <Button size="lg" className="h-12 px-8 text-lg gap-2">
-                                Commencer maintenant <ArrowRight className="w-5 h-5" />
-                            </Button>
-                            <Button variant="outline" size="lg" className="h-12 px-8 text-lg">
-                                Contacter l'équipe
-                            </Button>
+                    {/* Phone 1 (Front) */}
+                    <motion.div
+                        animate={{
+                            y: [0, -12, 0],
+                            rotate: [-2, -2, -2]
+                        }}
+                        transition={{
+                            duration: 4,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                        className="relative w-full bg-[#111] rounded-[36px] overflow-hidden border border-white/10 shadow-[0_32px_80px_rgba(0,0,0,0.6)] z-20"
+                    >
+                        <div className="bg-[#1e6641] text-white py-3 px-4 text-center text-[10px] font-bold">Comptabilité — Mars 2026</div>
+                        <div className="flex border-b border-gray-100 bg-white">
+                            <div className="flex-1 py-2 text-center text-[8px] font-bold text-[#1e6641] border-b-2 border-[#1e6641]">Bilan</div>
+                            <div className="flex-1 py-2 text-center text-[8px] font-bold text-gray-400">Résultat</div>
                         </div>
+                        <div className="p-4 bg-white min-h-[300px]">
+                            <div className="bg-[#f0faf4] rounded-xl p-3 mb-3">
+                                <div className="flex justify-between text-[8px] text-gray-700 py-1">
+                                    <span>Actifs</span>
+                                    <span className="font-bold text-[#1e6641]">8 979 200 FCFA</span>
+                                </div>
+                                <div className="flex justify-between text-[8px] text-gray-700 py-1">
+                                    <span>Passifs</span>
+                                    <span>0 FCFA</span>
+                                </div>
+                                <div className="flex justify-between text-[8px] font-black text-[#1e6641] py-1 mt-1 border-t border-gray-100">
+                                    <span>Capitaux propres</span>
+                                    <span>8 979 200 FCFA</span>
+                                </div>
+                            </div>
 
-                        <div className="flex flex-col gap-3 text-sm text-muted-foreground">
-                            <div className="flex items-center gap-2">
-                                <CheckCircle2 className="w-4 h-4 text-green-600" /> Gestion multicanale
+                            <div className="text-[8px] font-bold text-gray-800 mb-2">Trésorerie</div>
+                            <div className="flex justify-between p-2 bg-gray-50 rounded-lg text-[7.5px] items-center mb-1">
+                                <span>Portefeuille (CASH)</span>
+                                <span className="text-[#1e6641] font-bold">4 159 200 FCFA</span>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <CheckCircle2 className="w-4 h-4 text-green-600" /> Paiements sécurisés
+                            <div className="flex justify-between p-2 bg-gray-50 rounded-lg text-[7.5px] items-center">
+                                <span>Caisse (CHECKING)</span>
+                                <span className="text-[#1e6641] font-bold">100 000 FCFA</span>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <CheckCircle2 className="w-4 h-4 text-green-600" /> Support dédié 24/7
+
+                            <div className="mt-4 bg-[#1e6641] text-white py-2 rounded-lg text-[8px] font-bold text-center">
+                                📄 Générer le bilan comptable
+                            </div>
+                            <div className="mt-1.5 border-1.5 border-[#1e6641] text-[#1e6641] py-2 rounded-lg text-[8px] font-bold text-center">
+                                Exporter PDF
                             </div>
                         </div>
                     </motion.div>
 
-                    {/* Minimalist Web Interface Mockup */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative flex-1 w-full max-w-[650px] flex justify-center lg:justify-end"
-                    >
-                        <div className="relative w-full aspect-[4/3] rounded-2xl bg-white/40 backdrop-blur-2xl border border-white/50 shadow-2xl p-6 md:p-8 flex flex-col gap-8 transform hover:scale-[1.02] transition-transform duration-500">
-
-                            {/* Header Mock */}
-                            <div className="flex items-center justify-between mb-2">
-                                <div className="flex items-center gap-3">
-                                    <img src={moroLogo} alt="Moro Logo" className="h-8 w-auto opacity-90" loading="lazy" />
-                                    <div className="h-6 w-[1px] bg-border mx-2"></div>
-                                    <div className="text-sm font-medium text-muted-foreground">Dashboard</div>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <div className="w-8 h-8 rounded-full bg-slate-200 border border-white"></div>
-                                </div>
-                            </div>
-
-                            {/* Main Content Area */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full">
-                                {/* Large Stat Card */}
-                                <div className="col-span-1 md:col-span-2 bg-white/60 p-5 rounded-xl border border-white/50 shadow-sm flex items-center justify-between">
-                                    <div>
-                                        <p className="text-sm text-muted-foreground mb-1">Total opérations</p>
-                                        <h3 className="text-2xl font-bold text-foreground">2,543,000 FCFA</h3>
-                                        <span className="text-xs text-green-600 bg-green-100 px-2 py-0.5 rounded-full mt-2 inline-block">+12.5%</span>
-                                    </div>
-                                    <div className="bg-primary/5 p-3 rounded-full text-primary">
-                                        <Activity size={24} />
-                                    </div>
-                                </div>
-
-                                {/* Smaller Stat Cards */}
-                                <div className="bg-white/60 p-5 rounded-xl border border-white/50 shadow-sm flex flex-col justify-between">
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <div className="p-2 bg-blue-50 text-blue-600 rounded-lg">
-                                            <Users size={18} />
-                                        </div>
-                                        <span className="text-sm font-medium text-foreground">Utilisateurs</span>
-                                    </div>
-                                    <div>
-                                        <h4 className="text-2xl font-bold">1,250</h4>
-                                        <p className="text-xs text-muted-foreground mt-1">Actifs ce mois</p>
-                                    </div>
-                                </div>
-
-                                <div className="bg-white/60 p-5 rounded-xl border border-white/50 shadow-sm flex flex-col justify-between">
-                                    <div className="flex items-center gap-3 mb-4">
-                                        <div className="p-2 bg-orange-50 text-orange-600 rounded-lg">
-                                            <Briefcase size={18} />
-                                        </div>
-                                        <span className="text-sm font-medium text-foreground">Projets</span>
-                                    </div>
-                                    <div>
-                                        <h4 className="text-2xl font-bold">24</h4>
-                                        <p className="text-xs text-muted-foreground mt-1">En cours</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Decorative Elements */}
-                        <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/20 rounded-full blur-2xl -z-10"></div>
-                        <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-accent/20 rounded-full blur-3xl -z-10"></div>
-
-                    </motion.div>
+                    {/* Certification Badge Overlay */}
+                    <div className="absolute top-[-20px] right-[-30px] z-30">
+                        <motion.div
+                            animate={{ rotate: 360 }}
+                            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                            className="w-24 h-24 bg-gradient-to-br from-[#e8870a] to-[#f5a020] rounded-full border-4 border-white/20 shadow-xl flex items-center justify-center p-2"
+                        >
+                            <motion.div
+                                animate={{ rotate: -360 }}
+                                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                                className="text-center"
+                            >
+                                <div className="text-3xl mb-0.5">🏅</div>
+                                <div className="text-white text-[8px] font-black tracking-widest leading-none">CERTIFIÉ</div>
+                            </motion.div>
+                        </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

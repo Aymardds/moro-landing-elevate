@@ -10,6 +10,12 @@ import ScrollToHashElement from "./components/utils/ScrollToHashElement";
 // Lazy load pages for better performance
 const Index = lazy(() => import("./pages/Index"));
 const Business = lazy(() => import("./pages/Business"));
+const Gallery = lazy(() => import("./pages/Gallery"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogDetail = lazy(() => import("./pages/BlogDetail"));
+const AdminLogin = lazy(() => import("./pages/admin/Login"));
+const AdminDashboard = lazy(() => import("./pages/admin/Dashboard"));
+const BlogEditor = lazy(() => import("./pages/admin/BlogEditor"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -25,6 +31,13 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/business" element={<Business />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogDetail />} />
+            {/* Protected Admin Routes */}
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/admin/blog/:id" element={<BlogEditor />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

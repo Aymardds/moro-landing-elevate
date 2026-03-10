@@ -23,7 +23,7 @@ const features = [
   {
     icon: Users,
     title: "Gestion des utilisateurs",
-    description: "Déléguez des droits d'accès à vos collaborateurs et partenaires pour une meilleure collaboration.",
+    description: "Déléguez des droits d'accès à vos collaborateurs et partenaires pour une meilleure performance.",
   },
   {
     icon: BrainCircuit,
@@ -38,7 +38,7 @@ const features = [
   {
     icon: Network,
     title: "Mise en relation avec des investisseurs",
-    description: "Moro vous connecte directement aux investisseurs et institutions financières",
+    description: "Moro vous connecte directement aux investisseurs et institutions financières via sa marketplace MoroScore",
   },
 ];
 

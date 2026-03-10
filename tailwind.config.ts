@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+        sans: ["Futura", "Plus Jakarta Sans", "system-ui", "sans-serif"],
+        futura: ["Futura", "sans-serif"],
         montserrat: ["Montserrat", "sans-serif"],
       },
       colors: {

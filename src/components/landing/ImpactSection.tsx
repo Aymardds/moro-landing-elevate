@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ChevronRight } from "lucide-react";
 import impact1 from "@/assets/impact/impact-1.jpg";
 import impact2 from "@/assets/impact/impact-2.jpg";
 import impact3 from "@/assets/impact/impact-3.jpg";
@@ -69,7 +71,7 @@ export const ImpactSection = () => {
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[300px] gap-4">
-                    {images.map((image, index) => (
+                    {images.slice(0, 5).map((image, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, scale: 0.95 }}
@@ -89,6 +91,16 @@ export const ImpactSection = () => {
                             </div>
                         </motion.div>
                     ))}
+                </div>
+
+                <div className="mt-12 text-center">
+                    <Link
+                        to="/gallery"
+                        className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full font-semibold transition-all hover:scale-105 active:scale-95 shadow-md"
+                    >
+                        Plus d'images
+                        <ChevronRight className="w-5 h-5" />
+                    </Link>
                 </div>
             </div>
         </section>
