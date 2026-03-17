@@ -26,6 +26,13 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prefetch routes on hover for perceived <0.5s navigation
+  const prefetchRoute = (path: string) => {
+    if (path === '/business') import('../../pages/Business');
+    if (path === '/blog') import('../../pages/Blog');
+    if (path === '/gallery') import('../../pages/Gallery');
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "glass shadow-card py-3" : "bg-transparent py-5"
@@ -65,7 +72,7 @@ export const Header = () => {
           <Button variant="ghost" size="sm">
             Connexion
           </Button>
-          <Link to="/business">
+          <Link to="/business" onMouseEnter={() => prefetchRoute('/business')}>
             <Button size="sm">Moro Business</Button>
           </Link>
         </div>

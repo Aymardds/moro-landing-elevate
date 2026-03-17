@@ -8,6 +8,7 @@ import { BusinessImpact } from "@/components/business/BusinessImpact";
 import { BusinessTools } from "@/components/business/BusinessTools";
 import { BusinessPricing } from "@/components/business/BusinessPricing";
 import { SEO } from "@/components/SEO";
+import { Link } from "react-router-dom";
 
 const Business = () => {
     return (
@@ -42,9 +43,9 @@ const Business = () => {
                             Rejoignez les entrepreneurs africains qui transforment leur activité informelle en dossier financier certifié.
                         </p>
                         <div className="flex flex-wrap justify-center gap-4">
-                            <button className="bg-white hover:bg-[#e8f5ee] text-[#1e6641] px-10 py-4 rounded-xl text-base font-bold transition-all hover:-translate-y-1 active:translate-y-0">
+                            <Link to="/#download-cta" className="inline-block bg-white hover:bg-[#e8f5ee] text-[#1e6641] px-10 py-4 rounded-xl text-base font-bold transition-all hover:-translate-y-1 active:translate-y-0">
                                 📥 Télécharger Moro
-                            </button>
+                            </Link>
                             <button className="bg-transparent border-2 border-white/40 hover:border-white hover:bg-white/10 text-white px-10 py-4 rounded-xl text-base font-bold transition-all">
                                 🤝 Partenariat IMF
                             </button>

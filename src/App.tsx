@@ -17,6 +17,7 @@ const AdminLogin = lazy(() => import("./pages/admin/Login"));
 const AdminDashboard = lazy(() => import("./pages/admin/Dashboard"));
 const BlogEditor = lazy(() => import("./pages/admin/BlogEditor"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const CGU = lazy(() => import("./pages/CGU"));
 
 const queryClient = new QueryClient();
 
@@ -27,7 +28,11 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToHashElement />
-        <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Chargement...</div>}>
+        <Suspense fallback={
+          <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50/50">
+            <div className="w-10 h-10 border-4 border-[#1e6641]/20 border-t-[#1e6641] rounded-full animate-spin"></div>
+          </div>
+        }>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/business" element={<Business />} />
@@ -38,6 +43,7 @@ const App = () => (
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminDashboard />} />
             <Route path="/admin/blog/:id" element={<BlogEditor />} />
+            <Route path="/cgu" element={<CGU />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

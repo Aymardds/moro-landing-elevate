@@ -34,7 +34,7 @@ const footerLinks = {
     title: "Légal",
     links: [
       { label: "Confidentialité", href: "#", internal: false },
-      { label: "CGU", href: "#", internal: false },
+      { label: "CGU", href: "/cgu", internal: true },
       { label: "Cookies", href: "#", internal: false },
     ],
   },
@@ -48,6 +48,14 @@ const socialLinks = [
 ];
 
 export const Footer = () => {
+    // Prefetch routes on hover
+    const prefetchRoute = (path: string) => {
+      if (path === '/business') import('../../pages/Business');
+      if (path === '/blog') import('../../pages/Blog');
+      if (path === '/gallery') import('../../pages/Gallery');
+      if (path === '/cgu') import('../../pages/CGU');
+    };
+
   return (
     <footer className="bg-foreground text-background pt-16 pb-8">
       <div className="container-tight">
@@ -55,7 +63,7 @@ export const Footer = () => {
           {/* Brand */}
           <div className="col-span-2">
             <Link to="/" className="flex items-center mb-4">
-              <img src={moroLogo} alt="Moro" className="h-10 w-auto brightness-0 invert" />
+              <img src={moroLogo} alt="Moro" className="h-10 w-auto brightness-0 invert" loading="lazy" />
             </Link>
             <p className="text-background/60 mb-6 max-w-xs">
               Moro, est une solution inclusive de gestion des opérations courantes et d'assistance financière aux micros projets.
@@ -93,6 +101,7 @@ export const Footer = () => {
                     {link.internal ? (
                       <Link
                         to={link.href}
+                        onMouseEnter={() => prefetchRoute(link.href)}
                         className="text-background/60 hover:text-background transition-colors"
                       >
                         {link.label}

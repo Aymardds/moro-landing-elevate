@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { memo } from "react";
 
 const stats = [
   { value: "1,000+", label: "Utilisateurs actifs dont 40% sont des femmes" },
@@ -17,7 +18,7 @@ const testimonials = [
   {
     quote: "L'accès aux outils de microfinancement via Moro a permis à notre coopérative de mieux s'organiser.",
     author: "Maman Yvone",
-    role: "Présidente, Coopérative",
+    role: "Présidente, AFDD",
     location: "Logoualé, Côte d'Ivoire",
   },
   {
@@ -28,7 +29,7 @@ const testimonials = [
   },
 ];
 
-export const TrustSection = () => {
+export const TrustSection = memo(() => {
   return (
     <section className="section-padding bg-background">
       <div className="container-tight">
@@ -160,6 +161,7 @@ export const TrustSection = () => {
                 key={i}
                 src={partner.logo}
                 alt={partner.name}
+                loading="lazy"
                 className={`${partner.className || "h-16 w-auto"} object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100`}
               />
             ))}
@@ -168,4 +170,4 @@ export const TrustSection = () => {
       </div>
     </section>
   );
-};
+});

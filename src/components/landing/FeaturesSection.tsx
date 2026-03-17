@@ -42,7 +42,9 @@ const features = [
   },
 ];
 
-export const FeaturesSection = () => {
+import { memo } from 'react';
+
+export const FeaturesSection = memo(() => {
   return (
     <section id="features" className="section-padding bg-secondary/30">
       <div className="container-tight">
@@ -142,4 +144,4 @@ export const FeaturesSection = () => {
       </div>
     </section>
   );
-};
+});

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { supabase, type BlogPost } from "@/lib/supabase";
 import { ArrowLeft, LayoutDashboard, LogOut, Save, Loader2 } from "lucide-react";
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 import { useToast } from "@/hooks/use-toast";
 
 const CATEGORIES = ["Produit", "Partenariat", "Conseil", "Événement", "Actualité"];
@@ -203,16 +205,28 @@ const BlogEditor = () => {
                                     placeholder="Courte description visible sur la liste du blog..."
                                 />
                             </div>
-
                             <div>
-                                <label className="block text-sm font-bold text-gray-700 mb-2">Contenu (HTML ou texte)</label>
-                                <textarea
-                                    value={form.content || ""}
-                                    onChange={(e) => update("content", e.target.value)}
-                                    rows={16}
-                                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm font-mono outline-none focus:border-[#1e6641] focus:ring-2 focus:ring-[#1e6641]/10 transition-all resize-y"
-                                    placeholder="<p>Contenu complet de l'article...</p>"
-                                />
+                                <label className="block text-sm font-bold text-gray-700 mb-2">Contenu</label>
+                                <div className="border border-gray-200 rounded-xl overflow-hidden bg-white focus-within:border-[#1e6641] focus-within:ring-2 focus-within:ring-[#1e6641]/10 transition-all">
+                                    <ReactQuill
+                                        theme="snow"
+                                        value={form.content || ""}
+                                        onChange={(content) => update("content", content)}
+                                        className="h-[400px]"
+                                        modules={{
+                                            toolbar: [
+                                                [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+                                                ['bold', 'italic', 'underline', 'strike'],
+                                                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                                                [{ 'script': 'sub'}, { 'script': 'super' }],
+                                                [{ 'indent': '-1'}, { 'indent': '+1' }],
+                                                ['link', 'image', 'video'],
+                                                [{ 'color': [] }, { 'background': [] }],
+                                                ['clean']
+                                            ],
+                                        }}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>

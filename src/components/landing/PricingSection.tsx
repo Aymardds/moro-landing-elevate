@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -95,8 +95,8 @@ const plans: Plan[] = [
     priceFree: "Gratuit*",
     priceMonthly: null,
     priceAnnual: null,
-    equiv: "*seuil abaissé à 20 membres",
-    periodMonthly: "Pour 10+ membres",
+    equiv: "*seuil abaissé à 50 membres",
+    periodMonthly: "Pour 50+ membres",
     features: [
       { text: "Gestion cotisations & tontines" },
       { text: "Projets & budgets collectifs" },
@@ -134,7 +134,7 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.5, delay },
 });
 
-export const PricingSection = () => {
+export const PricingSection = memo(() => {
   const [isAnnual, setIsAnnual] = useState(false);
 
   const getPrice = (plan: Plan) => {
@@ -484,4 +484,4 @@ export const PricingSection = () => {
       </div>
     </section>
   );
-};
+});
