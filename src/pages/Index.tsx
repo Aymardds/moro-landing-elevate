@@ -10,6 +10,7 @@ import { TeamSection } from "@/components/landing/TeamSection";
 import { TrustSection } from "@/components/landing/TrustSection";
 import { NewsSection } from "@/components/landing/NewsSection";
 import { CTASection } from "@/components/landing/CTASection";
+import { FAQSection } from "@/components/landing/FAQSection";
 import { Footer } from "@/components/landing/Footer";
 import { SEO } from "@/components/SEO";
 
@@ -34,6 +35,7 @@ const Index = () => {
         <TeamSection />
         <TrustSection />
         <NewsSection />
+        <FAQSection />
         <CTASection />
       </main>
       <Footer />

@@ -90,7 +90,7 @@ const plans: Plan[] = [
   },
   {
     icon: "🌾",
-    name: "Moro Collectif",
+    name: "Moro GIE",
     tag: "Coopératives, tontines, associations",
     priceFree: "Gratuit*",
     priceMonthly: null,
@@ -98,15 +98,15 @@ const plans: Plan[] = [
     equiv: "*seuil abaissé à 50 membres",
     periodMonthly: "Pour 50+ membres",
     features: [
-      { text: "Gestion cotisations & tontines" },
       { text: "Projets & budgets collectifs" },
       { text: "Tableau de bord partagé" },
       { text: "Score collectif IMF", badge: "Clé" },
       { text: "Accès coopérative (pipeline)", badge: "Clé" },
+      { text: "Gestion cotisations & tontines" },
       { text: "Membres illimités" },
     ],
-    cta: "Créer mon groupe",
-    badge: "🤝 COOPÉRATIVES",
+    cta: "Créer mon GIE",
+    badge: "🤝 GIE",
     variant: "coop",
   },
 ];

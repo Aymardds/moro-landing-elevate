@@ -1,4 +1,4 @@
-import { Apple, PlayCircle, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Apple, PlayCircle, Facebook, Linkedin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 import moroLogo from "@/assets/moro-logo.png";
 
@@ -41,10 +41,9 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Facebook, href: "https://facebook.com/moroapp", label: "Facebook" },
-  { icon: Twitter, href: "https://twitter.com/moroapp", label: "Twitter" },
-  { icon: Linkedin, href: "https://linkedin.com/company/moroapp", label: "LinkedIn" },
-  { icon: Instagram, href: "https://instagram.com/moroapp", label: "Instagram" },
+  { icon: Facebook, href: "https://www.facebook.com/Morofintech", label: "Facebook" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/74752803", label: "LinkedIn" },
+  { icon: Instagram, href: "https://www.instagram.com/morofintech", label: "Instagram" },
 ];
 
 export const Footer = () => {

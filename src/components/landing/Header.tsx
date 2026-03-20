@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Fonctionnalités", href: "#features" },
   { label: "Pour qui", href: "#audience" },
   { label: "Tarifs", href: "#pricing" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export const Header = () => {
