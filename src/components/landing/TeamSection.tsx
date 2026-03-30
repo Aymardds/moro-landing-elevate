@@ -28,7 +28,7 @@ const team = [
     {
         name: "Ouanto Enoc",
         role: "Chief Financial Officer",
-        description: "Expert comptable et analyste financier assure la gestion des opération et la structuration financière de notre solution",
+        description: "Comptable et analyste financier, assure la gestion des opération et la structuration financière de notre solution",
         image: ouantoEnocImg,
         socials: { linkedin: "#", twitter: "#", instagram: "#" },
     },
