@@ -42,7 +42,7 @@ const team = [
     {
         name: "Mme Dion Claudia",
         role: "Chief Operating Officer",
-        description: "Expert en gestion de patrimoine financier; elle assure les gestion optimale des opérations courantes de l'entreprise",
+        description: "Responsable de la gestion du patrimoine, elle assure les gestion optimale des opérations courantes de l'entreprise",
         image: dionClaudiaImg,
         socials: { linkedin: "#", twitter: "#", instagram: "#" },
     },
