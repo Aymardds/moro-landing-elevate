@@ -21,11 +21,11 @@ import impact15 from "@/assets/impact/impact-15.jpg";
 
 const allImages = [
     // Block 1
-    { src: "/impact/action-5.jpg", alt: "Interview terrain" },
-    { src: impact1, alt: "Session de formation" },
-    { src: impact2, alt: "Utilisation app" },
-    { src: impact3, alt: "Réunion agriculteurs" },
-    { src: impact4, alt: "Présentation" },
+    { src: "/impact/action-5.jpg", alt: "Interview " },
+    { src: impact1, alt: "Rencontres des acteurs du secteur informel de sanpédro" },
+    { src: impact2, alt: "Rencontres des acteurs du secteur informel de Adzopé" },
+    { src: impact3, alt: "Rencontres des acteurs du secteur informel de Abengourou" },
+    { src: impact4, alt: "Rencontres des acteurs du secteur informel de Bondoukou" },
     // Block 2
     { src: impact5, alt: "workshop avec les associations de la Mé" },
     { src: impact6, alt: "Communauté" },

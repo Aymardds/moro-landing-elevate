@@ -381,12 +381,12 @@ export const PricingSection = memo(() => {
               {[1, 2, 3].map((n) => (
                 <div key={n} className="flex justify-between text-xs text-white/75 py-1">
                   <span>Vente box {n}</span>
-                  <span className="text-primary-light font-bold">+35 000 FCFA</span>
+                  <span className="text-primary-light font-bold">35 000 FCFA</span>
                 </div>
               ))}
               <div className="border-t border-white/10 mt-2 pt-2 flex justify-between text-xs font-black text-primary-light">
                 <span>Total enregistré</span>
-                <span>+105 000 FCFA</span>
+                <span>105 000 FCFA</span>
               </div>
             </div>
           </div>

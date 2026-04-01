@@ -12,46 +12,56 @@ import gnonzionJaulinaudImg from "@/assets/team/gnonzion_jaulinaud.png";
 // Team member images - Updated Kevine's photo
 const team = [
     {
-        name: "Dion Stephane A",
-        role: "CEO & CO-FOUNDER",
-        description: "Chargé du développement stratégique de la solution, Alumni 10X1000, expert en UI/UX design",
+        name: "Dion Stephane A.",
+        role: "CEO & Co-Fondateur",
+        description: "Visionnaire et architecte de la solution Moro, il pilote la stratégie globale de l'entreprise, fédère les équipes autour d'une ambition commune et conduit les décisions de développement produit. Alumni du programme 10X1000, il apporte une expertise pointue en UI/UX design et en croissance de startups technologiques.",
+
         image: dionStephaneImg,
         socials: { linkedin: "#", twitter: "#", instagram: "#" },
+        roleColor: "bg-amber-100 text-amber-700"
     },
     {
         name: "Gnonzion Jaulinaud",
         role: "Office Manager",
-        description: "Organise et planifie la montée en compétence de l'équipe opérationnelle et veille à la bonne exécution et l'atteinte des objectifs",
+        description: "Pilier organisationnel de l'équipe, il coordonne les opérations internes et assure la montée en compétence continue des collaborateurs. Il veille à ce que les processus soient fluides, les objectifs clairement définis et les échéances respectées, garantissant ainsi l'efficacité collective au quotidien.",
+
         image: gnonzionJaulinaudImg,
         socials: { linkedin: "#", twitter: "#", instagram: "#" },
+        roleColor: "bg-green-100 text-green-700"
     },
     {
-        name: "Ouanto Enoc",
-        role: "Chief Financial Officer",
-        description: "Comptable et analyste financier, assure la gestion des opération et la structuration financière de notre solution",
+        name: "Quanto Enoc",
+        role: "Directeur Financier (CFO)",
+        description: "Garant de la santé financière de l'entreprise, il supervise la comptabilité, l'analyse des performances économiques et la structuration financière de la solution Moro. Son expertise permet d'assurer une gestion rigoureuse des ressources et de sécuriser la trajectoire de croissance de l'organisation.",
+
         image: ouantoEnocImg,
         socials: { linkedin: "#", twitter: "#", instagram: "#" },
+        roleColor: "bg-blue-100 text-blue-700"
     },
     {
         name: "Ambre Delcroix",
-        role: "ASSOCIATE BUSINESS DEVELOPER",
-        description: "Assure les partenariats stratégiques, l'activation & adoption utilisateur, la croissance et la performance de la solution Moro",
+        role: "Développeur Business Associé",
+        description: "Moteur de la croissance commerciale, elle orchestre les partenariats stratégiques et déploie les initiatives d'activation et d'adoption utilisateur. Elle joue un rôle central dans l'expansion de la solution Moro, en assurant une présence forte sur le marché et en maximisant l'impact de chaque collaboration.",
+
         image: ambreDelcroixImg,
         socials: { linkedin: "#", twitter: "#", instagram: "#" },
+        roleColor: "bg-indigo-100 text-indigo-700"
     },
     {
         name: "Mme Dion Claudia",
-        role: "Chief Operating Officer",
-        description: "Responsable de la gestion du patrimoine, elle assure les gestion optimale des opérations courantes de l'entreprise",
+        role: "Directrice des Opérations (COO)",
+        description: "Responsable de l'excellence opérationnelle, elle supervise l'ensemble des activités courantes de l'entreprise et assure une gestion optimale du patrimoine organisationnel. Son rôle est de transformer la vision stratégique en réalisations concrètes, en maintenant un niveau de performance élevé dans chaque département.",
         image: dionClaudiaImg,
         socials: { linkedin: "#", twitter: "#", instagram: "#" },
+        roleColor: "bg-pink-100 text-pink-700"
     },
     {
-        name: "Ghossoub kevine",
-        role: "CHIEF TECHNICAL OFFICER",
-        description: "Assure la Direction et supervision de l'ensemble des initiatives technologiques du groupe, le Développement de l'application Moro",
+        name: "Ghossoub Kevine",
+        role: "Directeur Technique (CTO)",
+        description: "Architecte technologique du groupe, il dirige l'ensemble des initiatives techniques et supervise le développement de l'application Moro. Il garantit la robustesse, la scalabilité et l'innovation continue des systèmes, tout en assurant l'alignement entre les ambitions produit et les capacités technologiques de l'équipe.",
         image: ghossoubKevineImg,
         socials: { linkedin: "#", twitter: "#", instagram: "#" },
+        roleColor: "bg-orange-100 text-orange-700"
     },
 ];
 
@@ -105,8 +115,12 @@ export const TeamSection = () => {
                                         <Instagram className="w-4 h-4 text-pink-500 cursor-pointer hover:opacity-80" />
                                     </div>
                                 </div>
-                                <p className="text-[#f59e0b] font-bold text-sm mb-3 uppercase tracking-wider">{member.role}</p>
-                                <p className="text-muted-foreground text-sm leading-relaxed px-2">
+                                <div className="flex justify-center mb-4">
+                                    <span className={`text-xs font-semibold px-3 py-1 rounded-full ${member.roleColor || 'bg-primary/10 text-primary'}`}>
+                                        {member.role}
+                                    </span>
+                                </div>
+                                <p className="text-muted-foreground text-sm leading-relaxed px-2 text-left mb-4">
                                     {member.description}
                                 </p>
                             </div>

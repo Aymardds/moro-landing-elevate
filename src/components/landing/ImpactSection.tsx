@@ -19,11 +19,11 @@ import impact15 from "@/assets/impact/impact-15.jpg";
 
 const images = [
     // Block 1: Large Left (Interview terrain)
-    { src: "/impact/action-5.jpg", alt: "Interview terrain", className: "md:col-span-2 md:row-span-2 h-full" },
-    { src: impact1, alt: "Session de formation", className: "md:col-span-1 md:row-span-1 h-full" },
-    { src: impact2, alt: "Utilisation app", className: "md:col-span-1 md:row-span-1 h-full" },
-    { src: impact3, alt: "Réunion agriculteurs", className: "md:col-span-1 md:row-span-1 h-full" },
-    { src: impact4, alt: "Présentation", className: "md:col-span-1 md:row-span-1 h-full" },
+    { src: "/impact/action-5.jpg", alt: "Interview", className: "md:col-span-2 md:row-span-2 h-full" },
+    { src: impact1, alt: "Rencontres des acteurs du secteur informel de Sanpédro", className: "md:col-span-1 md:row-span-1 h-full" },
+    { src: impact2, alt: "Rencontres des acteurs du secteur informel de Adzopé", className: "md:col-span-1 md:row-span-1 h-full" },
+    { src: impact3, alt: "Rencontres des acteurs du secteur informel de Bondoukou", className: "md:col-span-1 md:row-span-1 h-full" },
+    { src: impact4, alt: "Rencontres de l'association AERSP", className: "md:col-span-1 md:row-span-1 h-full" },
 
     // Block 2: Large Right (Impact social)
     { src: impact5, alt: "workshop avec les associations de la Mé", className: "md:col-span-1 md:row-span-1 h-full" },
