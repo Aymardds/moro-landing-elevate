@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Apple, PlayCircle, ArrowRight } from "lucide-react";
 import { WavyBackground } from "@/components/ui/WavyBackground";
-import waveBg from "@/assets/wave-bg.jpg";
-import heroPeople from "@/assets/hero-people.png";
+import waveBg from "@/assets/wave-bg.webp";
+import heroPeople from "@/assets/hero-people.webp";
 
 export const HeroSection = () => {
   return (

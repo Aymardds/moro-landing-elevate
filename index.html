@@ -35,10 +35,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Optimized font loading with display=swap -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;900&family=Instrument+Serif:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <!-- Preload the critical LCP image -->
+  <link rel="preload" as="image" href="/src/assets/hero-people.webp" />
+
+  <!-- Optimized font loading with media hack -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;900&family=Instrument+Serif:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;900&family=Instrument+Serif:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;900&family=Instrument+Serif:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" />
+  </noscript>
 
   <meta property="og:title" content="Moro - Gestion et financement pour coopératives africaines" />
   <meta property="og:description"

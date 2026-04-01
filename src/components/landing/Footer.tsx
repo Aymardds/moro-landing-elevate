@@ -1,6 +1,6 @@
 import { Apple, PlayCircle, Facebook, Linkedin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
-import moroLogo from "@/assets/moro-logo.png";
+import moroLogo from "@/assets/moro-logo.webp";
 
 const footerLinks = {
   product: {

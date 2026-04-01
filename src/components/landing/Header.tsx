@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import moroLogo from "@/assets/moro-logo.png";
+import moroLogo from "@/assets/moro-logo.webp";
 
 const navLinks = [
   { label: "Moro", href: "#why" },

@@ -7,7 +7,7 @@ import {
   BarChart3,
   Network
 } from "lucide-react";
-import appDashboardMockup from "@/assets/app-dashboard-mockup.png";
+import appDashboardMockup from "@/assets/app-dashboard-mockup.webp";
 
 const features = [
   {

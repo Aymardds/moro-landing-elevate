@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 import { WavyBackground } from "@/components/ui/WavyBackground";
-import waveBg from "@/assets/wave-bg.jpg";
+import waveBg from "@/assets/wave-bg.webp";
 
 const trustChips = [
   "Paiement Wave & MoMo",
