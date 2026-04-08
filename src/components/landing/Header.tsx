@@ -46,7 +46,7 @@ export const Header = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
           {navLinks.map((link) => (
             isHomePage ? (
               <a
@@ -69,7 +69,7 @@ export const Header = () => {
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <a href="http://business.moro-apps.net" target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" size="sm">
               Connexion
@@ -82,7 +82,7 @@ export const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2"
+          className="lg:hidden p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Menu"
         >
@@ -97,7 +97,7 @@ export const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-border"
+            className="lg:hidden glass border-t border-border"
           >
             <nav className="container-tight py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
