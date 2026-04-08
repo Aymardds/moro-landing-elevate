@@ -70,9 +70,11 @@ export const Header = () => {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="ghost" size="sm">
-            Connexion
-          </Button>
+          <a href="http://business.moro-apps.net" target="_blank" rel="noopener noreferrer">
+            <Button variant="ghost" size="sm">
+              Connexion
+            </Button>
+          </a>
           <Link to="/business" onMouseEnter={() => prefetchRoute('/business')}>
             <Button size="sm">Moro Business</Button>
           </Link>
@@ -120,9 +122,11 @@ export const Header = () => {
                 )
               ))}
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
-                <Button variant="outline" className="w-full">
-                  Connexion
-                </Button>
+                <a href="http://business.moro-apps.net" target="_blank" rel="noopener noreferrer" className="w-full">
+                  <Button variant="outline" className="w-full">
+                    Connexion
+                  </Button>
+                </a>
                 <Link to="/business" onClick={() => setIsMobileMenuOpen(false)}>
                   <Button className="w-full">Moro Business</Button>
                 </Link>

@@ -25,12 +25,12 @@ const plans: Plan[] = [
   {
     icon: "☀️",
     name: "Moro Journée",
-    tag: "Sans engagement, par jour",
+    tag: "Débutants",
     priceMonthly: "200",
     priceAnnual: "200",
     periodMonthly: "par 24h",
     periodAnnual: "par 24h",
-    equiv: "Essai sans risque",
+    equiv: "Démarrer sa gestion sans engagement",
     features: [
       { text: "Caisse quotidienne illimitée" },
       { text: "Suivi créances clients" },
@@ -45,68 +45,52 @@ const plans: Plan[] = [
   {
     icon: "📱",
     name: "Moro Essentiel",
-    tag: "Le commerçant actif",
+    tag: "Entrepreneurs indépendants",
     priceMonthly: "900",
-    priceAnnual: "720",
+    priceAnnual: "855",
     periodMonthly: "/ mois",
-    periodAnnual: "/ mois · facturé annuellement",
-    equiv: "30 FCFA/jour",
+    periodAnnual: "/ mois",
+    equiv: "Notre offre principale",
     features: [
       { text: "Tout de Journée +" },
-      { text: "Moro AI — saisie vocale/texte" },
-      { text: "Analyses des flux financiers" },
-      { text: "Projets illimités" },
-      { text: "3 utilisateurs" },
-      { text: "Gestion autonome de projet (5)" },
-      { text: "Annonces 15/mois" },
-      { text: "Score financier actif" },
-    ],
-    cta: "Commencer",
-    variant: "default",
-  },
-  {
-    icon: "🚀",
-    name: "Moro Pro",
-    tag: "TPE & structures professionnelles",
-    priceMonthly: "3 000",
-    priceAnnual: "2 500",
-    periodMonthly: "/ mois",
-    periodAnnual: "/ mois · facturé annuellement",
-    equiv: "100 FCFA/jour ☕",
-    features: [
-      { text: "Tout de Essentiel +" },
       { text: "OCR Intelligent — scan factures", badge: "IA" },
       { text: "Simulateur de crédit", badge: "Exclusif" },
-      { text: "Tableau de bord intelligent" },
-      { text: "Résultat d'exploitation" },
-      { text: "Utilisateurs illimités" },
-      { text: "Assistance financement de projet" },
-      { text: "Annonces illimitées" },
-      { text: "Support 24/7 prioritaire" },
+      { text: "Tableau de bord & Résultat d'exploitation" },
+      { text: "Bilan SMT SYSCOA/OHADA" },
+      { text: "Exportation et partage de bilan en Pdf, Excel par WhatsApp" },
+      { text: "Devis & facturation pro" },
+      { text: "Gestion du personnel" },
+      { text: "Suivi optimisé des marchandises" },
+      { text: "3 Utilisateurs" },
+      { text: "5 projets actifs collaboratifs" },
+      { text: "Annonces de produits illimités sur Moro store" },
+      { text: "Support 24/7 & Assistance financement" },
+      { text: "Certification de bilan", badge: "Option payante" },
     ],
-    cta: "Souscrire maintenant",
-    badge: "⭐ POPULAIRE",
+    cta: "Commencer",
+    badge: "⭐ Essentiel",
     variant: "best",
   },
   {
     icon: "🌾",
     name: "Moro GIE",
-    tag: "Coopératives, tontines, associations",
-    priceFree: "Gratuit*",
-    priceMonthly: null,
-    priceAnnual: null,
-    equiv: "*seuil abaissé à 50 membres",
-    periodMonthly: "Pour 50+ membres",
+    tag: "Coopératives 15+ membres",
+    priceMonthly: "1 500",
+    priceAnnual: "1 425",
+    equiv: "Gratuit pour les GIE (entité)",
+    periodMonthly: "/ membre / mois",
+    periodAnnual: "/ membre / mois",
     features: [
-      { text: "Projets & budgets collectifs" },
-      { text: "Tableau de bord partagé" },
-      { text: "Score collectif IMF", badge: "Clé" },
-      { text: "Accès coopérative (pipeline)", badge: "Clé" },
-      { text: "Gestion cotisations & tontines" },
-      { text: "Membres illimités" },
+      { text: "Membres : Tout de Essentiel" },
+      { text: "Membres : Pipeline de financement", badge: "Clé" },
+      { text: "Membres : Score Moro collectif++", badge: "Clé" },
+      { text: "GIE : Hub ERP intégré" },
+      { text: "GIE : Pilotage centralisé (Membres, Employés & Stocks)" },
+      { text: "GIE : Approbation N1 de project des membres" },
+      { text: "GIE : Gestion des cotisations & tontines" },
     ],
     cta: "Créer mon GIE",
-    badge: "🤝 GIE",
+    badge: "👥 GIE",
     variant: "coop",
   },
 ];
@@ -186,7 +170,7 @@ export const PricingSection = memo(() => {
               Annuel
             </button>
             <span className="absolute -top-3 -right-2 bg-accent text-white text-[10px] font-black px-2.5 py-0.5 rounded-full">
-              −20%
+              −5%
             </span>
           </div>
         </motion.div>
@@ -227,7 +211,7 @@ export const PricingSection = memo(() => {
         </motion.div>
 
         {/* ── Plans grid ── */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12 items-start">
+        <div className="grid md:grid-cols-3 gap-6 mb-12 items-start mt-8">
           {plans.map((plan, i) => (
             <motion.div
               key={i}

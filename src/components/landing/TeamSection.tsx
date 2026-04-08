@@ -30,7 +30,7 @@ const team = [
         roleColor: "bg-green-100 text-green-700"
     },
     {
-        name: "Quanto Enoc",
+        name: "Ouanto Enoc",
         role: "Directeur Financier (CFO)",
         description: "Garant de la santé financière de l'entreprise, il supervise la comptabilité, l'analyse des performances économiques et la structuration financière de la solution Moro. Son expertise permet d'assurer une gestion rigoureuse des ressources et de sécuriser la trajectoire de croissance de l'organisation.",
 

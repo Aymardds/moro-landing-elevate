@@ -142,9 +142,9 @@ export const ChatWidget = () => {
                     sender: 'bot',
                     type: 'action-card',
                     actions: [
-                        { label: "Moro Basic", value: 'plan_basic', icon: <Zap className="w-4 h-4" /> },
-                        { label: "Moro Premium", value: 'plan_premium', icon: <Zap className="w-4 h-4" /> },
-                        { label: "Moro Business", value: 'plan_business', icon: <Zap className="w-4 h-4" /> }
+                        { label: "Moro Journée", value: 'plan_journee', icon: <Zap className="w-4 h-4" /> },
+                        { label: "Moro Essentiel", value: 'plan_essentiel', icon: <Zap className="w-4 h-4" /> },
+                        { label: "Moro GIE", value: 'plan_gie', icon: <Zap className="w-4 h-4" /> }
                     ],
                     timestamp: new Date(),
                 };
@@ -204,35 +204,35 @@ export const ChatWidget = () => {
                         sender: 'bot',
                         type: 'action-card',
                         actions: [
-                            { label: "Moro Basic (200 FCFA)", value: 'plan_basic', icon: <Zap className="w-4 h-4" /> },
-                            { label: "Moro Premium", value: 'plan_premium', icon: <Zap className="w-4 h-4" /> },
-                            { label: "Moro Business", value: 'plan_business', icon: <Zap className="w-4 h-4" /> }
+                            { label: "Moro Journée (200 FCFA)", value: 'plan_journee', icon: <Zap className="w-4 h-4" /> },
+                            { label: "Moro Essentiel", value: 'plan_essentiel', icon: <Zap className="w-4 h-4" /> },
+                            { label: "Moro GIE", value: 'plan_gie', icon: <Zap className="w-4 h-4" /> }
                         ],
                         timestamp: new Date(),
                     };
                     break;
-                case 'plan_basic':
+                case 'plan_journee':
                     botResponse = {
                         id: (Date.now() + 1).toString(),
-                        text: "🌱 **Moro Basic (200 FCFA / 24h)**\n\nIdéale pour usage personnel ou microprojet.\n\n• Gestion des opérations (Illimité)\n• Gestion autonome de projet (05)\n• Gestion de 2 utilisateurs\n• État de caisse\n• Annonces (1 par semaine)\n• Envoyer ou recevoir de l'argent par Wave, Momo",
+                        text: "☀️ **Moro Journée (200 FCFA / 24h)**\n\nDémarrer sa gestion sans engagement.\n\n• Caisse quotidienne illimitée\n• Suivi créances clients\n• 1 projet actif\n• Moro AI — saisie vocale/texte\n• Rapport journalier\n• Début scoring financier",
                         sender: 'bot',
                         type: 'text',
                         timestamp: new Date(),
                     };
                     break;
-                case 'plan_premium':
+                case 'plan_essentiel':
                     botResponse = {
                         id: (Date.now() + 1).toString(),
-                        text: "🚀 **Moro Premium (25 600 FCFA/an)**\n\nPour les structures professionnelles.\n\n• Gestion opérations & projets (Illimité)\n• Tableau de bord intelligent\n• Utilisateurs illimités\n• Résultat d'exploitation\n• Assistance et financement de projet\n• Annonces illimitées\n• Support 24/7 & OCR Intelligente\n• Simulateur de crédit\n• Envoyer ou recevoir de l'argent par Wave, Momo",
+                        text: "📱 **Moro Essentiel (900 FCFA / mois)**\n\nNotre offre principale pour les entrepreneurs indépendants.\n\n• Tout de Journée +\n• OCR Intelligent / Simulateur de crédit\n• Tableau de bord & Résultat\n• Bilan SMT SYSCOA/OHADA\n• Devis & facturation pro\n• 3 Utilisateurs / 5 projets actifs\n• Support 24/7",
                         sender: 'bot',
                         type: 'text',
                         timestamp: new Date(),
                     };
                     break;
-                case 'plan_business':
+                case 'plan_gie':
                     botResponse = {
                         id: (Date.now() + 1).toString(),
-                        text: "🏢 **Moro Business (Gratuit*)**\n\nPour les associations et coopératives d'au moins 50 membres.\n\n• Tout illimité (Opérations, Projets, Annonces)\n• Tableau de bord intelligent\n• Résultat d’exploitation\n• Assistance financement\n• Support 24/7 & OCR Intelligente\n• Envoyer ou recevoir de l'argent par Wave, Momo",
+                        text: "🌾 **Moro GIE (1 500 FCFA / membre / mois)**\n\nPour les coopératives (15+ membres).\n\n• Membres : Tout de Essentiel + Score collectif\n• GIE : Hub ERP intégré\n• Pilotage centralisé (Membres, Employés & Stocks)\n• Gestion des cotisations & tontines\n• Pipeline de financement",
                         sender: 'bot',
                         type: 'text',
                         timestamp: new Date(),

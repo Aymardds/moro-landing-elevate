@@ -85,7 +85,7 @@ const CGU = () => {
                                         ["IMF Partenaire","Institution de microfinance ayant conclu un accord de partenariat avec Moro"],
                                         ["Mobile Money","Services de paiement mobile (Wave, Orange Money, MTN MoMo) intégrés nativement"],
                                         ["Données Personnelles","Toute information relative à une personne physique identifiée ou identifiable"],
-                                        ["Abonnement","Le plan tarifaire souscrit par l'Utilisateur (Journée, Essentiel, Collectif, Pro)"],
+                                        ["Abonnement","Le plan tarifaire souscrit par l'Utilisateur (Journée, Essentiel, GIE)"],
                                         ["Mode Hors-Ligne","Utilisation de l'Application sans connexion internet, avec synchronisation différée"],
                                         ["BCEAO","Banque Centrale des États de l'Afrique de l'Ouest"],
                                         ["UEMOA","Union Économique et Monétaire Ouest-Africaine (8 pays : Bénin, Burkina Faso, Côte d'Ivoire, Guinée-Bissau, Mali, Niger, Sénégal, Togo)"],
@@ -174,16 +174,15 @@ const CGU = () => {
                                     <th className={tdH}>Plan</th><th className={tdH}>Tarif</th><th className={tdH}>Cible</th><th className={tdH}>Engagement</th>
                                 </tr></thead>
                                 <tbody>
-                                    <tr><td className={td + " font-medium"}>Moro Journée</td><td className={td}>200 FCFA / 24 heures</td><td className={td}>Usage ponctuel · tout utilisateur</td><td className={td}>Aucun</td></tr>
-                                    <tr><td className={td + " font-medium"}>Moro Essentiel</td><td className={td}>3 000 FCFA / mois</td><td className={td}>Micro-entrepreneurs individuels</td><td className={td}>Mensuel résiliable</td></tr>
-                                    <tr><td className={td + " font-medium"}>Moro Collectif</td><td className={td}>2 500 FCFA / membre / mois</td><td className={td}>GIE, coopératives, associations, mutuelles, tontines</td><td className={td}>Mensuel résiliable</td></tr>
-                                    <tr><td className={td + " font-medium"}>Moro Pro</td><td className={td}>100 000 FCFA / an</td><td className={td}>Structures formelles, TPE, semi-formelles</td><td className={td}>Annuel</td></tr>
+                                    <tr><td className={td + " font-medium"}>Moro Journée</td><td className={td}>200 FCFA / 24 heures</td><td className={td}>Débutants, usage ponctuel</td><td className={td}>Aucun</td></tr>
+                                    <tr><td className={td + " font-medium"}>Moro Essentiel</td><td className={td}>900 FCFA / mois</td><td className={td}>Entrepreneurs indépendants</td><td className={td}>Mensuel / Annuel (5% réduc.)</td></tr>
+                                    <tr><td className={td + " font-medium"}>Moro GIE</td><td className={td}>1 500 FCFA / membre / mois</td><td className={td}>Coopératives 15+ membres, GIE</td><td className={td}>Mensuel / Annuel (5% réduc.)</td></tr>
                                 </tbody>
                             </table>
                         </div>
                         <div className="space-y-4 mb-8">
                             <p><strong>5.2 Modalités de paiement :</strong> Exclusivement via Wave, Orange Money ou MTN MoMo. Aucun paiement en espèces ni par carte bancaire.</p>
-                            <p><strong>5.3 Plan Collectif — Facturation :</strong> Montant calculé sur la base du nombre de membres actifs au 1er jour du mois. L'Administrateur est responsable du paiement pour l'ensemble des membres.</p>
+                            <p><strong>5.3 Plan GIE — Facturation :</strong> Montant calculé sur la base du nombre de membres actifs au 1er jour du mois. L'Administrateur est responsable du paiement pour l'ensemble des membres. L'accès est gratuit pour l'entité GIE elle-même.</p>
                             <p><strong>5.4 Accès gratuit :</strong> Moro peut proposer des périodes d'essai ou des accès subventionnés dans le cadre de programmes partenaires.</p>
                             <p><strong>5.5 Non-remboursement :</strong> Les paiements ne sont pas remboursables sauf erreur avérée. Délai de signalement : 30 jours à contact@moro-apps.net.</p>
                             <p><strong>5.6 Modification des tarifs :</strong> Préavis minimum 30 jours par notification in-app et/ou SMS.</p>
@@ -343,34 +342,27 @@ const CGU = () => {
                                 <thead><tr className="bg-gray-50">
                                     <th className={tdH}>Fonctionnalité</th>
                                     <th className={tdH + " text-center w-20"}>Journée<br /><span className="text-xs font-normal">200 FCFA</span></th>
-                                    <th className={tdH + " text-center w-20"}>Essentiel<br /><span className="text-xs font-normal">3 000 F/mois</span></th>
-                                    <th className={tdH + " text-center w-20"}>Collectif<br /><span className="text-xs font-normal">2 500 F/mbr</span></th>
-                                    <th className={tdH + " text-center w-20"}>Pro<br /><span className="text-xs font-normal">100 000 F/an</span></th>
+                                    <th className={tdH + " text-center w-20"}>Essentiel<br /><span className="text-xs font-normal">900 F/mois</span></th>
+                                    <th className={tdH + " text-center w-20"}>GIE<br /><span className="text-xs font-normal">1 500 F/mbr</span></th>
                                 </tr></thead>
                                 <tbody>
                                     {[
-                                        ["Saisie des opérations (voix, photo, texte)","✓","✓","✓","✓"],
-                                        ["Saisie en dioula / bambara","✓","✓","✓","✓"],
-                                        ["Mode hors-ligne","✓","✓","✓","✓"],
-                                        ["Intégration Wave / Orange Money / MTN MoMo","✓","✓","✓","✓"],
-                                        ["Tableau de bord trésorerie","✓","✓","✓","✓"],
-                                        ["1 projet actif","✓","—","—","—"],
-                                        ["Projets et épargne illimités","—","✓","✓","✓"],
-                                        ["Bilan OHADA mensuel automatique","—","✓","✓","✓"],
-                                        ["Score financier individuel","—","✓","✓","✓"],
-                                        ["Pipeline accès crédit IMF","—","✓","✓","✓"],
-                                        ["Module Collectif (cotisations, tontine, budget GIE)","—","—","✓","✓"],
-                                        ["Score collectif du groupement","—","—","✓","✓"],
-                                        ["Bilan OHADA du groupement","—","—","✓","✓"],
-                                        ["Dossier crédit groupé pour les IMF","—","—","✓","✓"],
-                                        ["OCR Intelligent avancé (factures, bons)","—","—","—","✓"],
-                                        ["Simulateur de crédit intégré","—","—","—","✓"],
-                                        ["Scoring API pour IMF partenaires","—","—","—","✓"],
-                                        ["Certification officielle avancée","—","—","—","✓"],
-                                        ["Rapport d'impact annuel","—","—","—","✓"],
-                                        ["Support prioritaire","—","—","✓","✓"],
-                                    ].map(([feat, j, e, c, p]) => (
-                                        <tr key={feat}><td className={td}>{feat}</td><td className={td + " text-center"}>{j}</td><td className={td + " text-center"}>{e}</td><td className={td + " text-center"}>{c}</td><td className={td + " text-center"}>{p}</td></tr>
+                                        ["Saisie opérations / mode hors-ligne / Mobile Money","✓","✓","✓"],
+                                        ["Saisie en dioula / bambara / Tableaux de bord","✓","✓","✓"],
+                                        ["Projets actifs collaboratifs","1","5","Illimités"],
+                                        ["Utilisateurs gérés","1","3","Illimités"],
+                                        ["Devis & facturation pro","—","✓","✓"],
+                                        ["Gestion du personnel et des marchandises","—","✓","✓"],
+                                        ["Annonces de produits sur Moro Store","—","Illimitées","Illimitées"],
+                                        ["Bilan SMT SYSCOA/OHADA (Export PDF/Excel)","—","✓","✓"],
+                                        ["Score financier individuel & Pipeline crédit IMF","—","✓","✓"],
+                                        ["Certification de bilan (Option payante)","—","✓","✓"],
+                                        ["Gestion GIE (Cotisations, Tontines, Budget)","—","—","✓"],
+                                        ["Hub ERP Coopérative / Approbation dossier","—","—","✓"],
+                                        ["Score Moro collectif++ du groupement","—","—","✓"],
+                                        ["Support prioritaire 24/7","—","✓","✓"],
+                                    ].map(([feat, j, e, c]) => (
+                                        <tr key={feat}><td className={td}>{feat}</td><td className={td + " text-center"}>{j}</td><td className={td + " text-center"}>{e}</td><td className={td + " text-center"}>{c}</td></tr>
                                     ))}
                                 </tbody>
                             </table>
