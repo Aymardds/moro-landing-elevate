@@ -15,17 +15,33 @@ const AdminLogin = () => {
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
-        const { error } = await supabase.auth.signInWithPassword({ email, password });
-        if (error) {
+        
+        try {
+            // First, ensure we start with a clean state to avoid session refresh conflicts
+            await supabase.auth.signOut({ scope: 'local' });
+            
+            const { error } = await supabase.auth.signInWithPassword({ email, password });
+            if (error) {
+                console.error("Login attempt failed:", error.message);
+                toast({
+                    variant: "destructive",
+                    title: "Erreur de connexion",
+                    description: error.message === "Invalid login credentials" 
+                        ? "Email ou mot de passe incorrect." 
+                        : "Une erreur est survenue lors de la connexion. Veuillez réessayer.",
+                });
+            } else {
+                navigate("/admin");
+            }
+        } catch (err: any) {
             toast({
                 variant: "destructive",
-                title: "Erreur de connexion",
-                description: error.message,
+                title: "Erreur système",
+                description: "Impossible de contacter le service d'authentification.",
             });
-        } else {
-            navigate("/admin");
+        } finally {
+            setLoading(false);
         }
-        setLoading(false);
     };
 
     return (

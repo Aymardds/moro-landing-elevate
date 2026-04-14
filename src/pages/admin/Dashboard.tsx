@@ -27,10 +27,20 @@ const AdminDashboard = () => {
     };
 
     useEffect(() => {
-        supabase.auth.getSession().then(({ data }) => {
-            if (!data.session) navigate("/admin/login");
-            else fetchPosts();
-        });
+        const checkAuth = async () => {
+            try {
+                const { data, error } = await supabase.auth.getSession();
+                if (error || !data.session) {
+                    if (error) console.error("Dashboard auth check error:", error.message);
+                    navigate("/admin/login");
+                } else {
+                    fetchPosts();
+                }
+            } catch (err) {
+                navigate("/admin/login");
+            }
+        };
+        checkAuth();
     }, [navigate]);
 
     const togglePublish = async (post: BlogPost) => {

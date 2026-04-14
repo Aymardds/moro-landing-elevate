@@ -38,9 +38,22 @@ const BlogEditor = () => {
     });
 
     useEffect(() => {
-        supabase.auth.getSession().then(({ data }) => {
-            if (!data.session) navigate("/admin/login");
-        });
+        const checkAuth = async () => {
+            try {
+                const { data, error } = await supabase.auth.getSession();
+                if (error || !data.session) {
+                    if (error) console.error("Editor auth check error:", error.message);
+                    navigate("/admin/login");
+                    return;
+                }
+            } catch (err) {
+                navigate("/admin/login");
+                return;
+            }
+        };
+
+        checkAuth();
+
         if (!isNew && id) {
             supabase
                 .from("blog_posts")
