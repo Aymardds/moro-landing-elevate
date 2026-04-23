@@ -11,6 +11,7 @@ const navLinks = [
   { label: "Pour qui", href: "#audience" },
   { label: "Tarifs", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
+  { label: "EDUFI-CI", href: "edufi" },
 ];
 
 export const Header = () => {
@@ -32,6 +33,7 @@ export const Header = () => {
     if (path === '/business') import('../../pages/Business');
     if (path === '/blog') import('../../pages/Blog');
     if (path === '/gallery') import('../../pages/Gallery');
+    if (path === '/edufi') import('../../pages/Edufi');
   };
 
   return (

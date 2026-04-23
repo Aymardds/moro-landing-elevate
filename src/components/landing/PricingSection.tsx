@@ -16,6 +16,7 @@ interface Plan {
   equiv: string;
   features: { text: string; badge?: string }[];
   cta: string;
+  link?: string;
   badge?: string;
   variant: "default" | "best" | "coop";
 }
@@ -40,6 +41,7 @@ const plans: Plan[] = [
       { text: "Début scoring financier", badge: "Nouveau" },
     ],
     cta: "Essayer aujourd'hui",
+    link: "moro://subscription",
     variant: "default",
   },
   {
@@ -68,6 +70,7 @@ const plans: Plan[] = [
       { text: "Certification de bilan", badge: "Option payante" },
     ],
     cta: "Commencer",
+    link: "moro://subscription",
     badge: "⭐ Essentiel",
     variant: "best",
   },
@@ -90,6 +93,7 @@ const plans: Plan[] = [
       { text: "GIE : Gestion des cotisations & tontines" },
     ],
     cta: "Créer mon GIE",
+    link: "https://business.moro-apps.net/register",
     badge: "👥 GIE",
     variant: "coop",
   },
@@ -129,6 +133,32 @@ export const PricingSection = memo(() => {
   const getPeriod = (plan: Plan) => {
     if (plan.priceFree) return plan.periodMonthly ?? "";
     return isAnnual ? plan.periodAnnual : plan.periodMonthly;
+  };
+
+  const handlePlanClick = (plan: Plan) => {
+    if (plan.link?.startsWith("http")) {
+      window.open(plan.link, "_blank");
+      return;
+    }
+
+    if (plan.link) {
+      // Intent to open the mobile app
+      const start = Date.now();
+      window.location.href = plan.link;
+      
+      // We wait to see if the app opened. 
+      // If after 1.5s we are still on the landing page, we scroll to download.
+      setTimeout(() => {
+        // If the difference in time is roughly the timeout, it means the browser 
+        // didn't switch context (app didn't open).
+        if (Date.now() - start < 2000) {
+          const downloadSection = document.getElementById("download-cta");
+          if (downloadSection) {
+            downloadSection.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      }, 1500);
+    }
   };
 
   return (
@@ -306,6 +336,7 @@ export const PricingSection = memo(() => {
 
               {/* CTA */}
               <button
+                onClick={() => handlePlanClick(plan)}
                 className={`w-full py-3 rounded-xl text-sm font-black transition-all mt-auto ${plan.variant === "best"
                   ? "bg-accent text-white hover:bg-[#e08b0a] shadow-[0_4px_16px_rgba(244,160,28,0.35)]"
                   : plan.variant === "coop"

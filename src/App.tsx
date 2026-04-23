@@ -19,6 +19,7 @@ const AdminDashboard = lazy(() => import("./pages/admin/Dashboard"));
 const BlogEditor = lazy(() => import("./pages/admin/BlogEditor"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const CGU = lazy(() => import("./pages/CGU"));
+const Edufi = lazy(() => import("./pages/Edufi"));
 
 const queryClient = new QueryClient();
 
@@ -79,6 +80,7 @@ const App = () => {
               <Route path="/admin" element={<AdminDashboard />} />
               <Route path="/admin/blog/:id" element={<BlogEditor />} />
               <Route path="/cgu" element={<CGU />} />
+              <Route path="/edufi" element={<Edufi />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
