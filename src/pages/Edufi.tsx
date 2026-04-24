@@ -334,7 +334,7 @@ const Edufi = () => {
                                 {
                                     level: "Niveau 1",
                                     title: "L'Éveil Financier",
-                                    time: "Caravane Moro (2 jours)",
+                                    time: "Caravane Moro (30 jours)",
                                     desc: "Sensibilisation, création du compte Moro et enregistrement de la 1ère transaction.",
                                     icon: <Award className="w-8 h-8 text-[#1e6641]" />
                                 },
