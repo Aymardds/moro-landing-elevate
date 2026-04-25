@@ -36,7 +36,7 @@ const plans: Plan[] = [
       { text: "Caisse quotidienne illimitée" },
       { text: "Suivi créances clients" },
       { text: "1 projet actif" },
-      { text: "Moro AI — saisie vocale/texte" },
+      { text: "MiA — saisie vocale/texte" },
       { text: "Rapport journalier" },
       { text: "Début scoring financier", badge: "Nouveau" },
     ],
@@ -210,7 +210,7 @@ export const PricingSection = memo(() => {
           {[
             {
               icon: "🤖",
-              title: "IA Comptable — Moro AI",
+              title: "IA Comptable — MiA",
               desc: "Dites ou photographiez vos opérations. L'IA les enregistre dans le bon projet, dans la bonne catégorie, instantanément.",
             },
             {
@@ -350,7 +350,7 @@ export const PricingSection = memo(() => {
           ))}
         </div>
 
-        {/* ── Moro AI Deep Dive ── */}
+        {/* ── MiA Deep Dive ── */}
         <motion.div
           {...fadeUp(0.1)}
           className="bg-foreground rounded-2xl p-8 mb-10 grid md:grid-cols-2 gap-8 items-center"
@@ -358,7 +358,7 @@ export const PricingSection = memo(() => {
           {/* Left */}
           <div>
             <h2 className="font-montserrat font-black text-2xl text-white mb-3 leading-snug">
-              Moro AI :<br />
+              MiA :<br />
               <span className="text-primary-light">votre comptable</span><br />
               dans la poche
             </h2>

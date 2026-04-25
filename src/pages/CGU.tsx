@@ -77,7 +77,7 @@ const CGU = () => {
                                         ["Compte Collectif","Compte créé par un GIE, une coopérative, une association, une mutuelle, une tontine ou tout autre groupement économique, géré par un Administrateur"],
                                         ["Administrateur","Le représentant légal, la trésorière ou le responsable désigné d'un groupement"],
                                         ["Membre","Tout adhérent d'un groupement rattaché à un Compte Collectif Moro"],
-                                        ["Moro AI","Le module d'intelligence artificielle conversationnelle de l'Application (saisie vocale, textuelle, photographique)"],
+                                        ["MiA","Le module d'intelligence artificielle conversationnelle de l'Application (saisie vocale, textuelle, photographique)"],
                                         ["Bilan OHADA","L'état financier conforme au Système Minimal de Trésorerie (SMT) SYSCOA/OHADA, généré automatiquement"],
                                         ["Bouton Certifier","Fonctionnalité permettant la certification officielle des états financiers"],
                                         ["Score Moro","Indicateur de santé financière (0 à 100) calculé automatiquement"],
@@ -191,7 +191,7 @@ const CGU = () => {
                         {/* Art 6 */}
                         <h2 className={articleHeading}>Article 6 — Fonctionnalités de l'application</h2>
                         <div className="space-y-6 mb-8">
-                            <div><h3 className="font-bold mb-2">6.1 Comptabilité automatisée</h3><p>L'Application permet d'enregistrer des opérations financières par saisie vocale, photographique (OCR) ou textuelle. Moro AI classe automatiquement chaque opération selon le référentiel SYSCOA/OHADA. L'Utilisateur reconnaît que ce classement est une aide à la gestion et ne se substitue pas à un comptable agréé.</p></div>
+                            <div><h3 className="font-bold mb-2">6.1 Comptabilité automatisée</h3><p>L'Application permet d'enregistrer des opérations financières par saisie vocale, photographique (OCR) ou textuelle. MiA classe automatiquement chaque opération selon le référentiel SYSCOA/OHADA. L'Utilisateur reconnaît que ce classement est une aide à la gestion et ne se substitue pas à un comptable agréé.</p></div>
                             <div><h3 className="font-bold mb-2">6.2 Saisie multilingue</h3><p>L'Application supporte le français, le bambara et le dioula. D'autres langues (wolof, haoussa, twi) pourront être ajoutées.</p></div>
                             <div><h3 className="font-bold mb-2">6.3 Mode hors-ligne</h3><p>L'Application fonctionne en mode hors-ligne pour la saisie des opérations courantes, avec synchronisation différée lors de la prochaine connexion.</p></div>
                             <div><h3 className="font-bold mb-2">6.4 Gestion du portefeuille multi-comptes</h3><p>L'Application permet de gérer caisse espèces, comptes Mobile Money et comptes bancaires avec trésorerie nette consolidée.</p></div>
@@ -273,7 +273,7 @@ const CGU = () => {
 
                         <h2 className={articleHeading}>Article 12 — Propriété intellectuelle</h2>
                         <div className="space-y-4 mb-8">
-                            <p>12.1 L'Application Moro, son code source, ses interfaces, ses algorithmes (Score Moro, Moro AI), ses marques et logos sont la propriété exclusive d'INEXIUMUS GROUP SARL.</p>
+                            <p>12.1 L'Application Moro, son code source, ses interfaces, ses algorithmes (Score Moro, MiA), ses marques et logos sont la propriété exclusive d'INEXIUMUS GROUP SARL.</p>
                             <p>12.2 L'Utilisateur bénéficie d'une licence d'utilisation personnelle, non exclusive, non transférable et révocable, pour la durée de son abonnement.</p>
                             <p>12.3 Les données financières saisies par l'Utilisateur restent sa propriété exclusive. INEXIUMUS GROUP SARL ne revendique aucun droit de propriété sur ces données.</p>
                             <p>12.4 Moro se réserve le droit d'utiliser, sous forme agrégée et anonymisée, les données d'utilisation à des fins d'amélioration du service et de reporting sur l'inclusion financière.</p>
@@ -381,7 +381,7 @@ const CGU = () => {
                                         ["Données financières","Transactions (montants, dates, catégories), bilans, soldes, créances, stock","Service comptable, génération du bilan OHADA","10 ans (obligation OHADA)"],
                                         ["Score Moro","Indicateurs comportementaux agrégés (régularité, volume, épargne)","Calcul du Score Moro, pipeline IMF","Durée du compte + 3 ans"],
                                         ["Données de connexion","Adresse IP, appareil, OS, horodatage des sessions","Sécurité, lutte contre la fraude","12 mois"],
-                                        ["Données voix / photo","Enregistrements vocaux transcrits, images de documents (OCR)","Saisie des transactions via Moro AI — non conservés après transcription","Traitement immédiat / non stocké"],
+                                        ["Données voix / photo","Enregistrements vocaux transcrits, images de documents (OCR)","Saisie des transactions via MiA — non conservés après transcription","Traitement immédiat / non stocké"],
                                         ["Données groupement","Dénomination, membres, cotisations, tours de tontine, budget collectif","Module Collectif, score collectif","Durée du compte + 10 ans"],
                                         ["Données scoring IMF","Profil financier certifié transmis avec consentement","Demande de crédit auprès d'IMF Partenaires","Politique de l'IMF destinataire"],
                                         ["Données d'utilisation","Fonctionnalités utilisées, fréquence, langue, version","Amélioration du service, statistiques agrégées","36 mois anonymisés"],

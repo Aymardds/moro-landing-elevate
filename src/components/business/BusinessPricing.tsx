@@ -34,7 +34,7 @@ const plans = [
             { text: "Bilan SYSCOA/OHADA certifiable", badge: "Clé" },
             { text: "Analyses & tableaux de bord avancés", badge: "Pro" },
             { text: "Gestion multi-utilisateurs illimitée" },
-            { text: "Moro AI — saisie vocale & OCR", badge: "IA" },
+            { text: "MiA — saisie vocale & OCR", badge: "IA" },
             { text: "Accès pipeline IMF & microfinance" },
             { text: "Support prioritaire 24/7" },
             { text: "Certification intégrée depuis l'app", badge: "Exclusif" },

@@ -6,7 +6,7 @@ const steps = [
         icon: "🗣️",
         step: "Étape 1",
         title: "Saisie par IA conversationnelle",
-        desc: "L'utilisateur parle ou écrit en français naturel : \"J'ai vendu 3 box de poulet à 35 000 FCFA pour mon projet AfricaFood\". Moro AI comprend, confirme et enregistre 3 transactions distinctes en moins de 10 secondes. Pas de formulaire, pas de catégorie à choisir manuellement.",
+        desc: "L'utilisateur parle ou écrit en français naturel : \"J'ai vendu 3 box de poulet à 35 000 FCFA pour mon projet AfricaFood\". MiA comprend, confirme et enregistre 3 transactions distinctes en moins de 10 secondes. Pas de formulaire, pas de catégorie à choisir manuellement.",
         tags: ["Saisie vocale & texte", "OCR factures photo", "Confirmation IA avant action"],
         state: "done"
     },

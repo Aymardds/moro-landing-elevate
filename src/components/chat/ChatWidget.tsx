@@ -28,7 +28,7 @@ interface Message {
 const INITIAL_MESSAGES: Message[] = [
     {
         id: '1',
-        text: "Bonjour ! Je suis Miss Monique votre assistante Moro. 👋 Comment puis-je vous aider aujourd'hui ?",
+        text: "Bonjour ! Je suis MiA. 👋 Comment puis-je vous aider aujourd'hui ?",
         sender: 'bot',
         type: 'text',
         timestamp: new Date(),
@@ -151,6 +151,20 @@ export const ChatWidget = () => {
                 setMessages(prev => [...prev, botResponse]);
                 setIsTyping(false);
                 return;
+            } else if (lowerValue.includes('edufi') && actionValue !== 'go_edufi') {
+                botResponse = {
+                    id: (Date.now() + 1).toString(),
+                    text: "Le projet EDUFI-CI est notre initiative de formation inclusive en éducation financière en zone rurale. Il vise à former 5 000 bénéficiaires sur 18 mois pour transformer leur autonomie. Souhaitez-vous voir les détails ?",
+                    sender: 'bot',
+                    type: 'action-card',
+                    actions: [
+                        { label: "Découvrir EDUFI-CI", value: 'go_edufi', icon: <Users className="w-4 h-4" /> }
+                    ],
+                    timestamp: new Date(),
+                };
+                setMessages(prev => [...prev, botResponse]);
+                setIsTyping(false);
+                return;
             }
 
             switch (actionValue) {
@@ -214,7 +228,7 @@ export const ChatWidget = () => {
                 case 'plan_journee':
                     botResponse = {
                         id: (Date.now() + 1).toString(),
-                        text: "☀️ **Moro Journée (200 FCFA / 24h)**\n\nDémarrer sa gestion sans engagement.\n\n• Caisse quotidienne illimitée\n• Suivi créances clients\n• 1 projet actif\n• Moro AI — saisie vocale/texte\n• Rapport journalier\n• Début scoring financier",
+                        text: "☀️ **Moro Journée (200 FCFA / 24h)**\n\nDémarrer sa gestion sans engagement.\n\n• Caisse quotidienne illimitée\n• Suivi créances clients\n• 1 projet actif\n• MiA — saisie vocale/texte\n• Rapport journalier\n• Début scoring financier",
                         sender: 'bot',
                         type: 'text',
                         timestamp: new Date(),
@@ -289,6 +303,16 @@ export const ChatWidget = () => {
                     };
                     window.location.href = '#cta-section'; // Simple anchor link for demo
                     break;
+                case 'go_edufi':
+                    botResponse = {
+                        id: (Date.now() + 1).toString(),
+                        text: "Redirection vers la page du projet EDUFI-CI...",
+                        sender: 'bot',
+                        type: 'text',
+                        timestamp: new Date(),
+                    };
+                    window.location.href = '/edufi';
+                    break;
                 default:
                     botResponse = {
                         id: (Date.now() + 1).toString(),
@@ -325,7 +349,7 @@ export const ChatWidget = () => {
                                     <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-primary rounded-full"></div>
                                 </div>
                                 <div>
-                                    <h3 className="font-bold text-lg leading-tight">Moro Assistant</h3>
+                                    <h3 className="font-bold text-lg leading-tight">MiA</h3>
                                     <p className="text-xs text-white/80">Toujours là pour vous</p>
                                 </div>
                             </div>
