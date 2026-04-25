@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { supabase, type BlogPost } from "@/lib/supabase";
+import { supabase, type BlogPost, type EdufiZone } from "@/lib/supabase";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 import { 
@@ -19,7 +19,9 @@ import {
     Mail, 
     User,
     ChevronRight,
-    Search
+    Search,
+    MapPin,
+    Save
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -39,9 +41,11 @@ const AdminDashboard = () => {
     const { toast } = useToast();
     const [posts, setPosts] = useState<BlogPost[]>([]);
     const [requests, setRequests] = useState<ContactRequest[]>([]);
+    const [zones, setZones] = useState<EdufiZone[]>([]);
     const [loading, setLoading] = useState(true);
-    const [activeTab, setActiveTab] = useState<"blog" | "requests">("blog");
+    const [activeTab, setActiveTab] = useState<"blog" | "requests" | "zones">("blog");
     const [selectedRequest, setSelectedRequest] = useState<ContactRequest | null>(null);
+    const [editingZone, setEditingZone] = useState<Partial<EdufiZone> | null>(null);
 
     const fetchData = async () => {
         setLoading(true);
@@ -68,6 +72,18 @@ const AdminDashboard = () => {
             toast({ variant: "destructive", title: "Erreur Demandes", description: reqError.message });
         } else {
             setRequests(reqData as ContactRequest[]);
+        }
+
+        // Fetch Zones
+        const { data: zonesData, error: zonesError } = await supabase
+            .from("edufi_zones")
+            .select("*")
+            .order("name", { ascending: true });
+        
+        if (zonesError) {
+            toast({ variant: "destructive", title: "Erreur Zones", description: zonesError.message });
+        } else {
+            setZones(zonesData as EdufiZone[]);
         }
 
         setLoading(false);
@@ -134,6 +150,59 @@ const AdminDashboard = () => {
         }
     };
 
+    const handleSaveZone = async () => {
+        if (!editingZone || !editingZone.name || !editingZone.activity || !editingZone.target || !editingZone.imf) {
+            toast({ variant: "destructive", title: "Erreur", description: "Veuillez remplir tous les champs." });
+            return;
+        }
+
+        if (editingZone.id) {
+            const { error } = await supabase
+                .from("edufi_zones")
+                .update({
+                    name: editingZone.name,
+                    activity: editingZone.activity,
+                    target: editingZone.target,
+                    imf: editingZone.imf
+                })
+                .eq("id", editingZone.id);
+            if (!error) {
+                toast({ title: "Zone mise à jour" });
+                setEditingZone(null);
+                fetchData();
+            } else {
+                toast({ variant: "destructive", title: "Erreur", description: error.message });
+            }
+        } else {
+            const { error } = await supabase
+                .from("edufi_zones")
+                .insert([{
+                    name: editingZone.name,
+                    activity: editingZone.activity,
+                    target: editingZone.target,
+                    imf: editingZone.imf
+                }]);
+            if (!error) {
+                toast({ title: "Zone créée" });
+                setEditingZone(null);
+                fetchData();
+            } else {
+                toast({ variant: "destructive", title: "Erreur", description: error.message });
+            }
+        }
+    };
+
+    const handleDeleteZone = async (id: string) => {
+        if (!confirm("Supprimer cette zone ?")) return;
+        const { error } = await supabase.from("edufi_zones").delete().eq("id", id);
+        if (!error) {
+            toast({ title: "Zone supprimée" });
+            fetchData();
+        } else {
+            toast({ variant: "destructive", title: "Erreur", description: error.message });
+        }
+    };
+
     const handleLogout = async () => {
         await supabase.auth.signOut();
         navigate("/admin/login");
@@ -173,6 +242,13 @@ const AdminDashboard = () => {
                                 </span>
                             )}
                         </button>
+                        <button 
+                            onClick={() => setActiveTab("zones")}
+                            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeTab === "zones" ? "bg-[#1e6641] text-white" : "text-white/40 hover:text-white hover:bg-white/5"}`}
+                        >
+                            <MapPin className="w-5 h-5" />
+                            <span className="font-semibold text-sm">Zones EDUFI</span>
+                        </button>
                     </nav>
                 </div>
 
@@ -200,7 +276,7 @@ const AdminDashboard = () => {
 
                 <main className="flex-1 p-6 lg:p-10">
                     {/* Stats Overview */}
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
                         <div className="bg-white p-6 rounded-[32px] border border-gray-100 shadow-sm">
                             <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Total Demandes</p>
                             <h3 className="text-2xl font-black text-[#0a1a0f]">{requests.length}</h3>
@@ -210,11 +286,16 @@ const AdminDashboard = () => {
                             </div>
                         </div>
                         <div className="bg-white p-6 rounded-[32px] border border-gray-100 shadow-sm">
+                            <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Zones d'Action</p>
+                            <h3 className="text-2xl font-black text-[#0a1a0f]">{zones.length}</h3>
+                            <p className="text-[10px] font-bold text-gray-400 mt-2">Couverture EDUFI-CI</p>
+                        </div>
+                        <div className="bg-white p-6 rounded-[32px] border border-gray-100 shadow-sm">
                             <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Sponsors / Partenaires</p>
                             <h3 className="text-2xl font-black text-[#0a1a0f]">
                                 {requests.filter(r => r.type === 'Sponsor Caravane Moro').length} <span className="text-gray-200">/</span> {requests.filter(r => r.type === 'Partenariat Stratégique').length}
                             </h3>
-                            <p className="text-[10px] font-bold text-gray-400 mt-2">Répartition EDUFI-CI</p>
+                            <p className="text-[10px] font-bold text-gray-400 mt-2">Répartition demandes</p>
                         </div>
                         <div className="bg-white p-6 rounded-[32px] border border-gray-100 shadow-sm">
                             <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Articles Publiés</p>
@@ -228,7 +309,7 @@ const AdminDashboard = () => {
                         </div>
                     </div>
 
-                    {activeTab === "blog" ? (
+                    {activeTab === "blog" && (
                         <>
                             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
                                 <div>
@@ -322,7 +403,8 @@ const AdminDashboard = () => {
                                 </div>
                             )}
                         </>
-                    ) : (
+                    )}
+                    {activeTab === "requests" && (
                         <div className="flex flex-col h-full">
                             <div className="mb-10">
                                 <h1 className="text-3xl font-black text-[#0a1a0f] tracking-tight">Demandes de Contact</h1>
@@ -445,6 +527,134 @@ const AdminDashboard = () => {
                                     )}
                                 </div>
                             </div>
+                        </div>
+                    )}
+
+                    {activeTab === "zones" && (
+                        <div className="flex flex-col h-full">
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+                                <div>
+                                    <h1 className="text-3xl font-black text-[#0a1a0f] tracking-tight">Zones EDUFI-CI</h1>
+                                    <p className="text-gray-500 mt-1 font-medium">{zones.length} zone{zones.length > 1 ? "s" : ""} au total</p>
+                                </div>
+                                {!editingZone && (
+                                    <button
+                                        onClick={() => setEditingZone({ name: '', activity: '', target: '', imf: '' })}
+                                        className="inline-flex items-center justify-center gap-2 bg-[#1e6641] hover:bg-[#164d31] text-white px-6 py-3.5 rounded-2xl font-bold shadow-lg shadow-[#1e6641]/10 transition-all hover:-translate-y-0.5"
+                                    >
+                                        <Plus className="w-5 h-5" />
+                                        Nouvelle Zone
+                                    </button>
+                                )}
+                            </div>
+
+                            {editingZone ? (
+                                <div className="bg-white rounded-[32px] border border-gray-100 p-8 shadow-sm">
+                                    <h2 className="text-xl font-bold mb-6">{editingZone.id ? 'Modifier la zone' : 'Ajouter une zone'}</h2>
+                                    <div className="grid sm:grid-cols-2 gap-6 mb-8">
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-bold text-gray-700">Nom de la Région</label>
+                                            <input 
+                                                type="text" 
+                                                value={editingZone.name || ''} 
+                                                onChange={e => setEditingZone({...editingZone, name: e.target.value})}
+                                                placeholder="ex: Sud-Bandama"
+                                                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1e6641]/20 focus:border-[#1e6641]"
+                                            />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-bold text-gray-700">Cibles (Nombre)</label>
+                                            <input 
+                                                type="text" 
+                                                value={editingZone.target || ''} 
+                                                onChange={e => setEditingZone({...editingZone, target: e.target.value})}
+                                                placeholder="ex: 600"
+                                                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1e6641]/20 focus:border-[#1e6641]"
+                                            />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-bold text-gray-700">Activités Agricoles</label>
+                                            <input 
+                                                type="text" 
+                                                value={editingZone.activity || ''} 
+                                                onChange={e => setEditingZone({...editingZone, activity: e.target.value})}
+                                                placeholder="ex: Cacao, hévéa, palmier à huile"
+                                                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1e6641]/20 focus:border-[#1e6641]"
+                                            />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-sm font-bold text-gray-700">Partenaire IMF</label>
+                                            <input 
+                                                type="text" 
+                                                value={editingZone.imf || ''} 
+                                                onChange={e => setEditingZone({...editingZone, imf: e.target.value})}
+                                                placeholder="ex: Advans CI"
+                                                className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#1e6641]/20 focus:border-[#1e6641]"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="flex justify-end gap-3">
+                                        <button 
+                                            onClick={() => setEditingZone(null)}
+                                            className="px-6 py-3 rounded-xl font-bold text-gray-500 hover:bg-gray-100 transition-colors"
+                                        >
+                                            Annuler
+                                        </button>
+                                        <button 
+                                            onClick={handleSaveZone}
+                                            className="px-6 py-3 rounded-xl font-bold bg-[#1e6641] text-white hover:bg-[#164d31] transition-colors flex items-center gap-2"
+                                        >
+                                            <Save className="w-4 h-4" />
+                                            Enregistrer
+                                        </button>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    {loading ? (
+                                        [1, 2, 3].map(i => <div key={i} className="h-40 bg-gray-100 rounded-3xl animate-pulse" />)
+                                    ) : zones.length === 0 ? (
+                                        <div className="col-span-full bg-white rounded-[40px] border border-gray-100 py-24 text-center">
+                                            <div className="w-20 h-20 bg-gray-50 rounded-3xl flex items-center justify-center mx-auto mb-6 text-gray-300">
+                                                <MapPin className="w-10 h-10" />
+                                            </div>
+                                            <h3 className="text-xl font-bold text-[#0a1a0f] mb-2">Aucune zone</h3>
+                                            <p className="text-gray-400 mb-8 max-w-xs mx-auto">Ajoutez votre première zone d'intervention EDUFI-CI.</p>
+                                        </div>
+                                    ) : (
+                                        zones.map((zone) => (
+                                            <div key={zone.id} className="bg-white rounded-3xl border border-gray-100 p-6 shadow-sm hover:shadow-md transition-shadow relative group">
+                                                <div className="flex justify-between items-start mb-4">
+                                                    <div>
+                                                        <h3 className="font-bold text-lg text-[#1e6641]">{zone.name}</h3>
+                                                        <p className="text-[10px] text-gray-400 uppercase tracking-widest">{zone.imf}</p>
+                                                    </div>
+                                                    <div className="text-right">
+                                                        <span className="font-black text-xl italic">{zone.target}</span>
+                                                        <p className="text-[9px] text-gray-400 uppercase tracking-widest">Cibles</p>
+                                                    </div>
+                                                </div>
+                                                <p className="text-sm text-gray-600 mb-6">{zone.activity}</p>
+                                                
+                                                <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                    <button 
+                                                        onClick={() => setEditingZone(zone)}
+                                                        className="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center hover:bg-blue-100 transition-colors"
+                                                    >
+                                                        <Pencil className="w-4 h-4" />
+                                                    </button>
+                                                    <button 
+                                                        onClick={() => handleDeleteZone(zone.id)}
+                                                        className="w-8 h-8 rounded-lg bg-red-50 text-red-600 flex items-center justify-center hover:bg-red-100 transition-colors"
+                                                    >
+                                                        <Trash2 className="w-4 h-4" />
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        ))
+                                    )}
+                                </div>
+                            )}
                         </div>
                     )}
                 </main>

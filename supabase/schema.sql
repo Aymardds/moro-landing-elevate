@@ -83,3 +83,38 @@ create policy "Authenticated users can manage contact requests"
   to authenticated
   using (true)
   with check (true);
+
+-- Edufi Zones Table
+create table if not exists public.edufi_zones (
+  id uuid default uuid_generate_v4() primary key,
+  name text not null,
+  activity text not null,
+  target text not null,
+  imf text not null,
+  created_at timestamp with time zone default timezone('utc'::text, now()) not null,
+  updated_at timestamp with time zone default timezone('utc'::text, now()) not null
+);
+
+-- Enable RLS
+alter table public.edufi_zones enable row level security;
+
+-- Allow anyone to read zones
+drop policy if exists "Anyone can read zones" on public.edufi_zones;
+create policy "Anyone can read zones"
+  on public.edufi_zones
+  for select
+  using (true);
+
+-- Allow authenticated users to manage zones
+drop policy if exists "Authenticated users can manage zones" on public.edufi_zones;
+create policy "Authenticated users can manage zones"
+  on public.edufi_zones
+  for all
+  to authenticated
+  using (true)
+  with check (true);
+
+-- Trigger for updated_at
+create or replace trigger update_edufi_zones_updated_at
+  before update on public.edufi_zones
+  for each row execute procedure update_updated_at_column();

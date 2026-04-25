@@ -46,3 +46,13 @@ export interface BlogPost {
     created_at: string;
     updated_at: string;
 }
+
+export interface EdufiZone {
+    id: string;
+    name: string;
+    activity: string;
+    target: string;
+    imf: string;
+    created_at: string;
+    updated_at: string;
+}

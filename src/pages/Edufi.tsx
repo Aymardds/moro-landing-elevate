@@ -176,7 +176,7 @@ const Edufi = () => {
         transition: { duration: 0.6 }
     };
 
-    const zones = [
+    const defaultZones = [
         { name: "Sud-Bandama", activity: "Cacao, hévéa, palmier à huile", target: "600", imf: "Advans CI" },
         { name: "Haut-Sassandra", activity: "Cacao, forêt, café", target: "500", imf: "EquiFinance" },
         { name: "Marahoué", activity: "Riz, coton, maraîchage", target: "500", imf: "MICROCRED CI" },
@@ -189,10 +189,24 @@ const Edufi = () => {
         { name: "La Mé", activity: "Anacarde, sésame", target: "300", imf: "CIF CI" },
     ];
 
+    const [zones, setZones] = useState<any[]>(defaultZones);
+    const [loadingZones, setLoadingZones] = useState(true);
+
+    useEffect(() => {
+        const fetchZones = async () => {
+            const { data, error } = await supabase.from('edufi_zones').select('*').order('name', { ascending: true });
+            if (!error && data && data.length > 0) {
+                setZones(data);
+            }
+            setLoadingZones(false);
+        };
+        fetchZones();
+    }, []);
+
 
     return (
 
-        <div className="min-h-screen font-futura selection:bg-[#1e6641] selection:text-white">
+        <div className="min-h-screen font-futura selection:bg-[#1e6641] selection:text-white overflow-x-hidden">
             <SEO
                 title="Projet EDUFI-CI - Éducation Financière Inclusive"
                 description="Le Projet EDUFI-CI vise à former 5 000 bénéficiaires en zone rurale en Côte d'Ivoire à l'éducation financière grâce à la technologie Moro."
@@ -323,7 +337,7 @@ const Edufi = () => {
                 <section className="py-32 bg-[#f9fafb] relative">
                     <div className="container-tight">
                         <div className="text-center max-w-3xl mx-auto mb-20">
-                            <h2 className="text-4xl lg:text-6xl font-bold mb-6 tracking-tight">Un parcours en <span className="text-[#1e6641]">4 Niveaux</span></h2>
+                            <h2 className="text-4xl lg:text-6xl font-bold mb-6 tracking-tight">Un parcours à <span className="text-[#1e6641]">4 Niveaux</span></h2>
                             <p className="text-lg text-muted-foreground">
                                 Une pédagogie inclusive utilisant des supports visuels et des sessions en bambara/dioula pour ne laisser personne de côté.
                             </p>
@@ -391,7 +405,7 @@ const Edufi = () => {
                             <motion.div {...fadeIn} className="flex-1 relative">
                                 <div className="absolute -top-10 -left-10 w-64 h-64 bg-[#1e6641]/5 rounded-full blur-3xl" />
                                 <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-[#1e6641]/5 rounded-full blur-3xl" />
-                                <h2 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tighter">La Technologie <br /><span className="text-[#1e6641]">Incursive</span></h2>
+                                <h2 className="text-4xl lg:text-6xl font-bold mb-8 tracking-tighter">La Technologie <br /><span className="text-[#1e6641]">Inclusive</span></h2>
                                 <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
                                     L'application Moro transforme immédiatement la formation en action. Chaque concept enseigné est mis en pratique le jour même via une interface adaptée.
                                 </p>
@@ -494,17 +508,17 @@ const Edufi = () => {
                                         key={idx}
                                         {...fadeIn}
                                         transition={{ delay: idx * 0.05 }}
-                                        className="p-5 bg-white rounded-2xl border border-border/80 flex justify-between items-center group hover:border-[#1e6641]/40 transition-colors"
+                                        className="p-5 bg-white rounded-2xl border border-border/80 flex items-center gap-3 group hover:border-[#1e6641]/40 transition-colors"
                                     >
-                                        <div>
-                                            <h4 className="font-bold text-[#1e6641] group-hover:translate-x-1 transition-transform">{zone.name}</h4>
-                                            <p className="text-[10px] text-muted-foreground uppercase tracking-tight mb-1">{zone.activity}</p>
-                                            <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-[#e8f5ee] text-[#1e6641] rounded text-[9px] font-bold">
-                                                <Money className="w-3 h-3" />
-                                                {zone.imf}
+                                        <div className="flex-1 min-w-0 pr-3">
+                                            <h4 className="font-bold text-[#1e6641] group-hover:translate-x-1 transition-transform truncate">{zone.name}</h4>
+                                            <p className="text-[10px] text-muted-foreground uppercase tracking-tight mb-2 leading-tight line-clamp-2 pr-2">{zone.activity}</p>
+                                            <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-[#e8f5ee] text-[#1e6641] rounded text-[9px] font-bold whitespace-nowrap">
+                                                <Money className="w-3 h-3 shrink-0" />
+                                                <span className="truncate max-w-[80px] sm:max-w-none">{zone.imf}</span>
                                             </div>
                                         </div>
-                                        <div className="text-right">
+                                        <div className="text-right shrink-0 flex flex-col justify-center">
                                             <div className="font-black text-xl italic">{zone.target}</div>
                                             <div className="text-[9px] text-muted-foreground uppercase tracking-widest">Cibles</div>
                                         </div>
