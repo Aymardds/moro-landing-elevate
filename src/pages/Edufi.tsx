@@ -120,21 +120,21 @@ const ContactDialog = ({ type, trigger }: { type: string, trigger: React.ReactNo
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 pt-4">
                     <div className="space-y-2">
                         <Label htmlFor="name">Nom complet</Label>
-                        <Input id="name" {...form.register("name")} placeholder="Jean Dupont" />
+                        <Input id="name" {...form.register("name")} placeholder="Dion Stéphane Aymard" />
                         {form.formState.errors.name && (
                             <p className="text-xs text-red-500 font-medium">{form.formState.errors.name.message}</p>
                         )}
                     </div>
                     <div className="space-y-2">
                         <Label htmlFor="email">Email</Label>
-                        <Input id="email" type="email" {...form.register("email")} placeholder="jean@exemple.com" />
+                        <Input id="email" type="email" {...form.register("email")} placeholder="exemple@domaine.com" />
                         {form.formState.errors.email && (
                             <p className="text-xs text-red-500 font-medium">{form.formState.errors.email.message}</p>
                         )}
                     </div>
                     <div className="space-y-2">
                         <Label htmlFor="organization">Organisation / Entreprise</Label>
-                        <Input id="organization" {...form.register("organization")} placeholder="Nom de votre structure" />
+                        <Input id="organization" {...form.register("organization")} placeholder="INEXIUMUS GROUP" />
                         {form.formState.errors.organization && (
                             <p className="text-xs text-red-500 font-medium">{form.formState.errors.organization.message}</p>
                         )}
