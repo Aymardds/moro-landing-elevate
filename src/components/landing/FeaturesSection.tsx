@@ -7,7 +7,7 @@ import {
   BarChart3,
   Network
 } from "lucide-react";
-import appDashboardMockup from "@/assets/app-dashboard-mockup.webp";
+import appDashboardMockup from "@/assets/app-features-mockup.png";
 
 const features = [
   {
@@ -110,7 +110,7 @@ export const FeaturesSection = memo(() => {
                 src={appDashboardMockup}
                 alt="Interface de l'application Moro"
                 loading="lazy"
-                className="w-full h-auto drop-shadow-2xl scale-125 transition-transform duration-500"
+                className="w-full max-w-[320px] mx-auto h-auto transition-transform duration-500 hover:scale-105"
               />
             </div>
           </motion.div>
