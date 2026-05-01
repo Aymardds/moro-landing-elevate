@@ -29,11 +29,19 @@ export const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center lg:text-left"
           >
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6">
-              <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-              <span className="text-sm font-medium">
-                +1000 utilisateurs nous font confiance
-              </span>
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-6">
+              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full">
+                <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                <span className="text-sm font-medium">
+                  +1000 utilisateurs nous font confiance
+                </span>
+              </div>
+              <div className="inline-flex items-center gap-2 bg-secondary/10 text-foreground px-4 py-2 rounded-full border border-secondary/20">
+                <span className="text-xl">🌍</span>
+                <span className="text-sm font-medium">
+                  Bientôt disponible en Bambara et Malinké (Dioula)
+                </span>
+              </div>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-6">

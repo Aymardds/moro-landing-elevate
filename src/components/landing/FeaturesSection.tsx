@@ -13,7 +13,7 @@ const features = [
   {
     icon: Wallet,
     title: "Gestion des opérations courantes",
-    description: "Moro organise, planifie les opérations financières liées à un projet par catégorie, assisté par la technologie OCR.",
+    description: "Moro organise, planifie les opérations financières liées à un projet par catégorie, assisté par la technologie OCR, note vocale et textuelle en français, Bambara, Dioula(Malinké),Anglais.",
   },
   {
     icon: Activity,

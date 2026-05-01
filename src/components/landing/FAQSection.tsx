@@ -34,9 +34,14 @@ const faqs = [
       "Oui, Moro dispose d'un mode hors-ligne qui vous permet de continuer à enregistrer des transactions. Les données se synchronisent automatiquement dès que la connexion est rétablie.",
   },
   {
-    question: "Puis-je essayer Moro gratuitement ?",
+    question: "Quels sont les tarifs de Moro ?",
     answer:
-      "Absolument ! Le plan Gratuit vous donne accès aux fonctionnalités de base sans limite de temps. Pour les fonctionnalités avancées (rapports détaillés, membres illimités, etc.), vous pouvez opter pour Moro Pro à partir de 2 500 FCFA/mois.",
+      "Moro propose une offre 'Moro Journée' à 200 FCFA/24h pour tester l'application sans engagement. Pour un accès complet aux fonctionnalités avancées (OCR intelligent, utilisateurs et projets illimités), l'offre 'Moro Essentiel' est disponible à 900 FCFA/mois. Une offre spécifique existe également pour les coopératives et GIE.",
+  },
+  {
+    question: "Dans quelles langues Moro est-il disponible ?",
+    answer:
+      "Moro est disponible en Français et en Anglais. Pour être encore plus inclusif, l'application sera bientôt disponible en Bambara et en Malinké (Dioula). Moro intègre également la reconnaissance vocale et textuelle dans toutes ces langues, facilitant l'enregistrement de vos opérations.",
   },
   {
     question: "Comment contacter le support Moro ?",

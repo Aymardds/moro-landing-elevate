@@ -63,8 +63,8 @@ const plans: Plan[] = [
       { text: "Devis & facturation pro" },
       { text: "Gestion du personnel" },
       { text: "Suivi optimisé des marchandises" },
-      { text: "3 Utilisateurs" },
-      { text: "5 projets actifs collaboratifs" },
+      { text: "Utilisateurs illimités" },
+      { text: "projets actifs collaboratifs illimités" },
       { text: "Annonces de produits illimités sur Moro store" },
       { text: "Support 24/7 & Assistance financement" },
       { text: "Certification de bilan", badge: "Option payante" },
@@ -145,7 +145,7 @@ export const PricingSection = memo(() => {
       // Intent to open the mobile app
       const start = Date.now();
       window.location.href = plan.link;
-      
+
       // We wait to see if the app opened. 
       // If after 1.5s we are still on the landing page, we scroll to download.
       setTimeout(() => {
@@ -364,7 +364,7 @@ export const PricingSection = memo(() => {
             </h2>
             <p className="text-sm text-white/70 leading-relaxed mb-5">
               Pas besoin de savoir tenir une comptabilité. Parlez à Moro en français
-              naturel, envoyez une photo de facture — l'IA fait le reste. Chaque
+              ,Bambara, Dioula(Malinké),Anglais, envoyez une photo de facture — l'IA fait le reste. Chaque
               opération enregistrée renforce votre score financier.
             </p>
             <div className="flex flex-wrap gap-2">
