@@ -8,9 +8,10 @@ import { ImpactSection } from "@/components/landing/ImpactSection";
 import { PricingSection } from "@/components/landing/PricingSection";
 import { TeamSection } from "@/components/landing/TeamSection";
 import { TrustSection } from "@/components/landing/TrustSection";
+import { MediaSection } from "@/components/landing/MediaSection";
 import { NewsSection } from "@/components/landing/NewsSection";
-import { CTASection } from "@/components/landing/CTASection";
 import { FAQSection } from "@/components/landing/FAQSection";
+import { CTASection } from "@/components/landing/CTASection";
 import { Footer } from "@/components/landing/Footer";
 import { SEO } from "@/components/SEO";
 
@@ -34,6 +35,7 @@ const Index = () => {
         <PricingSection />
         <TeamSection />
         <TrustSection />
+        <MediaSection />
         <NewsSection />
         <FAQSection />
         <CTASection />

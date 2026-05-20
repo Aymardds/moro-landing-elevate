@@ -227,7 +227,7 @@ export const PricingSection = memo(() => {
             <motion.div
               key={i}
               {...fadeUp(0.1 + i * 0.08)}
-              className="bg-foreground rounded-2xl p-5 relative overflow-hidden"
+              className="bg-[#0d3e1e] dark:bg-card border border-transparent dark:border-border/50 rounded-2xl p-5 relative overflow-hidden"
             >
               <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full bg-white/[0.04]" />
               <span className="text-3xl block mb-3">{item.icon}</span>
@@ -247,10 +247,10 @@ export const PricingSection = memo(() => {
               key={i}
               {...fadeUp(0.05 + i * 0.08)}
               className={`relative rounded-2xl p-6 flex flex-col border-2 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-elevated ${plan.variant === "best"
-                ? "bg-foreground text-white border-primary lg:scale-[1.04] z-10 shadow-elevated"
+                ? "bg-[#0d3e1e] dark:bg-primary-dark text-white border-primary lg:scale-[1.04] z-10 shadow-elevated"
                 : plan.variant === "coop"
                   ? "bg-gradient-to-br from-[#f4a01c] to-[#d4880f] text-white border-transparent"
-                  : "bg-white text-foreground border-transparent"
+                  : "bg-card text-foreground border-border/50 dark:border-border/80"
                 }`}
             >
               {/* Top badge */}
@@ -353,7 +353,7 @@ export const PricingSection = memo(() => {
         {/* ── MiA Deep Dive ── */}
         <motion.div
           {...fadeUp(0.1)}
-          className="bg-foreground rounded-2xl p-8 mb-10 grid md:grid-cols-2 gap-8 items-center"
+          className="bg-[#0d3e1e] dark:bg-card border border-transparent dark:border-border/50 rounded-2xl p-8 mb-10 grid md:grid-cols-2 gap-8 items-center"
         >
           {/* Left */}
           <div>
@@ -410,7 +410,7 @@ export const PricingSection = memo(() => {
         {/* ── Scoring Deep Dive ── */}
         <motion.div
           {...fadeUp(0.1)}
-          className="bg-white rounded-2xl p-8 grid md:grid-cols-2 gap-8 items-start shadow-card"
+          className="bg-card border border-transparent dark:border-border/50 rounded-2xl p-8 grid md:grid-cols-2 gap-8 items-start shadow-card"
         >
           {/* Left — pipeline */}
           <div>
@@ -435,7 +435,7 @@ export const PricingSection = memo(() => {
                     className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0 relative z-10 ${step.state === "done"
                       ? "bg-primary text-white"
                       : step.state === "active"
-                        ? "border-2 border-primary text-primary bg-white"
+                        ? "border-2 border-primary text-primary bg-background"
                         : "bg-muted text-muted-foreground"
                       }`}
                   >
@@ -467,7 +467,7 @@ export const PricingSection = memo(() => {
                   <span>{s.label}</span>
                   <span className="text-primary">{s.value} / {s.max}</span>
                 </div>
-                <div className="h-2 bg-[#ddd] rounded-full overflow-hidden">
+                <div className="h-2 bg-muted rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${(s.value / s.max) * 100}%` }}

@@ -62,7 +62,7 @@ export const Footer = () => {
           {/* Brand */}
           <div className="col-span-2">
             <Link to="/" className="flex items-center mb-4">
-              <img src={moroLogo} alt="Moro" className="h-10 w-auto brightness-0 invert" loading="lazy" />
+              <img src={moroLogo} alt="Moro" className="h-10 w-auto brightness-0 invert dark:brightness-100 dark:invert-0" loading="lazy" />
             </Link>
             <p className="text-background/60 mb-6 max-w-xs">
               Moro, est une solution inclusive de gestion des opérations courantes et d'assistance financière aux micros projets.

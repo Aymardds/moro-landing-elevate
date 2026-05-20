@@ -206,7 +206,7 @@ const Edufi = () => {
 
     return (
 
-        <div className="min-h-screen font-futura selection:bg-[#1e6641] selection:text-white overflow-x-hidden">
+        <div className="min-h-screen font-futura selection:bg-[#1e6641] selection:text-white overflow-x-hidden bg-background text-foreground">
             <SEO
                 title="Projet EDUFI-CI - Éducation Financière Inclusive"
                 description="Le Projet EDUFI-CI vise à former 5 000 bénéficiaires en zone rurale en Côte d'Ivoire à l'éducation financière grâce à la technologie Moro."
@@ -219,7 +219,7 @@ const Edufi = () => {
             <main>
                 {/* Hero Section */}
                 <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-[#e8f5ee] via-white to-white -z-10" />
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-[#e8f5ee] via-white to-white dark:from-[#1e6641]/10 dark:via-background dark:to-background -z-10" />
                     <div className="container-tight relative">
                         <div className="grid lg:grid-cols-2 gap-16 items-center">
                             <motion.div
@@ -242,8 +242,8 @@ const Edufi = () => {
                                 </p>
 
                                 <div className="flex flex-wrap gap-4 mb-12">
-                                    <div className="flex items-center gap-4 p-5 bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl shadow-[#1e6641]/5 border border-white">
-                                        <div className="p-3 bg-[#e8f5ee] rounded-xl">
+                                    <div className="flex items-center gap-4 p-5 bg-white/80 dark:bg-card/80 backdrop-blur-sm rounded-2xl shadow-xl shadow-[#1e6641]/5 dark:shadow-none border border-white dark:border-border/50">
+                                        <div className="p-3 bg-[#e8f5ee] dark:bg-[#1e6641]/20 rounded-xl">
                                             <Users className="text-[#1e6641] w-6 h-6" />
                                         </div>
                                         <div>
@@ -251,8 +251,8 @@ const Edufi = () => {
                                             <p className="text-[10px] text-muted-foreground uppercase font-black tracking-[0.2em]">Bénéficiaires Directs</p>
                                         </div>
                                     </div>
-                                    <div className="flex items-center gap-4 p-5 bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl shadow-[#1e6641]/5 border border-white">
-                                        <div className="p-3 bg-[#e8f5ee] rounded-xl">
+                                    <div className="flex items-center gap-4 p-5 bg-white/80 dark:bg-card/80 backdrop-blur-sm rounded-2xl shadow-xl shadow-[#1e6641]/5 dark:shadow-none border border-white dark:border-border/50">
+                                        <div className="p-3 bg-[#e8f5ee] dark:bg-[#1e6641]/20 rounded-xl">
                                             <TrendingUp className="text-[#1e6641] w-6 h-6" />
                                         </div>
                                         <div>
@@ -270,7 +270,7 @@ const Edufi = () => {
                                 className="relative group"
                             >
                                 <div className="absolute -inset-4 bg-[#1e6641]/5 rounded-[40px] blur-2xl group-hover:bg-[#1e6641]/10 transition-colors duration-500" />
-                                <div className="relative rounded-[32px] overflow-hidden border-[8px] border-white shadow-2xl">
+                                <div className="relative rounded-[32px] overflow-hidden border-[8px] border-white dark:border-card shadow-2xl">
                                     <img
                                         src={edufiHero}
                                         alt="EDUFI-CI Rural Entrepreneurs"
@@ -289,7 +289,7 @@ const Edufi = () => {
                 </section>
 
                 {/* The Problem Section */}
-                <section className="py-24 bg-white border-y border-border">
+                <section className="py-24 bg-white dark:bg-background border-y border-border">
                     <div className="container-tight">
                         <div className="grid lg:grid-cols-2 gap-20 items-center">
                             <motion.div {...fadeIn}>
@@ -334,7 +334,7 @@ const Edufi = () => {
                 </section>
 
                 {/* Methodology Grid */}
-                <section className="py-32 bg-[#f9fafb] relative">
+                <section className="py-32 bg-[#f9fafb] dark:bg-secondary/20 relative">
                     <div className="container-tight">
                         <div className="text-center max-w-3xl mx-auto mb-20">
                             <h2 className="text-4xl lg:text-6xl font-bold mb-6 tracking-tight">Un parcours à <span className="text-[#1e6641]">4 Niveaux</span></h2>
@@ -380,10 +380,10 @@ const Edufi = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ delay: idx * 0.1 }}
                                     viewport={{ once: true }}
-                                    className="p-8 bg-white rounded-3xl border border-border/60 hover:border-[#1e6641]/30 hover:shadow-2xl hover:shadow-[#1e6641]/5 transition-all group"
+                                    className="p-8 bg-white dark:bg-card rounded-3xl border border-border/60 dark:border-border/40 hover:border-[#1e6641]/30 hover:shadow-2xl hover:shadow-[#1e6641]/5 dark:hover:shadow-none transition-all group"
                                 >
                                     <div className="text-[10px] font-black text-[#1e6641] uppercase tracking-[0.2em] mb-4">{step.level}</div>
-                                    <div className="mb-6 p-4 bg-[#e8f5ee] rounded-2xl w-fit group-hover:scale-110 transition-transform duration-500">
+                                    <div className="mb-6 p-4 bg-[#e8f5ee] dark:bg-[#1e6641]/20 rounded-2xl w-fit group-hover:scale-110 transition-transform duration-500">
                                         {step.icon}
                                     </div>
                                     <h3 className="text-xl font-bold mb-2">{step.title}</h3>
@@ -399,7 +399,7 @@ const Edufi = () => {
                 </section>
 
                 {/* Tech Integration Section */}
-                <section className="py-32 bg-white overflow-hidden">
+                <section className="py-32 bg-white dark:bg-background overflow-hidden">
                     <div className="container-tight">
                         <div className="flex flex-col lg:flex-row items-center gap-24">
                             <motion.div {...fadeIn} className="flex-1 relative">
@@ -418,7 +418,7 @@ const Edufi = () => {
                                         { title: "Pipeline Bancaire", desc: "Score financier prêt pour le financement IMF.", icon: <TrendingUp className="w-5 h-5" /> },
                                     ].map((feature, i) => (
                                         <div key={i} className="flex gap-4">
-                                            <div className="p-2 h-fit bg-[#e8f5ee] rounded-lg text-[#1e6641]">
+                                            <div className="p-2 h-fit bg-[#e8f5ee] dark:bg-[#1e6641]/20 rounded-lg text-[#1e6641]">
                                                 {feature.icon}
                                             </div>
                                             <div>
@@ -472,7 +472,7 @@ const Edufi = () => {
                 </section>
 
                 {/* Geographic Coverage */}
-                <section className="py-32 bg-[#f9fafb]">
+                <section className="py-32 bg-[#f9fafb] dark:bg-secondary/20">
                     <div className="container-tight">
                         <div className="flex flex-col lg:flex-row gap-16 items-start">
                             <div className="lg:w-1/3">
@@ -480,7 +480,7 @@ const Edufi = () => {
                                 <p className="text-muted-foreground leading-relaxed mb-8">
                                     Une présence stratégique dans 10 régions clés de Côte d'Ivoire, sélectionnées pour leur forte activité agricole et leur besoin d'inclusion.
                                 </p>
-                                <div className="p-6 bg-white rounded-2xl border border-border shadow-sm">
+                                <div className="p-6 bg-white dark:bg-card rounded-2xl border border-border dark:border-border/50 shadow-sm">
                                     <h4 className="font-bold mb-4 flex items-center gap-2">
                                         <ShieldCheck className="w-5 h-5 text-[#1e6641]" />
                                         Critères de sélection
@@ -508,12 +508,12 @@ const Edufi = () => {
                                         key={idx}
                                         {...fadeIn}
                                         transition={{ delay: idx * 0.05 }}
-                                        className="p-5 bg-white rounded-2xl border border-border/80 flex items-center gap-3 group hover:border-[#1e6641]/40 transition-colors"
+                                        className="p-5 bg-white dark:bg-card rounded-2xl border border-border/80 dark:border-border/40 flex items-center gap-3 group hover:border-[#1e6641]/40 transition-colors"
                                     >
                                         <div className="flex-1 min-w-0 pr-3">
                                             <h4 className="font-bold text-[#1e6641] group-hover:translate-x-1 transition-transform truncate">{zone.name}</h4>
                                             <p className="text-[10px] text-muted-foreground uppercase tracking-tight mb-2 leading-tight line-clamp-2 pr-2">{zone.activity}</p>
-                                            <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-[#e8f5ee] text-[#1e6641] rounded text-[9px] font-bold whitespace-nowrap">
+                                            <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-[#e8f5ee] dark:bg-[#1e6641]/20 text-[#1e6641] rounded text-[9px] font-bold whitespace-nowrap">
                                                 <Money className="w-3 h-3 shrink-0" />
                                                 <span className="truncate max-w-[80px] sm:max-w-none">{zone.imf}</span>
                                             </div>
@@ -530,7 +530,7 @@ const Edufi = () => {
                 </section>
 
                 {/* CTA Partnership Section */}
-                <section className="py-24 bg-white">
+                <section className="py-24 bg-white dark:bg-background">
                     <div className="container-tight text-center">
                         <div className="max-w-4xl mx-auto">
                             <h3 className="text-[#1e6641] font-black text-sm uppercase tracking-[0.3em] mb-6">Opportunités de Collaboration</h3>
@@ -539,7 +539,7 @@ const Edufi = () => {
                             <div className="grid md:grid-cols-2 gap-8">
                                 <motion.div
                                     whileHover={{ y: -5 }}
-                                    className="p-10 bg-[#e8f5ee]/50 rounded-[32px] border border-[#1e6641]/10 text-left"
+                                    className="p-10 bg-[#e8f5ee]/50 dark:bg-[#1e6641]/5 rounded-[32px] border border-[#1e6641]/10 dark:border-[#1e6641]/20 text-left"
                                 >
                                     <div className="w-14 h-14 bg-[#1e6641] rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-[#1e6641]/20">
                                         <TrendingUp className="text-white w-7 h-7" />
@@ -561,9 +561,9 @@ const Edufi = () => {
 
                                 <motion.div
                                     whileHover={{ y: -5 }}
-                                    className="p-10 bg-white rounded-[32px] border border-border text-left shadow-sm hover:shadow-xl hover:shadow-[#1e6641]/5 transition-all"
+                                    className="p-10 bg-white dark:bg-card rounded-[32px] border border-border dark:border-border/50 text-left shadow-sm hover:shadow-xl hover:shadow-[#1e6641]/5 transition-all"
                                 >
-                                    <div className="w-14 h-14 bg-[#f9fafb] border border-border rounded-2xl flex items-center justify-center mb-8">
+                                    <div className="w-14 h-14 bg-[#f9fafb] dark:bg-muted border border-border dark:border-border/50 rounded-2xl flex items-center justify-center mb-8">
                                         <Users className="text-[#1e6641] w-7 h-7" />
                                     </div>
                                     <h4 className="text-2xl font-bold mb-4">Partenariat Stratégique</h4>
@@ -573,7 +573,7 @@ const Edufi = () => {
                                     <ContactDialog
                                         type="Partenariat Stratégique"
                                         trigger={
-                                            <button className="w-full bg-[#f9fafb] text-[#1e6641] border border-[#1e6641]/20 py-4 rounded-xl font-bold hover:bg-[#e8f5ee] transition-colors flex items-center justify-center gap-2">
+                                            <button className="w-full bg-[#f9fafb] dark:bg-muted text-[#1e6641] border border-[#1e6641]/20 py-4 rounded-xl font-bold hover:bg-[#e8f5ee] dark:hover:bg-[#1e6641]/20 transition-colors flex items-center justify-center gap-2">
                                                 Demander un Partenariat
                                                 <ArrowRight className="w-4 h-4" />
                                             </button>

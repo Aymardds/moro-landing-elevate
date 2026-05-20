@@ -10,10 +10,10 @@ export const HeroSection = () => {
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-60"
+        className="absolute inset-0 bg-cover bg-center opacity-60 dark:opacity-10 dark:mix-blend-overlay"
         style={{ backgroundImage: `url(${waveBg})` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/40 dark:from-background/20 dark:via-transparent dark:to-background/40" />
       <WavyBackground
         colors={["#1B7D3C", "#F7941D", "#1B7D3C"]}
         opacity={0.02}

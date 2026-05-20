@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ChatWidget } from "./components/chat/ChatWidget";
 import ScrollToHashElement from "./components/utils/ScrollToHashElement";
 import { supabase } from "./lib/supabase";
+import { ThemeProvider } from "next-themes";
 
 // Lazy load pages for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -59,35 +60,37 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-          <ScrollToHashElement />
-          <Suspense fallback={
-            <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50/50">
-              <div className="w-10 h-10 border-4 border-[#1e6641]/20 border-t-[#1e6641] rounded-full animate-spin"></div>
-            </div>
-          }>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/business" element={<Business />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogDetail />} />
-              {/* Protected Admin Routes */}
-              <Route path="/admin/login" element={<AdminLogin />} />
-              <Route path="/admin" element={<AdminDashboard />} />
-              <Route path="/admin/blog/:id" element={<BlogEditor />} />
-              <Route path="/cgu" element={<CGU />} />
-              <Route path="/edufi" element={<Edufi />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-          <ChatWidget />
-        </BrowserRouter>
-      </TooltipProvider>
+      <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+            <ScrollToHashElement />
+            <Suspense fallback={
+              <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50/50">
+                <div className="w-10 h-10 border-4 border-[#1e6641]/20 border-t-[#1e6641] rounded-full animate-spin"></div>
+              </div>
+            }>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/business" element={<Business />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogDetail />} />
+                {/* Protected Admin Routes */}
+                <Route path="/admin/login" element={<AdminLogin />} />
+                <Route path="/admin" element={<AdminDashboard />} />
+                <Route path="/admin/blog/:id" element={<BlogEditor />} />
+                <Route path="/cgu" element={<CGU />} />
+                <Route path="/edufi" element={<Edufi />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Suspense>
+            <ChatWidget />
+          </BrowserRouter>
+        </TooltipProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 };

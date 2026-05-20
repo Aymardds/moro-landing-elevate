@@ -24,7 +24,7 @@ const Blog = () => {
     }, []);
 
     return (
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col bg-background text-foreground">
             <SEO
                 title="Moro - Blog et Actualités"
                 description="Suivez nos actualités, nos conseils pour les coopératives et notre impact sur le terrain."
@@ -32,14 +32,14 @@ const Blog = () => {
                 canonical="https://www.moro-apps.net/blog"
             />
             <Header />
-            <main className="flex-grow pt-24 pb-16 px-8 sm:px-12 lg:px-20 font-futura bg-white">
+            <main className="flex-grow pt-24 pb-16 px-8 sm:px-12 lg:px-20 font-futura bg-background">
                 <div className="max-w-[1200px] mx-auto text-center mb-16">
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-4xl sm:text-5xl lg:text-7xl font-bold text-[#0a1a0f] leading-[1.1] mb-6"
+                        className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground leading-[1.1] mb-6"
                     >
-                        Le Blog <br /> <span className="text-[#1e6641] italic">Moro</span>
+                        Le Blog <br /> <span className="text-gradient italic">Moro</span>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -64,7 +64,7 @@ const Blog = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="bg-[#f8f9fa] rounded-3xl overflow-hidden border border-gray-100 group flex flex-col"
+                                className="bg-[#f8f9fa] dark:bg-card rounded-3xl overflow-hidden border border-gray-100 dark:border-border/50 group flex flex-col"
                             >
                                 <div className="relative h-64 overflow-hidden">
                                     <img
@@ -72,7 +72,7 @@ const Blog = () => {
                                         alt={article.title}
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                     />
-                                    <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-[#1e6641] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-sm">
+                                    <div className="absolute top-4 left-4 bg-white/95 dark:bg-black/80 backdrop-blur-sm text-[#1e6641] dark:text-primary-light px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-sm">
                                         {article.category}
                                     </div>
                                 </div>
@@ -81,15 +81,15 @@ const Blog = () => {
                                         <Calendar className="w-4 h-4" />
                                         <span>{new Date(article.created_at).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}</span>
                                     </div>
-                                    <h2 className="text-2xl font-bold text-[#0a1a0f] mb-3 leading-tight group-hover:text-[#1e6641] transition-colors line-clamp-2">
+                                    <h2 className="text-2xl font-bold text-[#0a1a0f] dark:text-foreground mb-3 leading-tight group-hover:text-primary transition-colors line-clamp-2">
                                         {article.title}
                                     </h2>
-                                    <p className="text-gray-600 mb-6 flex-grow leading-relaxed line-clamp-3">
+                                    <p className="text-gray-600 dark:text-muted-foreground mb-6 flex-grow leading-relaxed line-clamp-3">
                                         {article.excerpt}
                                     </p>
                                     <Link
                                         to={`/blog/${article.slug}`}
-                                        className="inline-flex items-center gap-2 text-[#1e6641] font-bold text-sm hover:gap-3 transition-all uppercase tracking-wide"
+                                        className="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all uppercase tracking-wide"
                                     >
                                         Lire la suite
                                         <ArrowRight className="w-4 h-4" />

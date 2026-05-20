@@ -67,7 +67,7 @@ const team = [
 
 export const TeamSection = () => {
     return (
-        <section id="team" className="section-padding bg-white">
+        <section id="team" className="section-padding bg-white dark:bg-background">
             <div className="container-tight">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

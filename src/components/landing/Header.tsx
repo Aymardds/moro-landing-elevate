@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
 import moroLogo from "@/assets/moro-logo.webp";
 
 const navLinks = [
@@ -17,8 +18,33 @@ const navLinks = [
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const renderThemeToggle = () => {
+    if (!mounted) return <div className="w-9 h-9" />;
+    return (
+      <Button
+        variant="ghost"
+        size="icon"
+        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        className="rounded-full w-9 h-9 text-muted-foreground hover:text-foreground transition-colors"
+        aria-label="Changer de thème"
+      >
+        {theme === "dark" ? (
+          <Sun className="h-5 h-5 text-accent animate-pulse" />
+        ) : (
+          <Moon className="h-5 h-5 text-primary" />
+        )}
+      </Button>
+    );
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,6 +98,7 @@ export const Header = () => {
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-3">
+          {renderThemeToggle()}
           <a href="http://business.moro-apps.net" target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" size="sm">
               Connexion
@@ -82,14 +109,17 @@ export const Header = () => {
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden p-2"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Menu"
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile controls */}
+        <div className="flex items-center gap-2 lg:hidden">
+          {renderThemeToggle()}
+          <button
+            className="p-2 text-foreground"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
