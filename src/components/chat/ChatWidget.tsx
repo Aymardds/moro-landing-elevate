@@ -460,6 +460,7 @@ export const ChatWidget = () => {
                                     value={inputValue}
                                     onChange={(e) => setInputValue(e.target.value)}
                                     placeholder="Écrivez votre message..."
+                                    aria-label="Votre message"
                                     className="w-full bg-gray-50 border border-gray-200 rounded-full px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                                     onKeyDown={(e) => {
                                         if (e.key === 'Enter') {
@@ -470,6 +471,7 @@ export const ChatWidget = () => {
                                 <Button
                                     size="icon"
                                     onClick={handleSend}
+                                    aria-label="Envoyer le message"
                                     className="absolute right-1 w-8 h-8 rounded-full bg-primary hover:bg-primary-dark"
                                 >
                                     <Send className="w-4 h-4 text-white" />
@@ -485,6 +487,7 @@ export const ChatWidget = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsOpen(!isOpen)}
+                aria-label={isOpen ? "Fermer le chat" : "Ouvrir le chat"}
                 className="relative group w-14 h-14 bg-primary rounded-full shadow-lg shadow-primary/30 flex items-center justify-center text-white transition-all duration-300 hover:shadow-xl hover:shadow-primary/40 z-50"
             >
                 {/* Pulse Effect */}

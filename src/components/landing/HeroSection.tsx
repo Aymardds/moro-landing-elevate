@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Apple, PlayCircle, ArrowRight } from "lucide-react";
 import { WavyBackground } from "@/components/ui/WavyBackground";
 import waveBg from "@/assets/wave-bg.webp";
-import heroPeople from "@/assets/hero-people.webp";
 
 export const HeroSection = () => {
   return (
@@ -17,7 +16,7 @@ export const HeroSection = () => {
       <WavyBackground
         colors={["#1B7D3C", "#F7941D", "#1B7D3C"]}
         opacity={0.02}
-        className="opacity-30"
+        className="opacity-30 hidden md:block"
       />
 
       <div className="container-tight relative z-10">
@@ -92,7 +91,7 @@ export const HeroSection = () => {
               {/* People Illustration */}
               {/* People Illustration */}
               <img
-                src={heroPeople}
+                src="/hero-people.webp"
                 alt="Jeunes filles utilisant Moro"
                 className="relative z-10 w-full h-auto object-contain drop-shadow-2xl"
                 loading="eager"
