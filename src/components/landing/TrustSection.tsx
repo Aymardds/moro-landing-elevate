@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { memo } from "react";
 
 const stats = [
-  { value: "1,000+", label: "Utilisateurs actifs dont 40% sont des femmes" },
-  { value: "500+", label: "transactions/jour" },
-  { value: "5+", label: "Partenariats stratégiques" },
-  { value: "1", label: "Pays africain" },
+  { value: "650+", label: "Opérations enregistrées" },
+  { value: "33 Mds", label: "FCFA de transactions totales" },
+  { value: "11%", label: "Opérations justifiées" },
+  { value: "1,500+", label: "Utilisateurs" },
 ];
 
 const testimonials = [

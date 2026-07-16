@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { supabase, type BlogPost } from "@/lib/supabase";
-import { ArrowLeft, LayoutDashboard, LogOut, Save, Loader2 } from "lucide-react";
+import { ArrowLeft, LayoutDashboard, LogOut, Save, Loader2, Upload, ImageIcon, Link2, X } from "lucide-react";
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { useToast } from "@/hooks/use-toast";
@@ -23,6 +23,8 @@ const BlogEditor = () => {
     const isNew = id === "new" || !id;
     const [saving, setSaving] = useState(false);
     const [activeTab, setActiveTab] = useState<"content" | "seo">("content");
+    const [imageInputMode, setImageInputMode] = useState<"upload" | "url">("url");
+    const [uploadingImage, setUploadingImage] = useState(false);
 
     const [form, setForm] = useState<Partial<BlogPost>>({
         title: "",
@@ -96,6 +98,30 @@ const BlogEditor = () => {
             navigate("/admin");
         }
         setSaving(false);
+    };
+
+    const handleImageUpload = async (file: File) => {
+        if (!file) return;
+        const maxSize = 5 * 1024 * 1024; // 5MB
+        if (file.size > maxSize) {
+            toast({ variant: "destructive", title: "Fichier trop volumineux", description: "Max 5 Mo autorisé." });
+            return;
+        }
+        setUploadingImage(true);
+        const ext = file.name.split(".").pop();
+        const fileName = `blog/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+        const { error: uploadError } = await supabase.storage
+            .from("blog-images")
+            .upload(fileName, file, { upsert: false, contentType: file.type });
+        if (uploadError) {
+            toast({ variant: "destructive", title: "Erreur upload", description: uploadError.message });
+            setUploadingImage(false);
+            return;
+        }
+        const { data: urlData } = supabase.storage.from("blog-images").getPublicUrl(fileName);
+        update("image", urlData.publicUrl);
+        toast({ title: "Image uploadée !", description: "L'image a été enregistrée avec succès." });
+        setUploadingImage(false);
     };
 
     const handleLogout = async () => {
@@ -194,17 +220,107 @@ const BlogEditor = () => {
                                 </div>
                             </div>
 
+                            {/* Image mise en avant */}
                             <div>
-                                <label className="block text-sm font-bold text-gray-700 mb-2">Image (URL)</label>
-                                <input
-                                    type="text"
-                                    value={form.image || ""}
-                                    onChange={(e) => update("image", e.target.value)}
-                                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-[#1e6641] focus:ring-2 focus:ring-[#1e6641]/10 transition-all"
-                                    placeholder="https://... ou /impact/action-1.jpg"
-                                />
+                                <label className="block text-sm font-bold text-gray-700 mb-2">
+                                    🖼️ Image mise en avant
+                                    <span className="text-xs text-gray-400 font-normal ml-2">(og:image / link preview)</span>
+                                </label>
+
+                                {/* Mode selector */}
+                                <div className="flex gap-1 bg-gray-100 rounded-xl p-1 w-fit mb-4">
+                                    <button
+                                        type="button"
+                                        onClick={() => setImageInputMode("upload")}
+                                        className={`flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-sm font-semibold transition-all ${
+                                            imageInputMode === "upload"
+                                                ? "bg-white text-[#1e6641] shadow-sm"
+                                                : "text-gray-500 hover:text-gray-700"
+                                        }`}
+                                    >
+                                        <Upload className="w-3.5 h-3.5" />
+                                        Uploader
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => setImageInputMode("url")}
+                                        className={`flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-sm font-semibold transition-all ${
+                                            imageInputMode === "url"
+                                                ? "bg-white text-[#1e6641] shadow-sm"
+                                                : "text-gray-500 hover:text-gray-700"
+                                        }`}
+                                    >
+                                        <Link2 className="w-3.5 h-3.5" />
+                                        URL
+                                    </button>
+                                </div>
+
+                                {/* Upload mode */}
+                                {imageInputMode === "upload" && (
+                                    <label className={`flex flex-col items-center justify-center w-full border-2 border-dashed rounded-xl cursor-pointer transition-all ${
+                                        uploadingImage
+                                            ? "border-[#1e6641]/40 bg-[#e8f5ee]/30"
+                                            : "border-gray-200 hover:border-[#1e6641] hover:bg-[#e8f5ee]/20"
+                                    }`}>
+                                        <div className="py-8 px-4 text-center">
+                                            {uploadingImage ? (
+                                                <>
+                                                    <Loader2 className="w-8 h-8 mx-auto mb-2 text-[#1e6641] animate-spin" />
+                                                    <p className="text-sm text-gray-500">Upload en cours...</p>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <ImageIcon className="w-8 h-8 mx-auto mb-2 text-gray-400" />
+                                                    <p className="text-sm font-semibold text-gray-600">Cliquez pour choisir une image</p>
+                                                    <p className="text-xs text-gray-400 mt-1">PNG, JPG, WebP — max 5 Mo</p>
+                                                </>
+                                            )}
+                                        </div>
+                                        <input
+                                            type="file"
+                                            accept="image/png,image/jpeg,image/webp,image/gif"
+                                            className="hidden"
+                                            disabled={uploadingImage}
+                                            onChange={(e) => {
+                                                const file = e.target.files?.[0];
+                                                if (file) handleImageUpload(file);
+                                            }}
+                                        />
+                                    </label>
+                                )}
+
+                                {/* URL mode */}
+                                {imageInputMode === "url" && (
+                                    <input
+                                        type="text"
+                                        value={form.image || ""}
+                                        onChange={(e) => update("image", e.target.value)}
+                                        className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-[#1e6641] focus:ring-2 focus:ring-[#1e6641]/10 transition-all"
+                                        placeholder="https://... ou /impact/action-1.jpg"
+                                    />
+                                )}
+
+                                {/* Preview */}
                                 {form.image && (
-                                    <img src={form.image} alt="Aperçu" className="mt-3 h-36 rounded-xl object-cover w-full" />
+                                    <div className="relative mt-3 group">
+                                        <img
+                                            src={form.image}
+                                            alt="Aperçu"
+                                            className="h-44 rounded-xl object-cover w-full border border-gray-100"
+                                        />
+                                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 rounded-xl transition-all" />
+                                        <button
+                                            type="button"
+                                            onClick={() => update("image", "")}
+                                            className="absolute top-2 right-2 bg-white/90 hover:bg-red-50 text-gray-600 hover:text-red-500 rounded-full p-1.5 shadow transition-all opacity-0 group-hover:opacity-100"
+                                            title="Supprimer l'image"
+                                        >
+                                            <X className="w-4 h-4" />
+                                        </button>
+                                        <div className="absolute bottom-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-all max-w-[80%] truncate">
+                                            {form.image}
+                                        </div>
+                                    </div>
                                 )}
                             </div>
 

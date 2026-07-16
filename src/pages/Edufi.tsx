@@ -586,8 +586,8 @@ const Edufi = () => {
                 </section>
 
                 {/* Final CTA/Vision */}
-                <section className="relative py-32 overflow-hidden">
-                    <div className="absolute inset-0 bg-[#1e6641] -z-10" />
+                <section className="relative py-32 overflow-hidden bg-[#1e6641]">
+
                     <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5 pointer-events-none" />
 
                     <div className="container-tight text-center relative z-10">
