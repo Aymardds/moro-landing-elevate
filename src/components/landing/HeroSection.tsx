@@ -32,32 +32,31 @@ export const HeroSection = () => {
               <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full">
                 <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
                 <span className="text-sm font-medium">
-                  +1000 utilisateurs nous font confiance
+                  +2000 utilisateurs nous font confiance
                 </span>
               </div>
-              <div className="inline-flex items-center gap-2 bg-secondary/10 text-foreground px-4 py-2 rounded-full border border-secondary/20">
-                <span className="text-xl">🌍</span>
-                <span className="text-sm font-medium">
-                  Bientôt disponible en Bambara et Malinké (Dioula)
+              <div className="inline-flex items-center gap-2 bg-secondary/10 text-foreground px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-secondary/20 text-xs sm:text-sm">
+                <span className="text-lg sm:text-xl">🌍</span>
+                <span className="font-medium">
+                  Disponible en <strong className="font-bold text-foreground">Français</strong>, <strong className="font-bold text-foreground">Anglais</strong>, <strong className="font-bold text-foreground">Bambara</strong>, <strong className="font-bold text-foreground">Malinké</strong>, <strong className="font-bold text-foreground">Arabe</strong>
                 </span>
               </div>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-6">
               <span className="text-gradient font-montserrat font-black"> Une Solution Simple, Fiable et Inclusive</span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8">
+            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8">
               Moro vous aidera à organiser, gérer vos ressources et vous accompagne dans le financement de votre projet.
             </p>
 
-
-            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start w-full sm:w-auto">
               <a
                 href="https://apps.apple.com/fr/app/moro/id6569222115"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 bg-foreground text-background px-5 py-3 rounded-xl hover:opacity-90 transition-opacity"
+                className="inline-flex items-center justify-center gap-3 bg-foreground text-background px-5 py-3 rounded-xl hover:opacity-90 transition-opacity w-full sm:w-auto"
               >
                 <Apple className="w-6 h-6" />
                 <div className="text-left">
@@ -69,7 +68,7 @@ export const HeroSection = () => {
                 href="https://play.google.com/store/apps/details?id=com.litekev.moro"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 bg-foreground text-background px-5 py-3 rounded-xl hover:opacity-90 transition-opacity"
+                className="inline-flex items-center justify-center gap-3 bg-foreground text-background px-5 py-3 rounded-xl hover:opacity-90 transition-opacity w-full sm:w-auto"
               >
                 <PlayCircle className="w-6 h-6" />
                 <div className="text-left">
@@ -89,12 +88,12 @@ export const HeroSection = () => {
           >
             <div className="relative w-full max-w-[1080px]">
               {/* People Illustration */}
-              {/* People Illustration */}
               <img
                 src="/hero-people.webp"
                 alt="Jeunes filles utilisant Moro"
                 className="relative z-10 w-full h-auto object-contain drop-shadow-2xl"
                 loading="eager"
+                decoding="async"
                 // @ts-ignore
                 fetchpriority="high"
                 width="1024"
@@ -107,15 +106,15 @@ export const HeroSection = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="absolute bottom-4 md:-bottom-6 left-0 glass rounded-xl p-4 shadow-elevated z-20"
+              className="absolute bottom-2 left-2 sm:bottom-4 md:-bottom-6 sm:left-0 glass rounded-xl p-3 sm:p-4 shadow-elevated z-20 max-w-[calc(100%-1rem)]"
             >
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <span className="text-2xl">📊</span>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <span className="text-xl sm:text-2xl">📊</span>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-foreground">98%</div>
-                  <div className="text-sm text-muted-foreground">
+                  <div className="text-xl sm:text-2xl font-bold text-foreground">98%</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">
                     Taux de satisfaction
                   </div>
                 </div>
@@ -127,19 +126,19 @@ export const HeroSection = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="absolute -top-4 right-0 glass rounded-xl p-4 shadow-elevated z-20"
+              className="absolute -top-2 right-2 sm:-top-4 sm:right-0 glass rounded-xl p-3 sm:p-4 shadow-elevated z-20 max-w-[calc(100%-1rem)]"
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 sm:gap-3">
                 <div className="flex -space-x-2">
                   {[1, 2, 3].map((i) => (
                     <div
                       key={i}
-                      className="w-8 h-8 rounded-full bg-primary/20 border-2 border-card"
+                      className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary/20 border-2 border-card"
                     />
                   ))}
                 </div>
-                <div className="text-sm">
-                  <span className="font-bold text-foreground">+1000</span>
+                <div className="text-xs sm:text-sm">
+                  <span className="font-bold text-foreground">+2 000</span>
                   <span className="text-muted-foreground"> utilisateurs</span>
                 </div>
               </div>

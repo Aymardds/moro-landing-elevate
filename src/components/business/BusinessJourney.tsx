@@ -6,7 +6,11 @@ const steps = [
         icon: "🗣️",
         step: "Étape 1",
         title: "Saisie par IA conversationnelle",
-        desc: "L'utilisateur parle ou écrit en français naturel : \"J'ai vendu 3 box de poulet à 35 000 FCFA pour mon projet AfricaFood\". MiA comprend, confirme et enregistre 3 transactions distinctes en moins de 10 secondes. Pas de formulaire, pas de catégorie à choisir manuellement.",
+        desc: (
+            <>
+                L&apos;utilisateur parle ou écrit en <strong className="font-bold text-[#0a1a0f]">français</strong> naturel : &quot;J&apos;ai vendu 3 box de poulet à 35 000 FCFA pour mon projet AfricaFood&quot;. MiA comprend, confirme et enregistre 3 transactions distinctes en moins de 10 secondes. Pas de formulaire, pas de catégorie à choisir manuellement.
+            </>
+        ),
         tags: ["Saisie vocale & texte", "OCR factures photo", "Confirmation IA avant action"],
         state: "done"
     },
@@ -53,12 +57,12 @@ const steps = [
 
 export const BusinessJourney = () => {
     return (
-        <section id="journey" className="bg-white py-24 px-8 sm:px-12 lg:px-20 font-futura">
-            <div className="max-w-[1200px] mx-auto text-center mb-20">
+        <section id="journey" className="bg-white py-16 md:py-24 px-4 sm:px-8 md:px-12 lg:px-20 font-futura">
+            <div className="max-w-[1200px] mx-auto text-center mb-16 sm:mb-20">
                 <span className="inline-block bg-[#e8f5ee] text-[#2d8a58] text-[11px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full mb-5">
                     Le parcours complet
                 </span>
-                <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0a1a0f] leading-[1.15] mb-4">
+                <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-[#0a1a0f] leading-[1.15] mb-4">
                     De l'opération à la certification<br />en 5 étapes automatiques
                 </h2>
                 <p className="text-base text-[#6b7066] max-w-[520px] mx-auto leading-relaxed">
@@ -68,9 +72,9 @@ export const BusinessJourney = () => {
 
             <div className="max-w-[1000px] mx-auto relative lg:pl-10">
                 {/* Vertical Line */}
-                <div className="absolute left-[39px] lg:left-[49px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#e8f5ee] via-[#1e6641] to-[#e8f5ee]" />
+                <div className="absolute left-[24px] sm:left-[39px] lg:left-[49px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#e8f5ee] via-[#1e6641] to-[#e8f5ee]" />
 
-                <div className="space-y-14">
+                <div className="space-y-12 sm:space-y-14">
                     {steps.map((step, i) => (
                         <motion.div
                             key={i}
@@ -78,7 +82,7 @@ export const BusinessJourney = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.6, delay: i * 0.1 }}
-                            className="grid grid-cols-[80px,1fr] gap-8 relative"
+                            className="grid grid-cols-[50px,1fr] sm:grid-cols-[80px,1fr] gap-4 sm:gap-8 relative"
                         >
                             <div className="flex flex-col items-center">
                                 <div className={`w-[42px] h-[42px] rounded-full flex items-center justify-center text-xl z-10 border-[3px] border-white shadow-[0_0_0_2px] ${step.special ? 'bg-[#e8870a] shadow-[#e8870a] ring-[6px] ring-[#e8870a]/20' :

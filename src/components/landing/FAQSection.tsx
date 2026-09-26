@@ -40,8 +40,11 @@ const faqs = [
   },
   {
     question: "Dans quelles langues Moro est-il disponible ?",
-    answer:
-      "Moro est disponible en Français et en Anglais. Pour être encore plus inclusif, l'application sera bientôt disponible en Bambara et en Malinké (Dioula). Moro intègre également la reconnaissance vocale et textuelle dans toutes ces langues, facilitant l'enregistrement de vos opérations.",
+    answer: (
+      <>
+        Moro est disponible en <strong className="font-bold text-foreground">Français</strong>, <strong className="font-bold text-foreground">Anglais</strong>, <strong className="font-bold text-foreground">Bambara</strong>, <strong className="font-bold text-foreground">Malinké</strong> et <strong className="font-bold text-foreground">Arabe</strong>. Moro intègre également la reconnaissance vocale et textuelle dans toutes ces langues, facilitant l'enregistrement de vos opérations.
+      </>
+    ),
   },
   {
     question: "Comment contacter le support Moro ?",
@@ -110,7 +113,7 @@ export const FAQSection = memo(() => {
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section id="faq" className="section-padding bg-muted/30">
+    <section id="faq" className="section-padding bg-muted/30 section-deferred">
       <div className="container-tight">
         {/* Header */}
         <motion.div

@@ -7,13 +7,17 @@ import {
   BarChart3,
   Network
 } from "lucide-react";
-import appDashboardMockup from "@/assets/app-features-mockup.png";
+import appDashboardMockup from "@/assets/app-features-mockup.webp";
 
 const features = [
   {
     icon: Wallet,
     title: "Gestion des opérations courantes",
-    description: "Moro organise, planifie les opérations financières liées à un projet par catégorie, assisté par la technologie OCR, note vocale et textuelle en français, Bambara, Dioula(Malinké),Anglais.",
+    description: (
+      <>
+        Moro organise, planifie les opérations financières liées à un projet par catégorie, assisté par la technologie OCR, note vocale et textuelle en <strong className="font-bold text-foreground">français</strong>, <strong className="font-bold text-foreground">anglais</strong>, <strong className="font-bold text-foreground">bambara</strong>, <strong className="font-bold text-foreground">malinké</strong> et <strong className="font-bold text-foreground">arabe</strong>.
+      </>
+    ),
   },
   {
     icon: Activity,
@@ -110,6 +114,9 @@ export const FeaturesSection = memo(() => {
                 src={appDashboardMockup}
                 alt="Interface de l'application Moro"
                 loading="lazy"
+                decoding="async"
+                width="320"
+                height="800"
                 className="w-full max-w-[320px] mx-auto h-auto transition-transform duration-500 hover:scale-105"
               />
             </div>

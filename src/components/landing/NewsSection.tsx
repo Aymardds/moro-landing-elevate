@@ -20,7 +20,7 @@ export const NewsSection = () => {
     if (articles.length === 0) return null;
 
     return (
-        <section id="news" className="section-padding bg-muted/20">
+        <section id="news" className="section-padding bg-muted/20 section-deferred">
             <div className="container-tight">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -61,6 +61,9 @@ export const NewsSection = () => {
                                     src={article.image || "/impact/action-1.jpg"}
                                     alt={article.title}
                                     loading="lazy"
+                                    decoding="async"
+                                    width="600"
+                                    height="350"
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                                 <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest shadow-sm">

@@ -20,7 +20,7 @@ import {
     Clock,
     Loader2
 } from "lucide-react";
-import edufiHero from "@/assets/edufi-hero.png";
+import edufiHero from "@/assets/edufi-hero.webp";
 import {
     Dialog,
     DialogContent,
@@ -339,7 +339,7 @@ const Edufi = () => {
                         <div className="text-center max-w-3xl mx-auto mb-20">
                             <h2 className="text-4xl lg:text-6xl font-bold mb-6 tracking-tight">Un parcours à <span className="text-[#1e6641]">4 Niveaux</span></h2>
                             <p className="text-lg text-muted-foreground">
-                                Une pédagogie inclusive utilisant des supports visuels et des sessions en bambara/dioula pour ne laisser personne de côté.
+                                Une pédagogie inclusive utilisant des supports visuels et des sessions en <strong className="font-bold text-foreground">bambara/dioula</strong> pour ne laisser personne de côté.
                             </p>
                         </div>
 

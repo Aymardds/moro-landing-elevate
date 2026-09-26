@@ -19,10 +19,11 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Moro - Gestion et financement de microprojet en Afrique"
-        description="Moro, est une solution inclusive de gestion des opérations courantes et d'assistance financière aux micros projets. Simplifiez vos cotisations et accédez au microfinancement."
-        keywords="coopérative, association, gestion, financement, Afrique, microfinance, cotisation, tontine, épargne"
+        title="Moro — Gérez votre activité & accédez au financement en Afrique"
+        description="Moro est l'application de gestion financière inclusive pour entrepreneurs, coopératives, agriculteurs et PME en Afrique. +2 000 utilisateurs. Saisie vocale en français, anglais, bambara, malinké et arabe. Bilan OHADA automatique & accès au microfinancement."
+        keywords="gestion financière Afrique, coopérative, association, GIE, microfinance, cotisation, tontine, épargne, OHADA, SYSCOA, bilan, scoring financier, bambara, malinké, arabe, inclusion financière, micro-entrepreneur, PME Afrique, EDUFI"
         canonical="https://www.moro-apps.net"
+        ogImage="https://www.moro-apps.net/og-moro.jpg"
       />
       <Header />
       <main>

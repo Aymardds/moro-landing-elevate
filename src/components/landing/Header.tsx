@@ -70,7 +70,7 @@ export const Header = () => {
       <div className="container-tight flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src={moroLogo} alt="Moro" className="h-10 w-auto" />
+          <img src={moroLogo} alt="Moro" className="h-10 w-auto" width="120" height="40" decoding="async" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -99,7 +99,7 @@ export const Header = () => {
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-3">
           {renderThemeToggle()}
-          <a href="http://business.moro-apps.net" target="_blank" rel="noopener noreferrer">
+          <a href="https://business.moro-apps.net/login" target="_blank" rel="noopener noreferrer">
             <Button variant="ghost" size="sm">
               Connexion
             </Button>
@@ -154,7 +154,7 @@ export const Header = () => {
                 )
               ))}
               <div className="flex flex-col gap-3 pt-4 border-t border-border">
-                <a href="http://business.moro-apps.net" target="_blank" rel="noopener noreferrer" className="w-full">
+                <a href="https://business.moro-apps.net/login" target="_blank" rel="noopener noreferrer" className="w-full">
                   <Button variant="outline" className="w-full">
                     Connexion
                   </Button>

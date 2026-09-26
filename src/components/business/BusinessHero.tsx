@@ -23,7 +23,7 @@ export const BusinessHero = () => {
             </div>
 
             {/* Content Left */}
-            <div className="relative z-10 flex flex-col justify-center px-8 sm:px-12 lg:px-20 py-24 lg:py-32">
+            <div className="relative z-10 flex flex-col justify-center px-4 sm:px-8 md:px-12 lg:px-20 py-20 lg:py-32">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}

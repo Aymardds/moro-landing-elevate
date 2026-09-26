@@ -12,32 +12,38 @@ const benefits = [
   {
     icon: Users,
     title: "Gestion simplifiée",
-    description: "Gérez vos membres, cotisations et assemblées en quelques clics. Fini les registres papier.",
+    description:
+      "Digitalisez votre activité et gérez vos opérations, membres, cotisations et projets depuis un seul espace. Fini les registres dispersés et les calculs manuels.",
   },
   {
     icon: Wallet,
     title: "Suivi financier en temps réel",
-    description: "Visualisez l'état de vos finances, cotisations collectées et dépenses en un coup d'œil.",
+    description:
+      "Suivez vos recettes, dépenses, cotisations et opérations en temps réel. Visualisez simplement la situation financière de votre activité.",
   },
   {
     icon: TrendingUp,
-    title: "Accès au financement",
-    description: "Constituez votre historique financier et accédez à des microcrédits adaptés à vos besoins.",
+    title: "Préparez votre accès au financement",
+    description:
+      "Structurez vos opérations, construisez votre historique financier et renforcez progressivement votre profil pour mieux saisir les opportunités de financement.",
   },
   {
     icon: Shield,
-    title: "Transparence totale",
-    description: "Chaque transaction est tracée. Renforcez la confiance entre vos membres.",
+    title: "Transparence et traçabilité",
+    description:
+      "Chaque opération enregistrée contribue à une meilleure traçabilité de votre activité. Renforcez la confiance, la visibilité et la crédibilité financière de votre organisation.",
   },
   {
     icon: BarChart3,
-    title: "Rapports automatisés",
-    description: "Générez des bilans et rapports d'activité en un clic pour vos assemblées générales.",
+    title: "Rapports et données automatisés",
+    description:
+      "Transformez vos opérations en indicateurs et rapports financiers exploitables. Gagnez du temps et disposez des informations nécessaires pour mieux piloter votre activité.",
   },
   {
     icon: Globe,
-    title: "Adapté à l'Afrique",
-    description: "Conçu pour le secteur informel africain. Fonctionne même en zone à faible connectivité.",
+    title: "Pensé pour les réalités africaines",
+    description:
+      "Moro accompagne les entrepreneurs, agriculteurs, artisans, commerçants, coopératives et PME dans leur transition vers une gestion plus structurée, en ville comme dans les zones rurales et périurbaines. Avec des dispositifs terrain comme EDUFI, la digitalisation devient accessible au plus près des bénéficiaires.",
   },
 ];
 
@@ -96,9 +102,9 @@ export const WhyMoroSection = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="group bg-card rounded-2xl p-6 lg:p-8 shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 border border-border/50"
+              className="group bg-card rounded-2xl p-6 lg:p-8 shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1 border border-border/50 flex flex-col"
             >
-              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors flex-shrink-0">
                 <benefit.icon className="w-7 h-7 text-primary" />
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3">

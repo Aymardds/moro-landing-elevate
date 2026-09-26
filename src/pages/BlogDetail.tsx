@@ -54,6 +54,7 @@ const BlogDetail = () => {
                 keywords={post.seo_keywords}
                 canonical={`https://www.moro-apps.net/blog/${post.slug}`}
                 ogType="article"
+                ogImage={post.image || undefined}
             />
             <Header />
             <main className="flex-grow pt-24 pb-20 px-6 sm:px-12">

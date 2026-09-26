@@ -4,10 +4,12 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ChatWidget } from "./components/chat/ChatWidget";
 import ScrollToHashElement from "./components/utils/ScrollToHashElement";
 import { supabase } from "./lib/supabase";
 import { ThemeProvider } from "next-themes";
+
+// Lazy load ChatWidget to speed up initial page load
+const ChatWidget = lazy(() => import("./components/chat/ChatWidget").then((mod) => ({ default: mod.ChatWidget })));
 
 // Lazy load pages for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -87,7 +89,9 @@ const App = () => {
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
-            <ChatWidget />
+            <Suspense fallback={null}>
+              <ChatWidget />
+            </Suspense>
           </BrowserRouter>
         </TooltipProvider>
       </ThemeProvider>

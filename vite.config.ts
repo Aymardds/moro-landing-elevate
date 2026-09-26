@@ -45,6 +45,10 @@ export default defineConfig(({ mode }) => ({
           'animation-vendor': ['framer-motion'],
           // Form libraries
           'form-vendor': ['react-hook-form', '@hookform/resolvers', 'zod'],
+          // Icons library
+          'icons-vendor': ['lucide-react'],
+          // Query & data
+          'query-vendor': ['@tanstack/react-query'],
         },
         // Optimize asset file names
         assetFileNames: (assetInfo) => {

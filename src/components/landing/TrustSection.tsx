@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { memo } from "react";
 
 const stats = [
-  { value: "650+", label: "Opérations enregistrées" },
-  { value: "33 Mds", label: "FCFA de transactions totales" },
-  { value: "11%", label: "Opérations justifiées" },
-  { value: "1,500+", label: "Utilisateurs" },
+  { value: "+730", label: "Opérations enregistrées" },
+  { value: "3,4 Mds", label: "FCFA de transactions totales" },
+  { value: "16%", label: "Opérations justifiées" },
+  { value: "2 000", label: "Utilisateurs" },
 ];
 
 const testimonials = [
@@ -31,7 +31,7 @@ const testimonials = [
 
 export const TrustSection = memo(() => {
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding bg-background section-deferred">
       <div className="container-tight">
         {/* Stats */}
         <motion.div
@@ -156,12 +156,19 @@ export const TrustSection = memo(() => {
                 logo: "/partners/impose.png",
                 className: "h-9 w-auto",
               },
+              {
+                name: "Allo Finance - Cabinet d'expert-comptable",
+                logo: "/partners/logo-Allo-Finance-2.png",
+                className: "h-10 w-auto",
+              },
             ].map((partner, i) => (
               <img
                 key={i}
                 src={partner.logo}
                 alt={partner.name}
+                title={partner.name}
                 loading="lazy"
+                decoding="async"
                 className={`${partner.className || "h-16 w-auto"} object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100`}
               />
             ))}

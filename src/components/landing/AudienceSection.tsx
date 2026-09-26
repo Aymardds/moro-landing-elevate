@@ -27,7 +27,7 @@ const audiences = [
 
 export const AudienceSection = () => {
   return (
-    <section id="audience" className="section-padding bg-background overflow-hidden">
+    <section id="audience" className="section-padding bg-background overflow-hidden section-deferred">
       <div className="container-tight">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Content */}
@@ -77,12 +77,16 @@ export const AudienceSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative"
+            className="relative pb-6 sm:pb-0"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-elevated">
               <img
                 src={audienceImage}
                 alt="Communauté Moro"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="600"
                 className="w-full h-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent" />
@@ -94,9 +98,9 @@ export const AudienceSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="absolute -bottom-6 left-6 right-6 glass rounded-xl p-5 shadow-elevated"
+              className="mt-4 sm:mt-0 sm:absolute sm:-bottom-6 sm:left-6 sm:right-6 glass rounded-xl p-4 sm:p-5 shadow-elevated"
             >
-              <p className="text-foreground italic mb-3">
+              <p className="text-foreground italic mb-3 text-sm sm:text-base">
                 "Moro nous a permis d'optimiser et structurer la gestion de nos projets afin de garantir la performance de notre association."
               </p>
               <div className="flex items-center gap-3">

@@ -363,8 +363,7 @@ export const PricingSection = memo(() => {
               dans la poche
             </h2>
             <p className="text-sm text-white/70 leading-relaxed mb-5">
-              Pas besoin de savoir tenir une comptabilité. Parlez à Moro en français
-              ,Bambara, Dioula(Malinké),Anglais, envoyez une photo de facture — l'IA fait le reste. Chaque
+              Pas besoin de savoir tenir une comptabilité. Parlez à Moro en <strong className="font-bold text-white">français</strong>, <strong className="font-bold text-white">anglais</strong>, <strong className="font-bold text-white">bambara</strong>, <strong className="font-bold text-white">malinké</strong> ou <strong className="font-bold text-white">arabe</strong>, envoyez une photo de facture — l'IA fait le reste. Chaque
               opération enregistrée renforce votre score financier.
             </p>
             <div className="flex flex-wrap gap-2">

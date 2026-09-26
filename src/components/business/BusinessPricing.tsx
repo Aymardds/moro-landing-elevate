@@ -46,7 +46,7 @@ const plans = [
 
 export const BusinessPricing = () => {
     return (
-        <section id="business-pricing" className="py-24 px-8 sm:px-12 lg:px-20 bg-[#f0faf4] font-futura overflow-hidden">
+        <section id="business-pricing" className="py-16 md:py-24 px-4 sm:px-8 md:px-12 lg:px-20 bg-[#f0faf4] font-futura overflow-hidden">
             {/* Background */}
             <div className="absolute left-0 w-64 h-64 bg-[#1e6641]/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -137,13 +137,16 @@ export const BusinessPricing = () => {
                             </ul>
 
                             {/* CTA */}
-                            <button className={`w-full py-4 rounded-2xl text-sm font-black transition-all flex items-center justify-center gap-2 group ${plan.variant === "best"
-                                    ? "bg-[#4db87a] hover:bg-[#5dc98a] text-[#0a1a0f] shadow-[0_4px_20px_rgba(77,184,122,0.3)]"
-                                    : "bg-[#1e6641] hover:bg-[#2d8a58] text-white"
-                                }`}>
+                            <a
+                                href="https://business.moro-apps.net/login"
+                                className={`w-full py-4 rounded-2xl text-sm font-black transition-all flex items-center justify-center gap-2 group ${plan.variant === "best"
+                                        ? "bg-[#4db87a] hover:bg-[#5dc98a] text-[#0a1a0f] shadow-[0_4px_20px_rgba(77,184,122,0.3)]"
+                                        : "bg-[#1e6641] hover:bg-[#2d8a58] text-white"
+                                    }`}
+                            >
                                 {plan.cta}
                                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                            </button>
+                            </a>
                         </motion.div>
                     ))}
                 </div>

@@ -112,7 +112,7 @@ const mediaMentions: MediaMention[] = [
 
 export const MediaSection = () => {
   return (
-    <section className="section-padding bg-muted/20 relative overflow-hidden">
+    <section className="section-padding bg-muted/20 relative overflow-hidden section-deferred">
       <div className="absolute top-1/3 left-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl -z-10 pointer-events-none" />
       <div className="absolute bottom-1/3 right-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl -z-10 pointer-events-none" />
 

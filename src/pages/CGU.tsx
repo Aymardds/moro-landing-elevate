@@ -103,7 +103,7 @@ const CGU = () => {
                         <p className="mb-4">Moro est une application mobile et plateforme web d'inclusion financière développée et éditée par <strong>INEXIUMUS GROUP SARL</strong> (www.inexiumus.com), société de droit ivoirien. Elle est destinée aux micro-entrepreneurs, travailleurs indépendants, et groupements collectifs de la zone UEMOA.</p>
                         <p className="mb-2">L'Application a pour objet de :</p>
                         <ul className="list-disc pl-6 mb-6 space-y-2">
-                            <li>Fournir un outil de comptabilité automatisée via saisie vocale, photographique ou textuelle en français, bambara et dioula ;</li>
+                            <li>Fournir un outil de comptabilité automatisée via saisie vocale, photographique ou textuelle en <strong>français</strong>, <strong>anglais</strong>, <strong>bambara</strong>, <strong>malinké</strong> et <strong>arabe</strong> ;</li>
                             <li>Générer automatiquement des bilans financiers conformes au Système Minimal de Trésorerie SYSCOA/OHADA ;</li>
                             <li>Permettre la certification officielle d'états financiers via le bouton « Certifier » ;</li>
                             <li>Calculer un score de santé financière (Score Moro) sur 7 dimensions comportementales ;</li>
@@ -192,7 +192,7 @@ const CGU = () => {
                         <h2 className={articleHeading}>Article 6 — Fonctionnalités de l'application</h2>
                         <div className="space-y-6 mb-8">
                             <div><h3 className="font-bold mb-2">6.1 Comptabilité automatisée</h3><p>L'Application permet d'enregistrer des opérations financières par saisie vocale, photographique (OCR) ou textuelle. MiA classe automatiquement chaque opération selon le référentiel SYSCOA/OHADA. L'Utilisateur reconnaît que ce classement est une aide à la gestion et ne se substitue pas à un comptable agréé.</p></div>
-                            <div><h3 className="font-bold mb-2">6.2 Saisie multilingue</h3><p>L'Application supporte le français, le bambara et le dioula. D'autres langues (wolof, haoussa, twi) pourront être ajoutées.</p></div>
+                            <div><h3 className="font-bold mb-2">6.2 Saisie multilingue</h3><p>L'Application supporte le <strong>français</strong>, l'<strong>anglais</strong>, le <strong>bambara</strong>, le <strong>malinké</strong> et l'<strong>arabe</strong>. D'autres langues (wolof, haoussa, twi) pourront être ajoutées.</p></div>
                             <div><h3 className="font-bold mb-2">6.3 Mode hors-ligne</h3><p>L'Application fonctionne en mode hors-ligne pour la saisie des opérations courantes, avec synchronisation différée lors de la prochaine connexion.</p></div>
                             <div><h3 className="font-bold mb-2">6.4 Gestion du portefeuille multi-comptes</h3><p>L'Application permet de gérer caisse espèces, comptes Mobile Money et comptes bancaires avec trésorerie nette consolidée.</p></div>
                             <div><h3 className="font-bold mb-2">6.5 Facturation et suivi des créances</h3><p>L'Application génère des références de facture au format INV-AAAA-XXXX et permet le suivi des créances clients avec intégration Wave.</p></div>
@@ -348,7 +348,7 @@ const CGU = () => {
                                 <tbody>
                                     {[
                                         ["Saisie opérations / mode hors-ligne / Mobile Money","✓","✓","✓"],
-                                        ["Saisie en dioula / bambara / Tableaux de bord","✓","✓","✓"],
+                                        ["Saisie multilingue (français, anglais, bambara, malinké, arabe) / Tableaux de bord","✓","✓","✓"],
                                         ["Projets actifs collaboratifs","1","5","Illimités"],
                                         ["Utilisateurs gérés","1","3","Illimités"],
                                         ["Devis & facturation pro","—","✓","✓"],

@@ -49,7 +49,7 @@ const images = [
 
 export const ImpactSection = () => {
     return (
-        <section id="impact" className="section-padding bg-background overflow-hidden">
+        <section id="impact" className="section-padding bg-background overflow-hidden section-deferred">
             <div className="container-tight">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -70,7 +70,7 @@ export const ImpactSection = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[300px] gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 auto-rows-[220px] sm:auto-rows-[250px] md:auto-rows-[280px] gap-4">
                     {images.slice(0, 5).map((image, index) => (
                         <motion.div
                             key={index}
@@ -84,6 +84,9 @@ export const ImpactSection = () => {
                                 src={image.src}
                                 alt={image.alt}
                                 loading="lazy"
+                                decoding="async"
+                                width="600"
+                                height="400"
                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">

@@ -67,7 +67,7 @@ const team = [
 
 export const TeamSection = () => {
     return (
-        <section id="team" className="section-padding bg-white dark:bg-background">
+        <section id="team" className="section-padding bg-white dark:bg-background section-deferred">
             <div className="container-tight">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -97,6 +97,9 @@ export const TeamSection = () => {
                                         src={member.image}
                                         alt={member.name}
                                         loading="lazy"
+                                        decoding="async"
+                                        width="128"
+                                        height="128"
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
                                 ) : (

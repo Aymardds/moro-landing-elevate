@@ -62,7 +62,15 @@ export const Footer = () => {
           {/* Brand */}
           <div className="col-span-2">
             <Link to="/" className="flex items-center mb-4">
-              <img src={moroLogo} alt="Moro" className="h-10 w-auto brightness-0 invert dark:brightness-100 dark:invert-0" loading="lazy" />
+              <img
+                src={moroLogo}
+                alt="Moro"
+                className="h-10 w-auto brightness-0 invert dark:brightness-100 dark:invert-0"
+                loading="lazy"
+                decoding="async"
+                width="120"
+                height="40"
+              />
             </Link>
             <p className="text-background/60 mb-6 max-w-xs">
               Moro, est une solution inclusive de gestion des opérations courantes et d'assistance financière aux micros projets.
@@ -70,7 +78,7 @@ export const Footer = () => {
             {/* App Store Links */}
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="https://apps.apple.com"
+                href="https://apps.apple.com/fr/app/moro/id6569222115"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-background/10 hover:bg-background/20 px-4 py-2 rounded-lg transition-colors"
@@ -79,7 +87,7 @@ export const Footer = () => {
                 <span className="text-sm font-medium">App Store</span>
               </a>
               <a
-                href="https://play.google.com"
+                href="https://play.google.com/store/apps/details?id=com.litekev.moro"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-background/10 hover:bg-background/20 px-4 py-2 rounded-lg transition-colors"

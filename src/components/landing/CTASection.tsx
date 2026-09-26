@@ -3,10 +3,10 @@ import { Download } from "lucide-react";
 import { WavyBackground } from "@/components/ui/WavyBackground";
 import waveBg from "@/assets/wave-bg.webp";
 
-const trustChips = [
+const trustChips: (string | React.ReactNode)[] = [
   "Paiement Wave & MoMo",
   "Sans engagement",
-  "IA en français naturel",
+  <span>IA en <strong className="font-bold text-white">français</strong> naturel</span>,
   "Score financier alternatif",
   "8 pays UEMOA",
 ];
@@ -43,9 +43,9 @@ export const CTASection = () => {
 
           {/* Trust chips */}
           <div className="flex flex-wrap justify-center gap-3 mb-10">
-            {trustChips.map((chip) => (
+            {trustChips.map((chip, idx) => (
               <span
-                key={chip}
+                key={idx}
                 className="inline-flex items-center gap-1.5 bg-white/8 border border-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-semibold text-white/85"
               >
                 <span className="text-[#95d5b2] font-black">✓</span>
