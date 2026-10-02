@@ -29,3 +29,11 @@ dist-ssr
 *.sw?
 .vercel
 .env*.local
+
+# Ajouté lors du nettoyage 2026-10-02 (généré / lourd / secrets)
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.sample
+!.env.template
